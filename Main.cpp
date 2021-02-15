@@ -5,7 +5,7 @@ int main() {
 	std::cout << "Im working!";
 
 	Game game;
-	game.render();
+	game.refreshWindow();
 
 	return 0;
 }

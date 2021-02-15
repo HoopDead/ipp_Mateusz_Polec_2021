@@ -1,12 +1,14 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include "Entity.h"
 
 class Game {
 
 private:
 
-	std::unique_ptr<sf::RenderWindow> m_window;
+	std::shared_ptr<sf::RenderWindow> m_window;
+	std::unique_ptr<Entity> m_player;
 	sf::Event event;
 	
 public:
