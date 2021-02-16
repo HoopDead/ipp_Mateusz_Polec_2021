@@ -8,6 +8,7 @@ Entity::Entity() {
 	this->m_dynamic = false;
 }
 
+
 void Entity::load(std::string filename, bool dynamic) {
 	this->m_texture.loadFromFile("Graphics/sprites/" + filename);
 	this->m_sprite.setTexture(this->m_texture);

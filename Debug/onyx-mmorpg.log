@@ -1,2 +1,6 @@
 ﻿  Entity.cpp
+  EntityManager.cpp
+  Game.cpp
+  Main.cpp
+  Generating Code...
   onyx-mmorpg.vcxproj -> C:\Users\Mateusz\source\repos\onyx-mmorpg\Debug\onyx-mmorpg.exe
