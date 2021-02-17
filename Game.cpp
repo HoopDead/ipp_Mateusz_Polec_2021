@@ -5,8 +5,11 @@
 void Game::createWindow() {
 	this->m_window = std::make_shared<sf::RenderWindow>(sf::VideoMode(800, 600), "Onyx DEV 1.0.0");
 	this->m_window->setFramerateLimit(60);
-	this->m_player = std::make_unique<Entity>();
-	this->m_player->load("player_temp.png", true);
+	this->m_player = std::make_shared<Entity>();
+	this->m_enemy = std::make_shared<Entity>();
+	this->m_entityManager = std::make_unique<EntityManager>();
+	this->m_entityManager->add("Player 1", this->m_player);
+	this->m_entityManager->add("Player 1", this->m_enemy);
 }
 
 
@@ -29,7 +32,6 @@ void Game::refreshWindow() {
 
 void Game::render() {
 		this->m_window->clear(sf::Color::Black);
-		this->m_player->update(this->m_window);
 		this->m_window->display();
 }
 

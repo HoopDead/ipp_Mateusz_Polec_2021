@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include "EntityManager.h"
 #include "Entity.h"
 
 class Game {
@@ -8,7 +9,9 @@ class Game {
 private:
 
 	std::shared_ptr<sf::RenderWindow> m_window;
-	std::unique_ptr<Entity> m_player;
+	std::shared_ptr<Entity> m_player;
+	std::shared_ptr <Entity> m_enemy;
+	std::unique_ptr<EntityManager> m_entityManager;
 	sf::Event event;
 	
 public:
