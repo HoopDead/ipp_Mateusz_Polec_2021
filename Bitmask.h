@@ -5,32 +5,67 @@
 class Bitmask
 {
 public:
-
-	//TODO: Documentation
+	/*
+	* Constructor for Bitmask
+	* Initalize the member bits in object
+	* @Param: -
+	* @Return: -
+	*/
 	Bitmask();
 
-	//TODO: Documentation
+	/*
+	* setMask method
+	* Overwrites the bitmask with other bitmask
+	* @Param: Bitmask object reference
+	* @Return: -
+	*/
 	void setMask(Bitmask& other);
 
-	//TODO: Documentation
+	/*
+	* getMask method
+	* Return binary representation of bitmask
+	* @Param: -
+	* @Return uint_32t variable that represents bitmask
+	*/
 	uint32_t getMask() const;
 
-	//TODO: Documentation
+	/*
+	* getBit method
+	* Return logical value whether bit at given position is 1
+	* @Param: int pos - position of bit that we want to check
+	* @Return:  boolean - logic value of bit at given position
+	*/
 	bool getBit(int pos) const;
 
-	//TODO: Documentation
+	/*
+	* setBit method
+	* Set bits at given position to 1 (one) or 0 (zero)
+	* @Param: int pos - position of bit that we want to set
+	* @Param: bool on - is the bit 1 (one) or 0 (zero)
+	* @Return: -
+	*/
 	void setBit(int pos, bool on);
 
-	//TODO: Documentation
+	/*
+	* setBit method
+	* Set bit at given position to 1 (one)
+	* @Param: int pos - position of bit that we want to set to one
+	*/
 	void setBit(int pos);
 
-	//TODO: Documentation
+	/*
+	* clearBit method
+	* Set bit at given position to 0 (zero)
+	* @Param: int pos - position of bit that we want to set to zero
+	*/
 	void clearBit(int pos);
 
-	//TODO: Documentation
+	/*
+	* clear method
+	* Set all bit in bitmask to 0 (zero)
+	*/
 	void clear();
 
 private:
-
 	uint32_t m_bits;
 };
