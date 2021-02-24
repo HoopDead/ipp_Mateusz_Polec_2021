@@ -23,11 +23,8 @@ void Log(const T& value) noexcept {
 * Can ba called by using LogAll(variable to print, variable to print 2, variable to print 3, ...,  variable to print n)
 * Is noexcept because function does not throw any error + it's only test function
 */
-template <typename... Args>
-void LogAll(const Args&... args) noexcept
+template<typename ...Args>
+void LogAll(Args&&... args) noexcept
 {
-    using dummy = int[];
-    (void)dummy {
-        0, (Log(args), 0)...
-    };
+	((std::cout << std::forward<Args>(args) << "\n"), ...);
 }

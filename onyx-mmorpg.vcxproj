@@ -22,7 +22,6 @@
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="Logs.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="StateMachine.cpp" />
     <ClCompile Include="Window.cpp" />

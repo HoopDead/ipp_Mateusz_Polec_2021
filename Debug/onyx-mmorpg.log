@@ -1,4 +1,5 @@
 ﻿  Game.cpp
+C:\Users\Mateusz\source\repos\onyx-mmorpg\Logs.h(29,51): error C7518: fold expressions require at least '/std:c++17'
   Main.cpp
+C:\Users\Mateusz\source\repos\onyx-mmorpg\Logs.h(29,51): error C7518: fold expressions require at least '/std:c++17'
   Generating Code...
-  onyx-mmorpg.vcxproj -> C:\Users\Mateusz\source\repos\onyx-mmorpg\Debug\onyx-mmorpg.exe
