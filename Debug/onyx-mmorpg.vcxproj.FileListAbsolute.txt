@@ -1,6 +1,6 @@
+C:\Users\Mateusz\source\repos\onyx-mmorpg\Debug\onyx-mmorpg.vcxproj.CopyComplete
 C:\Users\Mateusz\source\repos\onyx-mmorpg\Debug\onyx-mmorpg.exe
 C:\Users\Mateusz\source\repos\onyx-mmorpg\Debug\onyx-mmorpg.pdb
-C:\Users\Mateusz\source\repos\onyx-mmorpg\Debug\onyx-mmorpg.vcxproj.CopyComplete
 C:\Users\Mateusz\source\repos\onyx-mmorpg\Debug\sfml-graphics-d-2.dll
 C:\Users\Mateusz\source\repos\onyx-mmorpg\Debug\sfml-window-d-2.dll
 C:\Users\Mateusz\source\repos\onyx-mmorpg\Debug\sfml-system-d-2.dll
