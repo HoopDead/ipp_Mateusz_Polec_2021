@@ -1,7 +1,9 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include "Input.h"
 #include <string>
+
 
 class Window {
 
@@ -58,5 +60,6 @@ public:
 private:
 
 	sf::RenderWindow m_window;
+	Input m_input;
 
 };

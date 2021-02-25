@@ -2,6 +2,7 @@
 
 #include "Window.h"
 #include "Logs.h"
+#include "Input.h"
 
 class Game {
 

@@ -14,12 +14,9 @@ void Entity::load(std::string filename, bool dynamic) {
 	this->m_sprite.setTexture(this->m_texture);
 	this->setTexture(this->m_texture);
 
-	if (dynamic) {
-		this->m_dynamic = true;
-	}
-	else {
-		this->m_dynamic = false;
-	}
+
+	this->m_dynamic = dynamic;
+
 }
 
 bool Entity::update(std::shared_ptr<sf::RenderWindow> window) {
