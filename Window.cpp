@@ -1,5 +1,6 @@
 #include "Window.h"
 
+
 Window::Window(const std::string& windowName)
 	: m_window(sf::VideoMode(800, 600), windowName) {
 	m_window.setVerticalSyncEnabled(true);
@@ -9,10 +10,9 @@ void Window::update() {
 
 	sf::Event event;
 
-	if (m_window.pollEvent(event)) {
-		if (event.type == sf::Event::Closed) {
-			m_window.close();
-		}
+	if (m_window.pollEvent(event)) 
+	{
+		m_input.ConsumeInput(event);
 	}
 
 }
