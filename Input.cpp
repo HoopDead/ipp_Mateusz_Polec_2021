@@ -1,36 +1,42 @@
 #include "Input.h"
 #include "Entity.h"
+#include "Logs.h"
 
 Input::Input()
 {
+	Log("Called Input Constructor");
 }
 
-Input::Input(Entity* owner)
-{
-	Owner = owner;
+Input::Input(std::shared_ptr<Entity> owner) {
+	Log("Called Input Constructor");
+	m_owner = owner;
 }
 
-void Input::ConsumeInput(sf::Event m_event)
+void Input::consumeInput(sf::Event event, sf::RenderWindow& window)
 {
-	if (Owner != nullptr)
+	if (m_owner != nullptr)
 	{
-		switch (m_event.type)
+		switch (event.type)
 		{
+		case sf::Event::Closed:
+		{
+			window.close();
+			break;
+		}
 
-		case sf::Event::KeyPressed:
-
-			switch (m_event.key.code)
+			switch (event.key.code)
 			{
 			case sf::Keyboard::W:
 			{
-				Owner->groupId();
+				m_owner->groupId();
 				// Owner->KeyWAction 
 				// We can later change Owner type to be player-specific
+				Log("Key W is pressed");
 				break;
 			}
 			case sf::Keyboard::S:
 			{
-
+				Log("Key S is pressed");
 				break;
 			}
 
@@ -44,20 +50,24 @@ void Input::ConsumeInput(sf::Event m_event)
 
 		case sf::Event::KeyReleased:
 
-			switch (m_event.key.code)
+			switch (event.key.code)
 			{
 			case sf::Keyboard::W:
 			{
+				Log("Key W released");
 				break;
 			}
-
+			case sf::Keyboard::S:
+			{
+				Log("Key S released");
+				break;	
+			}
 			default:
 			{
 				break;
 			}
 			}
 			break;
-
 
 		default:
 
@@ -66,7 +76,11 @@ void Input::ConsumeInput(sf::Event m_event)
 	}
 }
 
-void Input::setOwner(Entity* NewOwner)
+void Input::setOwner(std::shared_ptr<Entity> newOwner)
 {
-	Owner = NewOwner;
+	m_owner = newOwner;
+}
+
+Input::~Input() {
+	Log("Called Input Destructor");
 }

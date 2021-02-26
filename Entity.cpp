@@ -6,6 +6,7 @@ Entity::Entity() {
 	this->m_active = 1;
 	this->m_groupId = 0;
 	this->m_dynamic = false;
+	Log("Called Entity Constructor");
 }
 
 
@@ -36,4 +37,8 @@ int Entity::active() {
 
 void Entity::destroy() {
 	this->m_active = false;
+}
+
+Entity::~Entity() {
+	Log("Called Entity Destructor");
 }

@@ -23,6 +23,7 @@
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="StateMachine.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -32,6 +33,7 @@
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityManager.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="Logs.h" />
     <ClInclude Include="StateMachine.h" />
     <ClInclude Include="Window.h" />

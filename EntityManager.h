@@ -9,6 +9,7 @@ class EntityManager {
 
 public:
 
+	EntityManager();
 	/*
 	* Add method that allow to create new Entity and put it in unordered_map with name and unique pointer to entity
 	* @Param: std::string name - represents name of object

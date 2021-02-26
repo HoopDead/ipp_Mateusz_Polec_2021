@@ -1,23 +1,30 @@
 #pragma once
+ 
 #include "SFML/Window.hpp"
+#include <SFML/Graphics.hpp>
 
 class Entity;
 
 class Input
 {
 public:
+	//TODO: Documentation
 	Input();
-	Input(Entity* owner);
 
-	void ConsumeInput(sf::Event m_event);
+	//TODO: Documentation
+	Input(std::shared_ptr<Entity> owner);
 
-	void setOwner(Entity* NewOwner);
+	//TODO: Documentation
+	void consumeInput(sf::Event event, sf::RenderWindow& window);
+
+
+	//TODO: Documentation
+	void setOwner(std::shared_ptr<Entity> newOwner);
+
+	~Input();
 
 protected:
 
-	/*
-		No need for smart pointer, because Entity is already allocated on the Heap
-	*/
-	Entity* Owner; 
+	std::shared_ptr<Entity> m_owner; 
 };
 

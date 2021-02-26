@@ -4,6 +4,7 @@
 Window::Window(const std::string& windowName)
 	: m_window(sf::VideoMode(800, 600), windowName) {
 	m_window.setVerticalSyncEnabled(true);
+	Log("Called Window Constructor");
 }
 
 void Window::update() {
@@ -12,7 +13,7 @@ void Window::update() {
 
 	if (m_window.pollEvent(event)) 
 	{
-		m_input.ConsumeInput(event);
+		input.consumeInput(event, m_window);
 	}
 
 }
@@ -31,4 +32,12 @@ void Window::endDraw() {
 
 bool Window::isOpen() const {
 	return m_window.isOpen();
+}
+
+void Window::updateInput(std::shared_ptr<Entity> entity) {
+	input.setOwner(entity);
+}
+
+Window::~Window() {
+	Log("Called Window Destructor");
 }

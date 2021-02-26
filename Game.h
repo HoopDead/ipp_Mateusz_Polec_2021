@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Window.h"
-#include "Logs.h"
-#include "Input.h"
+#include "Entity.h"
+#include "EntityManager.h"
 
 class Game {
 
@@ -55,11 +55,17 @@ public:
 	*/
 	bool isRunning() const;
 
+	~Game();
+
 private:
 
 	//Construtor is called from windows.h
 	Window window;
 
+	//Testing Entity for new features
+	std::shared_ptr<Entity> m_testEntity;
+	std::unique_ptr<EntityManager> m_entityManager;
+	
 	//Handling time in game
 	sf::Clock m_clock;
 	float m_deltaTime;
