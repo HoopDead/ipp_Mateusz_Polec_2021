@@ -15,11 +15,11 @@ public:
 	Input(std::shared_ptr<Entity> owner);
 
 	//TODO: Documentation
-	void consumeInput(sf::Event event, sf::RenderWindow& window);
+	void ConsumeInput(sf::Event event, sf::RenderWindow& window);
 
 
 	//TODO: Documentation
-	void setOwner(std::shared_ptr<Entity> newOwner);
+	void SetOwner(std::shared_ptr<Entity> newOwner);
 
 	~Input();
 

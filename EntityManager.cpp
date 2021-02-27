@@ -1,10 +1,10 @@
-#include "EntityManager.h"
+#include "EntityManager.hpp"
 
 EntityManager::EntityManager() {
 	Log("Called EntityManager Constructor");
 }
 
-void EntityManager::add(std::string name, std::shared_ptr<Entity> entity) {
+void EntityManager::Add(std::string name, std::shared_ptr<Entity> entity) {
 
 	std::unordered_map<std::string, std::shared_ptr<Entity>>::const_iterator found = this->entities.find(name);
 
@@ -19,7 +19,7 @@ void EntityManager::add(std::string name, std::shared_ptr<Entity> entity) {
 }
 
 //TODO: TEST
-void EntityManager::add(std::string name, std::string filename, bool dynamic) {
+void EntityManager::Add(std::string name, std::string filename, bool dynamic) {
 
 	std::unordered_map<std::string, std::shared_ptr<Entity>>::const_iterator found = this->entities.find(name);
 
@@ -30,13 +30,13 @@ void EntityManager::add(std::string name, std::string filename, bool dynamic) {
 	}
 
 	std::shared_ptr<Entity> entity = std::make_shared<Entity>();
-	entity->load(filename, dynamic);
+	entity->Load(filename, dynamic);
 	this->entities.insert(std::make_pair(name, entity));
 
 }
 
 //TODO TEST:
-std::shared_ptr<Entity> EntityManager::get(std::string name) {
+std::shared_ptr<Entity> EntityManager::Get(std::string name) {
 
 	std::unordered_map<std::string, std::shared_ptr<Entity>>::const_iterator found = this->entities.find(name);
 
@@ -50,7 +50,7 @@ std::shared_ptr<Entity> EntityManager::get(std::string name) {
 }
 
 //TODO: TEST
-void EntityManager::render(std::shared_ptr<sf::RenderWindow> window) {
+void EntityManager::Render(std::shared_ptr<sf::RenderWindow> window) {
 
 	for (auto& iterator : this->entities) {
 		window->draw(iterator.second->m_sprite);

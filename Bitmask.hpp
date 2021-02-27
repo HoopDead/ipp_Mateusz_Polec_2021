@@ -19,7 +19,7 @@ public:
 	* @Param: Bitmask object reference
 	* @Return: -
 	*/
-	void setMask(Bitmask& other);
+	void SetMask(Bitmask& other);
 
 	/*
 	* getMask method
@@ -27,7 +27,7 @@ public:
 	* @Param: -
 	* @Return uint_32t variable that represents bitmask
 	*/
-	uint32_t getMask() const;
+	uint32_t GetMask() const;
 
 	/*
 	* getBit method
@@ -35,7 +35,7 @@ public:
 	* @Param: int pos - position of bit that we want to check
 	* @Return:  boolean - logic value of bit at given position
 	*/
-	bool getBit(int pos) const;
+	bool GetBit(int pos) const;
 
 	/*
 	* setBit method
@@ -44,27 +44,27 @@ public:
 	* @Param: bool on - is the bit 1 (one) or 0 (zero)
 	* @Return: -
 	*/
-	void setBit(int pos, bool on);
+	void SetBit(int pos, bool on);
 
 	/*
 	* setBit method
 	* Set bit at given position to 1 (one)
 	* @Param: int pos - position of bit that we want to set to one
 	*/
-	void setBit(int pos);
+	void SetBit(int pos);
 
 	/*
 	* clearBit method
 	* Set bit at given position to 0 (zero)
 	* @Param: int pos - position of bit that we want to set to zero
 	*/
-	void clearBit(int pos);
+	void ClearBit(int pos);
 
 	/*
 	* clear method
 	* Set all bit in bitmask to 0 (zero)
 	*/
-	void clear();
+	void Clear();
 
 private:
 	uint32_t m_bits;

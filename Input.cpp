@@ -1,6 +1,6 @@
-#include "Input.h"
-#include "Entity.h"
-#include "Logs.h"
+#include "Input.hpp"
+#include "Entity.hpp"
+#include "Logs.hpp"
 
 Input::Input()
 {
@@ -12,7 +12,7 @@ Input::Input(std::shared_ptr<Entity> owner) {
 	m_owner = owner;
 }
 
-void Input::consumeInput(sf::Event event, sf::RenderWindow& window)
+void Input::ConsumeInput(sf::Event event, sf::RenderWindow& window)
 {
 	if (m_owner != nullptr)
 	{
@@ -28,7 +28,7 @@ void Input::consumeInput(sf::Event event, sf::RenderWindow& window)
 			{
 			case sf::Keyboard::W:
 			{
-				m_owner->groupId();
+				m_owner->GroupId();
 				// Owner->KeyWAction 
 				// We can later change Owner type to be player-specific
 				Log("Key W is pressed");
@@ -76,7 +76,7 @@ void Input::consumeInput(sf::Event event, sf::RenderWindow& window)
 	}
 }
 
-void Input::setOwner(std::shared_ptr<Entity> newOwner)
+void Input::SetOwner(std::shared_ptr<Entity> newOwner)
 {
 	m_owner = newOwner;
 }

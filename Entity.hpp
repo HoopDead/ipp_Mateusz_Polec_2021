@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <string>
-#include "Logs.h"
+#include "Logs.hpp"
 
 
 class Entity : sf::Sprite {
@@ -11,18 +11,18 @@ public:
 
 	sf::Vector2f m_velocity;
 
-	virtual void load(std::string filename, bool dynamic);
+	virtual void Load(std::string filename, bool dynamic);
 
-	virtual bool update(std::shared_ptr<sf::RenderWindow> window);
+	virtual bool Update(std::shared_ptr<sf::RenderWindow> window);
 
 
 	Entity();
 
-	void destroy();
+	void Destroy();
 
-	int active();
+	int Active();
 
-	int groupId();
+	int GroupId();
 
 	~Entity();
 

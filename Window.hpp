@@ -1,9 +1,9 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "Input.h"
+#include "Input.hpp"
 #include <string>
-#include "Logs.h"
+#include "Logs.hpp"
 
 class Window {
 
@@ -23,7 +23,7 @@ public:
 	* @Param: -
 	* @Return: -
 	*/
-	void update();
+	void Update();
 
 	/*
 	* beginDraw method
@@ -31,7 +31,7 @@ public:
 	* @Param: -
 	* @Return: -
 	*/
-	void beginDraw();
+	void BeginDraw();
 
 	/*
 	* draw method
@@ -39,7 +39,7 @@ public:
 	* @Param: const sf::Drawable (SFML virtual object) reference to drawable - you can pass any drawable object by it. (Rectangle, Sprite etc.)
 	* @Return: -
 	*/
-	void draw(const sf::Drawable& drawable);
+	void Draw(const sf::Drawable& drawable);
 
 	/*
 	* endDraw method
@@ -47,7 +47,7 @@ public:
 	* @Param: -
 	* @Return: -
 	*/
-	void endDraw();
+	void EndDraw();
 
 	/*
 	* isOpen method
@@ -55,7 +55,7 @@ public:
 	* @Param: none
 	* @Return: boolean represents the state logic state of window.
 	*/
-	bool isOpen() const;
+	bool IsOpen() const;
 
 	/*
 	* updateInput
@@ -63,7 +63,7 @@ public:
 	* @Param: std shared pointer to Entity created in Game source file
 	* @Return -
 	*/
-	void updateInput(std::shared_ptr<Entity> entity);
+	void UpdateInput(std::shared_ptr<Entity> entity);
 
 	~Window();
 

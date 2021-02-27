@@ -1,32 +1,32 @@
-#include "Bitmask.h"
+#include "Bitmask.hpp"
 
 Bitmask::Bitmask() : m_bits(0) { }
 
-void Bitmask::setMask(Bitmask& other) {
-	m_bits = other.getMask();
+void Bitmask::SetMask(Bitmask& other) {
+	m_bits = other.GetMask();
 }
 
-uint32_t Bitmask::getMask() const {
+uint32_t Bitmask::GetMask() const {
 	return m_bits;
 }
 
-bool Bitmask::getBit(int pos) const {
+bool Bitmask::GetBit(int pos) const {
 	return (m_bits & (1 << pos)) != 0;
 }
 
-void Bitmask::setBit(int pos, bool on) {
-	on ? setBit(pos) : clearBit(pos);
+void Bitmask::SetBit(int pos, bool on) {
+	on ? SetBit(pos) : ClearBit(pos);
 }
 
-void Bitmask::setBit(int pos) {
+void Bitmask::SetBit(int pos) {
 	m_bits = m_bits | 1 << pos;
 }
 
-void Bitmask::clearBit(int pos) {
+void Bitmask::ClearBit(int pos) {
 	m_bits = m_bits & ~(1 << pos);
 }
 
-void Bitmask::clear() {
+void Bitmask::Clear() {
 	m_bits = 0;
 }
 

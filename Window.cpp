@@ -1,4 +1,4 @@
-#include "Window.h"
+#include "Window.hpp"
 
 
 Window::Window(const std::string& windowName)
@@ -7,35 +7,35 @@ Window::Window(const std::string& windowName)
 	Log("Called Window Constructor");
 }
 
-void Window::update() {
+void Window::Update() {
 
 	sf::Event event;
 
 	if (m_window.pollEvent(event)) 
 	{
-		input.consumeInput(event, m_window);
+		input.ConsumeInput(event, m_window);
 	}
 
 }
 
-void Window::beginDraw() {
+void Window::BeginDraw() {
 	m_window.clear(sf::Color::Black);
 }
 
-void Window::draw(const sf::Drawable& drawable) {
+void Window::Draw(const sf::Drawable& drawable) {
 	m_window.draw(drawable);
 }
 
-void Window::endDraw() {
+void Window::EndDraw() {
 	m_window.display();
 }
 
-bool Window::isOpen() const {
+bool Window::IsOpen() const {
 	return m_window.isOpen();
 }
 
-void Window::updateInput(std::shared_ptr<Entity> entity) {
-	input.setOwner(entity);
+void Window::UpdateInput(std::shared_ptr<Entity> entity) {
+	input.SetOwner(entity);
 }
 
 Window::~Window() {

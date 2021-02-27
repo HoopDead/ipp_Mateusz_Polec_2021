@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Window.h"
-#include "Entity.h"
-#include "EntityManager.h"
+#include "Window.hpp"
+#include "Entity.hpp"
+#include "EntityManager.hpp"
 
 class Game {
 
@@ -21,7 +21,7 @@ public:
 	* @Param: -
 	* @Return: -
 	*/
-	void update();
+	void Update();
 
 	/*
 	* LateUpdate method
@@ -29,7 +29,7 @@ public:
 	* @Param: -
 	* @Return: -
 	*/
-	void lateUpdate();
+	void LateUpdate();
 
 	/*
 	* Draw method
@@ -37,7 +37,7 @@ public:
 	* @Param: -
 	* @Return: -
 	*/
-	void draw();
+	void Draw();
 
 	/*
 	* calculateDeltaTime method
@@ -45,7 +45,7 @@ public:
 	* @Param: -
 	* @Return: -
 	*/
-	void calculateDeltaTime();
+	void CalculateDeltaTime();
 
 	/*
 	* isRunning method
@@ -53,7 +53,7 @@ public:
 	* @Param: -
 	* @Return: boolean represents the state logic state of window.
 	*/
-	bool isRunning() const;
+	bool IsRunning() const;
 
 	~Game();
 

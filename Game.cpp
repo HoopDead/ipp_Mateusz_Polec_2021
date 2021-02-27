@@ -1,32 +1,32 @@
-#include "Game.h"
+#include "Game.hpp"
 
-Game::Game() : window("Onyx Game DEV 1.0.0") {
+Game::Game() : window("Onyx Game DEV 1.0.1") {
 	m_deltaTime = m_clock.restart().asSeconds();
 	m_testEntity = std::make_shared<Entity>();
 	m_entityManager = std::make_unique<EntityManager>();
-	m_entityManager->add("Test Entity", m_testEntity);
-	window.updateInput(m_testEntity);
+	m_entityManager->Add("Test Entity", m_testEntity);
+	window.UpdateInput(m_testEntity);
 	Log("Called Game Constructor");
 }
 
-void Game::update() {
-	window.update();
+void Game::Update() {
+	window.Update();
 }
 
-void Game::lateUpdate() {}
+void Game::LateUpdate() {}
 
-void Game::draw() {
-	window.beginDraw();
+void Game::Draw() {
+	window.BeginDraw();
 
-	window.endDraw();
+	window.EndDraw();
 }
 
-void Game::calculateDeltaTime() {
+void Game::CalculateDeltaTime() {
 	m_deltaTime = m_clock.restart().asSeconds();
 }
 
-bool Game::isRunning() const {
-	return window.isOpen();
+bool Game::IsRunning() const {
+	return window.IsOpen();
 }
 
 Game::~Game() {

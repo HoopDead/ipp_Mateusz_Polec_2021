@@ -29,14 +29,15 @@
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Bitmask.h" />
-    <ClInclude Include="Entity.h" />
-    <ClInclude Include="EntityManager.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="Input.h" />
-    <ClInclude Include="Logs.h" />
-    <ClInclude Include="StateMachine.h" />
-    <ClInclude Include="Window.h" />
+    <ClInclude Include="Bitmask.hpp" />
+    <ClInclude Include="Entity.hpp" />
+    <ClInclude Include="EntityManager.hpp" />
+    <ClInclude Include="Game.hpp" />
+    <ClInclude Include="Input.hpp" />
+    <ClInclude Include="Logs.hpp" />
+    <ClInclude Include="Scene.hpp" />
+    <ClInclude Include="StateMachine.hpp" />
+    <ClInclude Include="Window.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
