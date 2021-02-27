@@ -20,6 +20,7 @@ void Log(const T& value) noexcept {
 * template LOG ALL (n-arguments)
 * Print the given values in console
 * @Param const reference to any number of variables types 
+* @Return: -
 * Can ba called by using LogAll(variable to print, variable to print 2, variable to print 3, ...,  variable to print n)
 * Is noexcept because function does not throw any error + it's only test function
 */

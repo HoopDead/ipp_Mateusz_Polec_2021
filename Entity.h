@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <string>
+#include "Logs.h"
 
 
 class Entity : sf::Sprite {
@@ -22,6 +23,8 @@ public:
 	int active();
 
 	int groupId();
+
+	~Entity();
 
 private:
 

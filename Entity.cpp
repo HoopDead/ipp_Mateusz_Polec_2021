@@ -6,6 +6,7 @@ Entity::Entity() {
 	this->m_active = 1;
 	this->m_groupId = 0;
 	this->m_dynamic = false;
+	Log("Called Entity Constructor");
 }
 
 
@@ -14,12 +15,9 @@ void Entity::load(std::string filename, bool dynamic) {
 	this->m_sprite.setTexture(this->m_texture);
 	this->setTexture(this->m_texture);
 
-	if (dynamic) {
-		this->m_dynamic = true;
-	}
-	else {
-		this->m_dynamic = false;
-	}
+
+	this->m_dynamic = dynamic;
+
 }
 
 bool Entity::update(std::shared_ptr<sf::RenderWindow> window) {
@@ -39,4 +37,8 @@ int Entity::active() {
 
 void Entity::destroy() {
 	this->m_active = false;
+}
+
+Entity::~Entity() {
+	Log("Called Entity Destructor");
 }

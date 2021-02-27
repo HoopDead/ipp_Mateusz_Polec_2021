@@ -1,5 +1,9 @@
 #include "EntityManager.h"
 
+EntityManager::EntityManager() {
+	Log("Called EntityManager Constructor");
+}
+
 void EntityManager::add(std::string name, std::shared_ptr<Entity> entity) {
 
 	std::unordered_map<std::string, std::shared_ptr<Entity>>::const_iterator found = this->entities.find(name);
@@ -56,4 +60,5 @@ void EntityManager::render(std::shared_ptr<sf::RenderWindow> window) {
 //TODO: TEST
 EntityManager::~EntityManager() {
 	this->entities.clear();
+	Log("Called Entity Manager Destructor");
 }

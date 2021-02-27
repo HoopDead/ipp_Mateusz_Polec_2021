@@ -1,7 +1,9 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include "Input.h"
 #include <string>
+#include "Logs.h"
 
 class Window {
 
@@ -55,8 +57,19 @@ public:
 	*/
 	bool isOpen() const;
 
+	/*
+	* updateInput
+	* Update the owner of input class
+	* @Param: std shared pointer to Entity created in Game source file
+	* @Return -
+	*/
+	void updateInput(std::shared_ptr<Entity> entity);
+
+	~Window();
+
 private:
 
 	sf::RenderWindow m_window;
+	Input input;
 
 };
