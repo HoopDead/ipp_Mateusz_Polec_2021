@@ -13,7 +13,9 @@ void Window::Update() {
 
 	if (m_window.pollEvent(event)) 
 	{
-		input.ConsumeInput(event, m_window);
+		if (event.type == sf::Event::Closed) {
+			m_window.close();
+		}
 	}
 
 }
@@ -32,10 +34,6 @@ void Window::EndDraw() {
 
 bool Window::IsOpen() const {
 	return m_window.isOpen();
-}
-
-void Window::UpdateInput(std::shared_ptr<Entity> entity) {
-	input.SetOwner(entity);
 }
 
 Window::~Window() {

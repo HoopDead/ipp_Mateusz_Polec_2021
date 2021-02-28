@@ -25,7 +25,8 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="StateMachine.cpp" />
+    <ClCompile Include="SceneGame.cpp" />
+    <ClCompile Include="SceneStateMachine.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -36,7 +37,8 @@
     <ClInclude Include="Input.hpp" />
     <ClInclude Include="Logs.hpp" />
     <ClInclude Include="Scene.hpp" />
-    <ClInclude Include="StateMachine.hpp" />
+    <ClInclude Include="SceneGame.hpp" />
+    <ClInclude Include="SceneStateMachine.hpp" />
     <ClInclude Include="Window.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Window.hpp"
+
 class Scene {
 public:
 
@@ -15,6 +17,16 @@ public:
 	//TODO: Documentation
 	virtual void OnDeactivate() {};
 
+	//TODO: Documentation
+	virtual void ProcessInput() {};
 
+	//TODO: Documentation
+	virtual void Update(float deltaTime) {};
+
+	//TODO: Documentation
+	virtual void LateUpdate(float deltaTime) {};
+
+	//TODO: Documentation
+	virtual void Draw(Window& window) {};
 
 };
