@@ -1,86 +1,37 @@
 #include "Input.hpp"
-#include "Entity.hpp"
-#include "Logs.hpp"
 
-Input::Input()
-{
-	Log("Called Input Constructor");
+void Input::Update() {
+
+	m_lastFrameKeys.SetMask(m_frameKeys);
+
+	m_frameKeys.SetBit((int)Key::Up, (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) || (sf::Keyboard::isKeyPressed(sf::Keyboard::W)));
+
+	m_frameKeys.SetBit((int)Key::Down, (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) || (sf::Keyboard::isKeyPressed(sf::Keyboard::S)));
+
+	m_frameKeys.SetBit((int)Key::Left, (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) || (sf::Keyboard::isKeyPressed(sf::Keyboard::A)));
+
+	m_frameKeys.SetBit((int)Key::Right, (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) || (sf::Keyboard::isKeyPressed(sf::Keyboard::D)));
+
+	m_frameKeys.SetBit((int)Key::Esc), sf::Keyboard::isKeyPressed(sf::Keyboard::Escape);
+
 }
 
-Input::Input(std::shared_ptr<Entity> owner) {
-	Log("Called Input Constructor");
-	m_owner = owner;
+bool Input::IsKeyDown(Key keycode) {
+
+	bool lastFrame = m_lastFrameKeys.GetBit((int)keycode);
+	bool thisFrame = m_frameKeys.GetBit((int)keycode);
+
+	return !lastFrame && thisFrame;
 }
 
-void Input::ConsumeInput(sf::Event event, sf::RenderWindow& window)
-{
-	if (m_owner != nullptr)
-	{
-		switch (event.type)
-		{
-		case sf::Event::Closed:
-		{
-			window.close();
-			break;
-		}
-
-			switch (event.key.code)
-			{
-			case sf::Keyboard::W:
-			{
-				m_owner->GroupId();
-				// Owner->KeyWAction 
-				// We can later change Owner type to be player-specific
-				Log("Key W is pressed");
-				break;
-			}
-			case sf::Keyboard::S:
-			{
-				Log("Key S is pressed");
-				break;
-			}
-
-			default:
-			{
-				break;
-			}
-			}
-			break;
-
-
-		case sf::Event::KeyReleased:
-
-			switch (event.key.code)
-			{
-			case sf::Keyboard::W:
-			{
-				Log("Key W released");
-				break;
-			}
-			case sf::Keyboard::S:
-			{
-				Log("Key S released");
-				break;	
-			}
-			default:
-			{
-				break;
-			}
-			}
-			break;
-
-		default:
-
-			break;
-		}
-	}
+bool Input::IsKeyPressed(Key keycode) {
+	return m_frameKeys.GetBit((int)keycode);
 }
 
-void Input::SetOwner(std::shared_ptr<Entity> newOwner)
-{
-	m_owner = newOwner;
-}
+bool Input::IsKeyUp(Key keycode) {
+	
+	bool lastFrame = m_lastFrameKeys.GetBit((int)keycode);
+	bool thisFrame = m_frameKeys.GetBit((int)keycode);
 
-Input::~Input() {
-	Log("Called Input Destructor");
+	return lastFrame && thisFrame;
 }

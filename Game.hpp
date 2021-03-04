@@ -3,6 +3,8 @@
 #include "Window.hpp"
 #include "Entity.hpp"
 #include "EntityManager.hpp"
+#include "SceneStateMachine.hpp"
+#include "SceneGame.hpp"
 
 class Game {
 
@@ -22,6 +24,8 @@ public:
 	* @Return: -
 	*/
 	void Update();
+
+	void ConsumeInput();
 
 	/*
 	* LateUpdate method
@@ -69,6 +73,9 @@ private:
 	//Handling time in game
 	sf::Clock m_clock;
 	float m_deltaTime;
+
+	//Handling scenes
+	SceneStateMachine sceneStateMachine;
 
 
 
