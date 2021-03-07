@@ -1,8 +1,6 @@
 #pragma once
 
 #include "Window.hpp"
-#include "Entity.hpp"
-#include "EntityManager.hpp"
 #include "SceneStateMachine.hpp"
 #include "SceneGame.hpp"
 
@@ -66,9 +64,6 @@ private:
 	//Construtor is called from windows.h
 	Window window;
 
-	//Testing Entity for new features
-	std::shared_ptr<Entity> m_testEntity;
-	std::unique_ptr<EntityManager> m_entityManager;
 	
 	//Handling time in game
 	sf::Clock m_clock;

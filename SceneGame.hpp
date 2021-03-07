@@ -1,8 +1,10 @@
 #pragma once
 
+#include <SFML/Graphics.hpp>
 #include "Scene.hpp"
 #include "Input.hpp"
-#include <SFML/Graphics.hpp>
+#include "Object.hpp"
+#include "Component_Sprite.hpp"
 
 class SceneGame : public Scene {
 
@@ -22,8 +24,8 @@ public:
 	~SceneGame();
 
 private:
-	sf::Texture testPlayerTexture;
-	sf::Sprite testPlayerSprite;
+
+	std::shared_ptr<Object> m_player;
 
 	Input input;
 };

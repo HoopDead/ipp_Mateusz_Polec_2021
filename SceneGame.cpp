@@ -5,8 +5,11 @@ SceneGame::SceneGame() {
 }
 
 void SceneGame::OnCreate() {
-	testPlayerTexture.loadFromFile("Graphics/sprites/player_temp.png");
-	testPlayerSprite.setTexture(testPlayerTexture);
+	m_player = std::make_shared<Object>();
+
+	// Adds a component by calling our previously written template function.
+	auto sprite = m_player->AddComponent<Component_Sprite>();
+	sprite->Load("Graphics/sprites/player_temp.png");
 }
 
 void SceneGame::OnDestroy() {}
@@ -16,23 +19,10 @@ void SceneGame::ProcessInput() {
 }
 
 void SceneGame::Update(float deltaTime) {
-	Log("Update input");
-	if (input.IsKeyPressed(Input::Key::Up)) {
-		Log("Key UP Pressed");
-	}
-	if (input.IsKeyPressed(Input::Key::Down)) {
-		Log("Key DOWN Pressed");
-	}
-	if (input.IsKeyPressed(Input::Key::Left)) {
-		Log("Key LEFT Pressed");
-	}
-	if (input.IsKeyPressed(Input::Key::Right)) {
-		Log("Key Right Pressed");
-	}
 }
 
 void SceneGame::Draw(Window& window) {
-	window.Draw(testPlayerSprite);
+	m_player->Draw(window);
 }
 
 SceneGame::~SceneGame() {
