@@ -3,9 +3,17 @@
 #include <vector>
 #include "Window.hpp"
 #include "Component.hpp"
+#include "Component_Transform.hpp"
 
 class Object {
 public:
+
+    std::shared_ptr<Component_Transform> m_transform;
+
+public:
+
+    //TODO: Documentation
+    Object();
 
     /*
     * Awake method
