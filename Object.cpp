@@ -1,12 +1,8 @@
 #include "Object.hpp"
 
-Object::Object() {
+Object::Object() : m_queuedForRemoval(false) {
     transform = AddComponent<Component_Transform>();
     Log("Called Object Constructor");
-}
-
-Object::~Object() {
-    Log("Called Object Destructor");
 }
 
 void Object::Awake()
@@ -47,4 +43,12 @@ void Object::Draw(Window& window)
     {
         m_components[i]->Draw(window);
     }
+}
+
+void Object::QueueForRemoval() {
+    m_queuedForRemoval = true;
+}
+
+bool Object::IsQueuedForRemoval() {
+    return m_queuedForRemoval;
 }

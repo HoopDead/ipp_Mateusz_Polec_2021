@@ -21,11 +21,11 @@ public:
     */
     Object();
     
-    /*
-    * Destructor of Object
-    * Created only for test purposes
-    */
-    ~Object();
+    ///*
+    //* Destructor of Object
+    //* Created only for test purposes
+    //*/
+    //~Object();
 
     /*
     * Awake method
@@ -119,6 +119,23 @@ public:
         return nullptr;
     };
 
+    /*
+    * IsQueuedForRemoval method
+    * Returns if object is queued for removal by m_queuedForRemoval boolean variable
+    * @Param: -
+    * @Return: -
+    */
+    bool IsQueuedForRemoval();
+
+    /*
+    * QueueForRemoval method
+    * Sets Object to queue for remove
+    * @Param: -
+    * @Return: -
+    */
+    void QueueForRemoval();
+
 private:
     std::vector<std::shared_ptr<Component>> m_components;
+    bool m_queuedForRemoval;
 };

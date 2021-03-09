@@ -7,6 +7,7 @@
 #include "Component_Sprite.hpp"
 #include "Component_KeyboardMovement.hpp"
 #include "ResourceAllocator.hpp"
+#include "ObjectCollection.hpp"
 
 class SceneGame : public Scene {
 
@@ -81,6 +82,7 @@ private:
 	ResourceAllocator<sf::Texture>& m_textureAllocator;
 
 	std::shared_ptr<Object> m_player;
+	ObjectCollection m_objects;
 
 	Input input;
 };

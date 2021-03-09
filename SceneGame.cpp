@@ -15,6 +15,8 @@ void SceneGame::OnCreate() {
 
 	sprite->Load("Graphics/sprites/player_temp.png");
 	movement->SetInput(&input);
+
+	m_objects.Add(m_player);
 }
 
 void SceneGame::OnDestroy() {}
@@ -24,15 +26,17 @@ void SceneGame::ProcessInput() {
 }
 
 void SceneGame::Update(float deltaTime) {
-	m_player->Update(deltaTime);
+	m_objects.ProcessRemoval();
+	m_objects.ProcessNewObjects();
+	m_objects.Update(deltaTime);
 }
 
 void SceneGame::LateUpdate(float deltaTime) {
-	m_player->LateUpdate(deltaTime);
+	m_objects.LateUpdate(deltaTime);
 }
 
 void SceneGame::Draw(Window& window) {
-	m_player->Draw(window);
+	m_objects.Draw(window);
 }
 
 SceneGame::~SceneGame() {

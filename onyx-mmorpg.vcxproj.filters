@@ -54,6 +54,9 @@
     <ClCompile Include="Component_Transform.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
+    <ClCompile Include="ObjectCollection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene.hpp">
@@ -96,6 +99,9 @@
       <Filter>Header Files\Components</Filter>
     </ClInclude>
     <ClInclude Include="ResourceAllocator.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectCollection.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
