@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bitmask.cpp" />
+    <ClCompile Include="Component_KeyboardMovement.cpp" />
     <ClCompile Include="Component_Sprite.cpp" />
     <ClCompile Include="Component_Transform.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -33,6 +34,7 @@
   <ItemGroup>
     <ClInclude Include="Bitmask.hpp" />
     <ClInclude Include="Component.hpp" />
+    <ClInclude Include="Component_KeyboardMovement.hpp" />
     <ClInclude Include="Component_Sprite.hpp" />
     <ClInclude Include="Component_Transform.hpp" />
     <ClInclude Include="Game.hpp" />

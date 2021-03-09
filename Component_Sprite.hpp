@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Component.hpp"
+#include "Component_Transform.hpp"
+#include "Object.hpp"
 #include "Logs.hpp"
 
 class Component_Sprite : public Component
@@ -36,6 +38,8 @@ public:
     * @Return: -
     */
     void Draw(Window& window) override;
+
+    void LateUpdate(float deltaTime) override;
 
 private:
     sf::Texture m_texture;

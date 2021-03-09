@@ -4,16 +4,28 @@
 #include "Window.hpp"
 #include "Component.hpp"
 #include "Component_Transform.hpp"
+#include "Logs.hpp"
 
 class Object {
 public:
 
-    std::shared_ptr<Component_Transform> m_transform;
+    std::shared_ptr<Component_Transform> transform; //Because it's public and being used in other files
 
 public:
 
-    //TODO: Documentation
+    /*
+    * Constructor of Object
+    * Sets the Compontent for shared pointer declared above
+    * @Param: -
+    * @Return: -
+    */
     Object();
+    
+    /*
+    * Destructor of Object
+    * Created only for test purposes
+    */
+    ~Object();
 
     /*
     * Awake method

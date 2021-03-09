@@ -1,7 +1,12 @@
 #include "Object.hpp"
 
 Object::Object() {
-    m_transform = AddComponent<Component_Transform>();
+    transform = AddComponent<Component_Transform>();
+    Log("Called Object Constructor");
+}
+
+Object::~Object() {
+    Log("Called Object Destructor");
 }
 
 void Object::Awake()

@@ -14,7 +14,7 @@ public:
 	* @Param: Object* owner - Pointer to owner of this Compontent
 	* @Return: -
 	*/
-	Component(Object* owner) : m_owner(owner) {
+	Component(Object* owner) : owner(owner) {
 		Log("Called Compontent Constructor");
 	}
 
@@ -55,6 +55,6 @@ public:
 	}
 
 protected:
-	Object* m_owner;
+	Object* owner; //Because it is used in other, derivered classes
 
 };

@@ -5,6 +5,7 @@
 #include "Input.hpp"
 #include "Object.hpp"
 #include "Component_Sprite.hpp"
+#include "Component_KeyboardMovement.hpp"
 
 class SceneGame : public Scene {
 
@@ -42,9 +43,22 @@ public:
 	*/
 	void ProcessInput() override;
 
-	//TODO: Documentation
+	/*
+	* Update method - overriden from Scene class
+	* Updates the Objects that are represented on this Scene
+	* @Param: float deltaTime - time between each frame
+	* @Return: -
+	*/
 	void Update(float deltaTime) override;
 	
+	/*
+	* LateUpdate method - overriden from Scene class
+	* Updates the Objects that are represtend on this Scene and requires more operations to handle
+	* @Param: float deltaTime - time between each frame
+	* @Return: -
+	*/
+	void LateUpdate(float deltaTime) override;
+
 	/*
 	* Draw method
 	* Draw every object to screen of player,
