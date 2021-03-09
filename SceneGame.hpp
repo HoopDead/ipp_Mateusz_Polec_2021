@@ -6,6 +6,7 @@
 #include "Object.hpp"
 #include "Component_Sprite.hpp"
 #include "Component_KeyboardMovement.hpp"
+#include "ResourceAllocator.hpp"
 
 class SceneGame : public Scene {
 
@@ -17,7 +18,7 @@ public:
 	* @Param: -
 	* @Return: -
 	*/
-	SceneGame();
+	SceneGame(ResourceAllocator<sf::Texture>& textureAllocator);
 
 	/*
 	* OnCreate method
@@ -76,6 +77,8 @@ public:
 	~SceneGame();
 
 private:
+
+	ResourceAllocator<sf::Texture>& m_textureAllocator;
 
 	std::shared_ptr<Object> m_player;
 

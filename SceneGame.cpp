@@ -1,6 +1,7 @@
 #include "SceneGame.hpp"
 
-SceneGame::SceneGame() {
+SceneGame::SceneGame(ResourceAllocator<sf::Texture>& textureAllocator) :
+	m_textureAllocator(textureAllocator) {
 	Log("Called Scene Game Constructor");
 }
 
@@ -9,6 +10,7 @@ void SceneGame::OnCreate() {
 
 	// Adds a component by calling our previously written template function.
 	auto sprite = m_player->AddComponent<Component_Sprite>();
+	sprite->SetTextureAllocator(&m_textureAllocator);
 	auto movement = m_player->AddComponent<Component_KeyboardMovement>();
 
 	sprite->Load("Graphics/sprites/player_temp.png");

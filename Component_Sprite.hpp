@@ -4,6 +4,7 @@
 #include "Component_Transform.hpp"
 #include "Object.hpp"
 #include "Logs.hpp"
+#include "ResourceAllocator.hpp"
 
 class Component_Sprite : public Component
 {
@@ -25,11 +26,27 @@ public:
 
     /*
     * Load method
-    * Load method allows the Owner of Compontent to load texture & sprite
+    * Load method allows the Owner of Compontent to load texture & sprite. It also adds the Texture to resource allocator.
     * @Param: const std::string& filePath - file path to sprite that we want to load
     * @Return: -
     */
     void Load(const std::string& filePath);
+
+    /*
+    * Load method
+    * Load method allows the Owner of Compontent to load texture & sprite. It also adds the Texture to resource allocator.
+    * @Param: int id - id of resource we want to load
+    * @Return: -
+    */
+    void Load(int id);
+
+    /*
+    * SetTextureAllocator method
+    * Set the Resource Allocator for this Compontent
+    * @Param: ResouerceAllocator<sf::Texture>* allocator - pointer to resource allocator we want to assign
+    * @Return: -
+    */
+    void SetTextureAllocator(ResourceAllocator<sf::Texture>* allocator);
 
     /*
     * Draw method - overriden from Compontent class
@@ -39,9 +56,16 @@ public:
     */
     void Draw(Window& window) override;
 
+    /*
+    * LateUpdate method - overriden from Component class
+    * Is called just after Update method to handle more challanging operations
+    * @Param: float deltaTime - time between each frame
+    * @Return: -
+    */
     void LateUpdate(float deltaTime) override;
 
 private:
     sf::Texture m_texture;
     sf::Sprite m_sprite;
+    ResourceAllocator<sf::Texture>* m_allocator;
 };

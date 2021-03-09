@@ -2,7 +2,7 @@
 
 Game::Game() : window("Onyx Game DEV 1.0.1") {
 
-	std::shared_ptr<SceneGame> gameScene = std::make_shared<SceneGame>();
+	std::shared_ptr<SceneGame> gameScene = std::make_shared<SceneGame>(m_textureAllocator);
 
 	unsigned int gameSceneID = sceneStateMachine.Add(gameScene);
 

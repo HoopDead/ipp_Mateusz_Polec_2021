@@ -3,13 +3,14 @@
 #include "Window.hpp"
 #include "SceneStateMachine.hpp"
 #include "SceneGame.hpp"
+#include "ResourceAllocator.hpp"
 
 class Game {
 
 public:
 
 	/* Constructor of Game Object
-	* Intialise code for Game class, right now it sets Window object running
+	* Intialise code for Game class, it also sets the allocator for Scenes.
 	* @Param: -
 	* @Return: -
 	*/
@@ -23,6 +24,12 @@ public:
 	*/
 	void Update();
 
+	/*
+	* ConsumeInput method
+	* As it says, it handles the input for Scene State Machine
+	* @Param: -
+	* @Return: -
+	*/
 	void ConsumeInput();
 
 	/*
@@ -57,6 +64,10 @@ public:
 	*/
 	bool IsRunning() const;
 
+	/*
+	* Game Destructor
+	* Created only for test purposes.
+	*/
 	~Game();
 
 private:
@@ -72,6 +83,8 @@ private:
 	//Handling scenes
 	SceneStateMachine sceneStateMachine;
 
+	//Handling resources for textures
+	ResourceAllocator<sf::Texture> m_textureAllocator;
 
 
 };

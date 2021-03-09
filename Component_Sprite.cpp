@@ -6,8 +6,25 @@ Component_Sprite::Component_Sprite(Object* owner) : Component(owner) {
 
 void Component_Sprite::Load(const std::string& filePath)
 {
-    m_texture.loadFromFile(filePath);
-    m_sprite.setTexture(m_texture);
+    if (m_allocator) {
+        int textureID = m_allocator->Add(filePath);
+
+        if (textureID >= 0) {
+            std::shared_ptr<sf::Texture> texture = m_allocator->Get(textureID);
+            m_sprite.setTexture(*texture);
+        }
+    }
+}
+
+void Component_Sprite::SetTextureAllocator(ResourceAllocator<sf::Texture>* allocator) {
+    m_allocator = allocator;
+}
+
+void Component_Sprite::Load(int id) {
+    if (id >= 0) {
+        std::shared_ptr<sf::Texture> texture = m_allocator->Get(id);
+        m_sprite.setTexture(*texture);
+    }
 }
 
 void Component_Sprite::Draw(Window& window)

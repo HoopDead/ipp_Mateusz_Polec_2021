@@ -41,6 +41,7 @@
     <ClInclude Include="Input.hpp" />
     <ClInclude Include="Logs.hpp" />
     <ClInclude Include="Object.hpp" />
+    <ClInclude Include="ResourceAllocator.hpp" />
     <ClInclude Include="Scene.hpp" />
     <ClInclude Include="SceneGame.hpp" />
     <ClInclude Include="SceneStateMachine.hpp" />
