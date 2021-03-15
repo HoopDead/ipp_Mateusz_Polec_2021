@@ -8,6 +8,7 @@
 #include "Component_KeyboardMovement.hpp"
 #include "ResourceAllocator.hpp"
 #include "ObjectCollection.hpp"
+#include "Component_Animation.hpp";
 
 class SceneGame : public Scene {
 

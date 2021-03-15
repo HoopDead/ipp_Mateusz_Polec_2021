@@ -64,7 +64,12 @@ public:
     */
     void LateUpdate(float deltaTime) override;
 
+    void SetTextureRect(int x, int y, int width, int height);
+
+    void SetTextureRect(const sf::IntRect& rect);
+
 private:
+    int m_currentTextureID;
     sf::Texture m_texture;
     sf::Sprite m_sprite;
     ResourceAllocator<sf::Texture>* m_allocator;

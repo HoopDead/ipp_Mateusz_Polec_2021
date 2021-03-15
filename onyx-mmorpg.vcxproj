@@ -19,7 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Bitmask.cpp" />
+    <ClCompile Include="Component_Animation.cpp" />
     <ClCompile Include="Component_KeyboardMovement.cpp" />
     <ClCompile Include="Component_Sprite.cpp" />
     <ClCompile Include="Component_Transform.cpp" />
@@ -33,8 +35,10 @@
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.hpp" />
     <ClInclude Include="Bitmask.hpp" />
     <ClInclude Include="Component.hpp" />
+    <ClInclude Include="Component_Animation.hpp" />
     <ClInclude Include="Component_KeyboardMovement.hpp" />
     <ClInclude Include="Component_Sprite.hpp" />
     <ClInclude Include="Component_Transform.hpp" />

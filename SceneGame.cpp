@@ -6,17 +6,30 @@ SceneGame::SceneGame(ResourceAllocator<sf::Texture>& textureAllocator) :
 }
 
 void SceneGame::OnCreate() {
-	m_player = std::make_shared<Object>();
+    std::shared_ptr<Object> player = std::make_shared<Object>();
 
-	// Adds a component by calling our previously written template function.
-	auto sprite = m_player->AddComponent<Component_Sprite>();
-	sprite->SetTextureAllocator(&m_textureAllocator);
-	auto movement = m_player->AddComponent<Component_KeyboardMovement>();
+    auto sprite = player->AddComponent<Component_Sprite>();
+    sprite->SetTextureAllocator(&m_textureAllocator);
 
-	sprite->Load("Graphics/sprites/player_temp.png");
-	movement->SetInput(&input);
+    auto movement = player->AddComponent<Component_KeyboardMovement>();
+    movement->SetInput(&input);
 
-	m_objects.Add(m_player);
+    auto animation = player->AddComponent<Component_Animation>();
+
+    int vikingTextureID = m_textureAllocator.Add("Graphics/sprites/Viking.png");
+
+    const int frameWidth = 165;
+    const int frameHeight = 145;
+
+    std::shared_ptr<Animation> idleAnimation = std::make_shared<Animation>();
+    const float idleAnimFrameSeconds = 0.2f;
+    idleAnimation->AddFrame(vikingTextureID, 600, 0, frameWidth, frameHeight, idleAnimFrameSeconds);
+    idleAnimation->AddFrame(vikingTextureID, 800, 0, frameWidth, frameHeight, idleAnimFrameSeconds);
+    idleAnimation->AddFrame(vikingTextureID, 0, 145, frameWidth, frameHeight, idleAnimFrameSeconds);
+    idleAnimation->AddFrame(vikingTextureID, 200, 145, frameWidth, frameHeight, idleAnimFrameSeconds);
+    animation->AddAnimation(AnimationState::Idle, idleAnimation);
+
+    m_objects.Add(player);
 }
 
 void SceneGame::OnDestroy() {}
