@@ -2,7 +2,7 @@
 #include "Object.hpp"
 
 Component_KeyboardMovement::Component_KeyboardMovement(Object* owner)
-	: Component(owner), m_moveSpeed(100), m_input(nullptr) {
+	: Component(owner), m_moveSpeed(200), m_input(nullptr) {
 	Log("Called Component Keyboard Movement Constructor");
 }
 
@@ -24,9 +24,11 @@ void Component_KeyboardMovement::Update(float deltaTime) {
 
 	if (m_input->IsKeyPressed(Input::Key::Left)) {
 		xMove = -m_moveSpeed;
+		m_animation->SetAnimationDirection(FacingDirection::Left);
 	}
 	else if (m_input->IsKeyPressed(Input::Key::Right)) {
 		xMove = m_moveSpeed;
+		m_animation->SetAnimationDirection(FacingDirection::Right);
 	}
 
 	int yMove = 0;
@@ -42,6 +44,17 @@ void Component_KeyboardMovement::Update(float deltaTime) {
 
 	owner->transform->AddPosition(xFrameMove, yFrameMove);
 
+	if (xMove == 0 && yMove == 0) {
+		m_animation->SetAnimationState(AnimationState::Idle);
+	}
+	else {
+		m_animation->SetAnimationState(AnimationState::Walk);
+	}
+
+}
+
+void Component_KeyboardMovement::Awake() {
+	m_animation = owner->GetComponent<Component_Animation>();
 }
 
 Component_KeyboardMovement::~Component_KeyboardMovement() {

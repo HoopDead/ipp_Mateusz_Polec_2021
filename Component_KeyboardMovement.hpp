@@ -3,6 +3,7 @@
 #include "Component.hpp"
 #include "Input.hpp"
 #include "Logs.hpp"
+#include "Component_Animation.hpp"
 
 
 class Component_KeyboardMovement : public Component {
@@ -41,13 +42,21 @@ public:
 	void Update(float deltaTime) override;
 
 	/*
+	* Awake method overriden from Component class
+	* Initialises m_animation for Component
+	* @Param: -
+	* @Return: -
+	*/
+	void Awake() override;
+
+	/*
 	* Destructor of Component Keyboard Movement
 	* Created only for test purposes
 	*/
-
 	~Component_KeyboardMovement();
 
 private:
 	int m_moveSpeed;
 	Input* m_input;
+	std::shared_ptr<Component_Animation> m_animation;
 };

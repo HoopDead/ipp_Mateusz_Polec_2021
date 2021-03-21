@@ -58,3 +58,9 @@ const AnimationState& Component_Animation::GetAnimationState() const
 {
     return m_currentAnimation.first;
 }
+
+void Component_Animation::SetAnimationDirection(FacingDirection dir) {
+    if (m_currentAnimation.first != AnimationState::None) {
+        m_currentAnimation.second->SetDirection(dir);
+    }
+}

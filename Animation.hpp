@@ -3,6 +3,13 @@
 #include <vector>
 #include "Logs.hpp"
 
+enum class FacingDirection {
+	None,
+	Left,
+	Right
+};
+
+
 struct FrameData {
 	//Handles the texture id
 	int id;
@@ -28,10 +35,10 @@ public:
 	/*
 	* Constructor of Animation class
 	* Initialise the all private values of this class
-	* @Param: -
+	* @Param: FacingDirection direction - intialise direction for player
 	* @Return: -
 	*/
-	Animation();
+	Animation(FacingDirection direction);
 
 	/*
 	* AddFrame method
@@ -75,6 +82,23 @@ public:
 	*/
 	void Reset();
 
+	/*
+	* SetDirection method
+	* Sets correct Direction for animation & makes sure that sprite does not flip
+	* @Param: FacingDirection dir - new facing direction for player
+	* @Return: -
+	*/
+	void SetDirection(FacingDirection dir);
+
+
+	/*
+	* GetDirection method
+	* Gets direction that player is facing
+	* @Param: -
+	* @Return: FacingDirection direction const - ummutable direction that player is facing
+	*/
+	FacingDirection GetDirection() const;
+
 private:
 	/*
 	* IncrementFrame method
@@ -89,4 +113,6 @@ private:
 	int m_currentFrameIndex;
 
 	float m_currentFrameTime;
+
+	FacingDirection m_direction;
 };

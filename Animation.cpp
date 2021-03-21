@@ -1,7 +1,7 @@
 #include "Animation.hpp"
 
 
-Animation::Animation() : m_frames(0), m_currentFrameIndex(0), m_currentFrameTime(0.f)
+Animation::Animation(FacingDirection direction) : m_frames(0), m_currentFrameIndex(0), m_currentFrameTime(0.f), m_direction(direction)
 {
 
 }
@@ -44,6 +44,20 @@ bool Animation::UpdateFrame(float deltaTime)
     }
 
     return false;
+}
+
+void Animation::SetDirection(FacingDirection dir) {
+    if (m_direction != dir) {
+        m_direction = dir;
+        for (auto& f : m_frames) {
+            f.x += f.width;
+            f.width *= -1;
+        }
+    }
+}
+
+FacingDirection Animation::GetDirection() const {
+    return m_direction;
 }
 
 void Animation::IncrementFrame()
