@@ -15,7 +15,7 @@ Stworzenie własnego silnika gier na podstawie biblioteki SFML nastawionego pod 
 - [x] Stworzenie systemu zasobów,
 - [x] Stworzenie menadżera obiektów,
 - [x] Stworzenie silnika animacji,
-- [] Stworzenie silnika wczytywania tilemapy,
+- [x] Stworzenie silnika wczytywania tilemapy,
 - [] Stworzenie silnika kolizji,
 - [] Stworzenie systemu kamer,
 - [] Stworzenie systemu projectiles,
