@@ -72,7 +72,7 @@ public:
 
 private:
 	std::shared_ptr<Component_Sprite> m_sprite;
-	std::map<AnimationState, std::shared_ptr<Animation>> m_animations
+	std::map<AnimationState, std::shared_ptr<Animation>> m_animations;
 	std::pair<AnimationState, std::shared_ptr<Animation>> m_currentAnimation;
 
 };

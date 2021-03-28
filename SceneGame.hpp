@@ -9,6 +9,7 @@
 #include "ResourceAllocator.hpp"
 #include "ObjectCollection.hpp"
 #include "Component_Animation.hpp";
+#include "TestMap.hpp";
 
 class SceneGame : public Scene {
 

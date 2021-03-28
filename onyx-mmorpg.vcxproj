@@ -42,6 +42,18 @@
     <ClInclude Include="Component_KeyboardMovement.hpp" />
     <ClInclude Include="Component_Sprite.hpp" />
     <ClInclude Include="Component_Transform.hpp" />
+    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\Config.hpp" />
+    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\FreeFuncs.hpp" />
+    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\ImageLayer.hpp" />
+    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\Layer.hpp" />
+    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\LayerGroup.hpp" />
+    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\Map.hpp" />
+    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\Object.hpp" />
+    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\ObjectGroup.hpp" />
+    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\Property.hpp" />
+    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\TileLayer.hpp" />
+    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\Tileset.hpp" />
+    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\Types.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="Input.hpp" />
     <ClInclude Include="Logs.hpp" />
@@ -51,7 +63,11 @@
     <ClInclude Include="Scene.hpp" />
     <ClInclude Include="SceneGame.hpp" />
     <ClInclude Include="SceneStateMachine.hpp" />
+    <ClInclude Include="TestMap.hpp" />
     <ClInclude Include="Window.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\Types.inl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -116,6 +132,10 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <VcpkgUseStatic>false</VcpkgUseStatic>
+    <VcpkgEnableManifest>false</VcpkgEnableManifest>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
