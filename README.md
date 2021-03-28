@@ -33,7 +33,8 @@ Stworzenie własnego silnika gier na podstawie biblioteki SFML nastawionego pod 
 
 - C++ w wersji 17,
 - SFML w wersji 2.5.1,
-- C++ STL.
+- C++ STL,
+- tmxlite.
 
 ## Harmonogram
 
