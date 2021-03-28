@@ -23,6 +23,7 @@
     <ClCompile Include="Bitmask.cpp" />
     <ClCompile Include="Component_Animation.cpp" />
     <ClCompile Include="Component_KeyboardMovement.cpp" />
+    <ClCompile Include="Component_MapParser.cpp" />
     <ClCompile Include="Component_Sprite.cpp" />
     <ClCompile Include="Component_Transform.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -40,20 +41,9 @@
     <ClInclude Include="Component.hpp" />
     <ClInclude Include="Component_Animation.hpp" />
     <ClInclude Include="Component_KeyboardMovement.hpp" />
+    <ClInclude Include="Component_MapParser.hpp" />
     <ClInclude Include="Component_Sprite.hpp" />
     <ClInclude Include="Component_Transform.hpp" />
-    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\Config.hpp" />
-    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\FreeFuncs.hpp" />
-    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\ImageLayer.hpp" />
-    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\Layer.hpp" />
-    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\LayerGroup.hpp" />
-    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\Map.hpp" />
-    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\Object.hpp" />
-    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\ObjectGroup.hpp" />
-    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\Property.hpp" />
-    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\TileLayer.hpp" />
-    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\Tileset.hpp" />
-    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\Types.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="Input.hpp" />
     <ClInclude Include="Logs.hpp" />
@@ -63,11 +53,8 @@
     <ClInclude Include="Scene.hpp" />
     <ClInclude Include="SceneGame.hpp" />
     <ClInclude Include="SceneStateMachine.hpp" />
-    <ClInclude Include="TestMap.hpp" />
+    <ClInclude Include="MapLoader.hpp" />
     <ClInclude Include="Window.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\Types.inl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

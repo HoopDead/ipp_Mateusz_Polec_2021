@@ -19,8 +19,14 @@
     <Filter Include="Source Files\Components">
       <UniqueIdentifier>{85eae4c7-d27b-4784-bb40-4be34b1b221a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\tmxlite">
-      <UniqueIdentifier>{414d35ce-489a-4956-9628-b68d223679b3}</UniqueIdentifier>
+    <Filter Include="Header Files\Scenes">
+      <UniqueIdentifier>{c159310f-839a-4dde-ae56-d6820a271d68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Map">
+      <UniqueIdentifier>{3f6289ba-20d7-49ed-a6f7-4d368cc88528}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scenes">
+      <UniqueIdentifier>{32cf120d-dbfc-4da2-9d86-a07d06bde3d5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -37,12 +43,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Input.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneStateMachine.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Object.cpp">
@@ -66,11 +66,17 @@
     <ClCompile Include="Component_Animation.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
+    <ClCompile Include="SceneStateMachine.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneGame.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Component_MapParser.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Scene.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Window.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -84,12 +90,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Bitmask.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneStateMachine.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneGame.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Object.hpp">
@@ -119,49 +119,20 @@
     <ClInclude Include="Component_Animation.hpp">
       <Filter>Header Files\Components</Filter>
     </ClInclude>
-    <ClInclude Include="TestMap.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="SceneGame.hpp">
+      <Filter>Header Files\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\ImageLayer.hpp">
-      <Filter>Header Files\tmxlite</Filter>
+    <ClInclude Include="SceneStateMachine.hpp">
+      <Filter>Header Files\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\Layer.hpp">
-      <Filter>Header Files\tmxlite</Filter>
+    <ClInclude Include="Scene.hpp">
+      <Filter>Header Files\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\LayerGroup.hpp">
-      <Filter>Header Files\tmxlite</Filter>
+    <ClInclude Include="MapLoader.hpp">
+      <Filter>Header Files\Map</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\Map.hpp">
-      <Filter>Header Files\tmxlite</Filter>
+    <ClInclude Include="Component_MapParser.hpp">
+      <Filter>Header Files\Components</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\Object.hpp">
-      <Filter>Header Files\tmxlite</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\ObjectGroup.hpp">
-      <Filter>Header Files\tmxlite</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\Property.hpp">
-      <Filter>Header Files\tmxlite</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\TileLayer.hpp">
-      <Filter>Header Files\tmxlite</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\Tileset.hpp">
-      <Filter>Header Files\tmxlite</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\Types.hpp">
-      <Filter>Header Files\tmxlite</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\Config.hpp">
-      <Filter>Header Files\tmxlite</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\FreeFuncs.hpp">
-      <Filter>Header Files\tmxlite</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="D:\Programs\tmxlite\tmxlite\include\tmxlite\Types.inl">
-      <Filter>Header Files\tmxlite</Filter>
-    </None>
   </ItemGroup>
 </Project>

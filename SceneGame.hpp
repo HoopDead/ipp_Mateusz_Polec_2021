@@ -9,7 +9,7 @@
 #include "ResourceAllocator.hpp"
 #include "ObjectCollection.hpp"
 #include "Component_Animation.hpp";
-#include "TestMap.hpp";
+#include "Component_MapParser.hpp"
 
 class SceneGame : public Scene {
 
@@ -83,7 +83,6 @@ private:
 
 	ResourceAllocator<sf::Texture>& m_textureAllocator;
 
-	std::shared_ptr<Object> m_player;
 	ObjectCollection m_objects;
 
 	Input input;

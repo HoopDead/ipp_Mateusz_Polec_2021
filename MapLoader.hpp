@@ -56,9 +56,37 @@ public:
         }
     }
 
+    void Load(const tmx::Map& map, std::size_t idx) {
+        const auto& layers = map.getLayers();
+        if (map.getOrientation() == tmx::Orientation::Orthogonal &&
+            idx < layers.size() && layers[idx]->getType() == tmx::Layer::Type::Tile)
+        {
+            //round the chunk size to the nearest tile
+            const auto tileSize = map.getTileSize();
+            m_chunkSize.x = std::floor(m_chunkSize.x / tileSize.x) * tileSize.x;
+            m_chunkSize.y = std::floor(m_chunkSize.y / tileSize.y) * tileSize.y;
+            m_MapTileSize.x = map.getTileSize().x;
+            m_MapTileSize.y = map.getTileSize().y;
+            const auto& layer = layers[idx]->getLayerAs<tmx::TileLayer>();
+            createChunks(map, layer);
+
+            auto mapSize = map.getBounds();
+            m_globalBounds.width = mapSize.width;
+            m_globalBounds.height = mapSize.height;
+        }
+        else
+        {
+            std::cout << "Not a valid orthogonal layer, nothing will be drawn." << std::endl;
+        }
+    }
+
+    MapLayer() {};
     ~MapLayer() = default;
-    MapLayer(const MapLayer&) = delete;
-    MapLayer& operator = (const MapLayer&) = delete;
+    MapLayer& operator=(const MapLayer&) {
+        return *this;
+    }
+    //MapLayer(const MapLayer&) = delete;
+    //MapLayer& operator = (const MapLayer&) = delete;
 
     const sf::FloatRect& getGlobalBounds() const { return m_globalBounds; }
 
