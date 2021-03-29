@@ -49,6 +49,14 @@ Grafika 2D, pixelartowa, obsługiwanie eventów wprowadzanych z klawiatury/myszk
 - C++ STL,
 - tmxlite.
 
+## Dokładny opis tasków:
+
+Można znaleźć pod tym linkiem, lub zakładce "Projects" repozytorium:
+
+[Opisy wszystkich zadań](https://github.com/HoopDead/ipp_Mateusz_Polec_2021/projects/)
+
+
+
 ## Harmonogram
 
 - 23.03.2021 - Propozycja projektu
