@@ -47,13 +47,15 @@ Grafika 2D, pixelartowa, obsługiwanie eventów wprowadzanych z klawiatury/myszk
 
 Start gry odbywa się przy akompaniamencie melancholinej muzyki. Znajdujemy się w portowej - nieznanej dla gracza - części miasta. Pierwszym zadaniem jest odnalezienie jakiegokolwiek schronienia na początek. Gracz zwesząd będzie doświadczał ogromnej ignoracnji ze strony środowiska - na psa nikt nie będzie zwracał uwagi. Do wyboru gracza będzie kilka miejsc, w których początkowo będzie mógł się schronić (Weranda domu, zaułek ulicy, portowy magazyn). W każdym z miejsc doświadczymy zarówno plusów wyboru, jak i minusów.
 
-**Portowy magazyn**
+**Portowy magazyn**:
 - Gracz znajdzie tutaj pożywienie,
 - Gracz zostanie poturbowany przez inne, dzikie zwierzęta
-**Weranda domu**
+
+**Weranda domu**:
 - Gracz znajdzie schronienie na noc,
 - Gracz zostanie rano przegoniony przez właściciela domu
-**Zaułek ulicy**
+- 
+**Zaułek ulicy**:
 - Gracz nie znajdzie schronienia
 - Gracz pozna NPC, który będzie mu pomagał.
 
