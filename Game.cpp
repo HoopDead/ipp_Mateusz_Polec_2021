@@ -1,6 +1,6 @@
 #include "Game.hpp"
 
-Game::Game() : window("Onyx Game DEV 1.0.1") {
+Game::Game() : window("Onyx Game DEV 1.0.2") {
 
 	std::shared_ptr<SceneGame> gameScene = std::make_shared<SceneGame>(m_textureAllocator);
 
