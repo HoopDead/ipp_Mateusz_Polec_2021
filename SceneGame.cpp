@@ -6,6 +6,11 @@ SceneGame::SceneGame(ResourceAllocator<sf::Texture>& textureAllocator) :
 }
 
 void SceneGame::OnCreate() {
+    //MapParser section    
+    std::shared_ptr<Object> MapParser = std::make_shared<Object>();
+    auto parser = MapParser->AddComponent<Component_MapParser>();
+    m_objects.Add(MapParser);
+
     //Player loader section
     std::shared_ptr<Object> player = std::make_shared<Object>(); //Move to class member?
 
@@ -41,10 +46,6 @@ void SceneGame::OnCreate() {
 
     m_objects.Add(player);
 
-    //MapParser section    
-    std::shared_ptr<Object> MapParser = std::make_shared<Object>();
-    auto parser = MapParser->AddComponent<Component_MapParser>();
-    m_objects.Add(MapParser);
 }
 
 void SceneGame::OnDestroy() {}

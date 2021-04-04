@@ -2,7 +2,7 @@
 
 
 Window::Window(const std::string& windowName)
-	: m_window(sf::VideoMode(800, 600), windowName) {
+	: m_window(sf::VideoMode(1920, 1080), windowName) {
 	m_window.setVerticalSyncEnabled(true);
 	Log("Called Window Constructor");
 }
