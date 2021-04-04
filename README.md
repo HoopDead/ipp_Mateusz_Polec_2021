@@ -35,9 +35,16 @@ Stworzenie własnego silnika gier na podstawie biblioteki SFML nastawionego pod 
 Gra, która skupia się na problemie porzuconych zwierząt we współczesnym świecie. Głównią postacią jest pies rasy shibainu, porzucony przez właściciela. Bohaterem będzie można poruszać za pomocą klawiatury. Do rozgrywki zostaną dodanę elementy questów, dialogów, muzyki, menu i animacji. Akcja toczona będzie w Japońskim mieście. Gracz za główny cel będzie miał wybranie jednej ze ścieżki - odnalezienia nowego właściciela, lub poznania uroków życia dzikiego. Pobocznymi zadaniami będzie możliwość pomocy innym zwierzętom/ludziom. Opis poszczególnych questów pojawi się wraz z **Raportem III**. 
 
 
-Przykładowa grafika (aktualnie w trakcie tworzenia):
+Przykładowa grafika na podstawie lokacji
 
-![alt text](https://i.imgur.com/vPuId7y.png)
+#### Zen Garden:
+
+![alt text](https://i.imgur.com/svwTpEz.png)
+
+### City #1:
+
+![alt text](https://i.imgur.com/dqPBXRm.png)
+
 
 ## Technicze szczegóły gry:
 
