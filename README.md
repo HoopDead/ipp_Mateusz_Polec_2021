@@ -45,6 +45,9 @@ Przykładowa grafika na podstawie lokacji
 
 ![alt text](https://i.imgur.com/dqPBXRm.png)
 
+### City #2:
+![alt text](https://i.imgur.com/UJSswEZ.png)
+
 
 ## Technicze szczegóły gry:
 
