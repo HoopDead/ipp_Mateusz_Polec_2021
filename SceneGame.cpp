@@ -6,10 +6,10 @@ SceneGame::SceneGame(ResourceAllocator<sf::Texture>& textureAllocator) :
 }
 
 void SceneGame::OnCreate() {
-    //MapParser section    
-    std::shared_ptr<Object> MapParser = std::make_shared<Object>();
-    auto parser = MapParser->AddComponent<Component_MapParser>();
-    m_objects.Add(MapParser);
+
+    //Map Loading Section
+    m_mapRenderer = std::make_shared<MapRenderer>();
+    m_mapRenderer->Awake();
 
     //Player loader section
     std::shared_ptr<Object> player = std::make_shared<Object>(); //Move to class member?
@@ -65,6 +65,7 @@ void SceneGame::LateUpdate(float deltaTime) {
 }
 
 void SceneGame::Draw(Window& window) {
+    m_mapRenderer->Draw(window);
 	m_objects.Draw(window);
 }
 

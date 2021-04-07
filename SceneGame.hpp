@@ -8,8 +8,8 @@
 #include "Component_KeyboardMovement.hpp"
 #include "ResourceAllocator.hpp"
 #include "ObjectCollection.hpp"
+#include "MapRenderer.h"
 #include "Component_Animation.hpp";
-#include "Component_MapParser.hpp"
 
 class SceneGame : public Scene {
 
@@ -80,6 +80,8 @@ public:
 	~SceneGame();
 
 private:
+
+	std::shared_ptr<MapRenderer> m_mapRenderer;
 
 	ResourceAllocator<sf::Texture>& m_textureAllocator;
 

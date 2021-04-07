@@ -28,6 +28,9 @@
     <Filter Include="Source Files\Scenes">
       <UniqueIdentifier>{32cf120d-dbfc-4da2-9d86-a07d06bde3d5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Map">
+      <UniqueIdentifier>{63296919-e32f-4aae-8ce7-61aa62e635f2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -72,8 +75,8 @@
     <ClCompile Include="SceneGame.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="Component_MapParser.cpp">
-      <Filter>Source Files\Components</Filter>
+    <ClCompile Include="MapRenderer.cpp">
+      <Filter>Source Files\Map</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -131,8 +134,31 @@
     <ClInclude Include="MapLoader.hpp">
       <Filter>Header Files\Map</Filter>
     </ClInclude>
-    <ClInclude Include="Component_MapParser.hpp">
-      <Filter>Header Files\Components</Filter>
+    <ClInclude Include="MapRenderer.h">
+      <Filter>Header Files\Map</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Graphics\map\Dark Tokyo.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Graphics\map\Dotonrobi.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Graphics\map\Japanese City.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Graphics\map\Japanese Interior.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Graphics\map\Japanese Kangawa.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Graphics\map\Japanese Osaka.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Graphics\map\Zen Garden.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

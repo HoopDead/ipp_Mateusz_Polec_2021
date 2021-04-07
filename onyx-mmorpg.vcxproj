@@ -23,12 +23,12 @@
     <ClCompile Include="Bitmask.cpp" />
     <ClCompile Include="Component_Animation.cpp" />
     <ClCompile Include="Component_KeyboardMovement.cpp" />
-    <ClCompile Include="Component_MapParser.cpp" />
     <ClCompile Include="Component_Sprite.cpp" />
     <ClCompile Include="Component_Transform.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MapRenderer.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectCollection.cpp" />
     <ClCompile Include="SceneGame.cpp" />
@@ -41,12 +41,12 @@
     <ClInclude Include="Component.hpp" />
     <ClInclude Include="Component_Animation.hpp" />
     <ClInclude Include="Component_KeyboardMovement.hpp" />
-    <ClInclude Include="Component_MapParser.hpp" />
     <ClInclude Include="Component_Sprite.hpp" />
     <ClInclude Include="Component_Transform.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="Input.hpp" />
     <ClInclude Include="Logs.hpp" />
+    <ClInclude Include="MapRenderer.h" />
     <ClInclude Include="Object.hpp" />
     <ClInclude Include="ObjectCollection.hpp" />
     <ClInclude Include="ResourceAllocator.hpp" />
@@ -55,6 +55,15 @@
     <ClInclude Include="SceneStateMachine.hpp" />
     <ClInclude Include="MapLoader.hpp" />
     <ClInclude Include="Window.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Graphics\map\Dark Tokyo.png" />
+    <Image Include="Graphics\map\Dotonrobi.png" />
+    <Image Include="Graphics\map\Japanese City.png" />
+    <Image Include="Graphics\map\Japanese Interior.png" />
+    <Image Include="Graphics\map\Japanese Kangawa.png" />
+    <Image Include="Graphics\map\Japanese Osaka.png" />
+    <Image Include="Graphics\map\Zen Garden.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
