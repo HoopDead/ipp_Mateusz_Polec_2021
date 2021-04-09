@@ -78,6 +78,9 @@
     <ClCompile Include="MapRenderer.cpp">
       <Filter>Source Files\Map</Filter>
     </ClCompile>
+    <ClCompile Include="Component_MapCollision.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.hpp">
@@ -136,6 +139,9 @@
     </ClInclude>
     <ClInclude Include="MapRenderer.h">
       <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Component_MapCollision.hpp">
+      <Filter>Header Files\Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

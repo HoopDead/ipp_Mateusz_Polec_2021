@@ -10,6 +10,7 @@
 #include "ObjectCollection.hpp"
 #include "MapRenderer.h"
 #include "Component_Animation.hpp";
+#include "Component_MapCollision.hpp";
 
 class SceneGame : public Scene {
 

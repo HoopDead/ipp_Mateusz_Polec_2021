@@ -66,6 +66,7 @@ void SceneGame::LateUpdate(float deltaTime) {
 
 void SceneGame::Draw(Window& window) {
     m_mapRenderer->Draw(window);
+    m_mapRenderer->ShowLayers();
 	m_objects.Draw(window);
 }
 
