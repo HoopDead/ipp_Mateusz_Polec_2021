@@ -27,10 +27,11 @@ void MapRenderer::Draw(Window& window) {
 	window.Draw(m_layer_collision);
 }
 
-void MapRenderer::ShowLayers() {
+tmx::ObjectGroup MapRenderer::GetCollisionLayer() {
 	for (const auto& layer : m_map.getLayers()) {
-		if (layer->getName() == "Layer_collision") {
-				std::cout << "Layer Collision found!";
-			}
+		if (layer->getType() == tmx::Layer::Type::Object) {
+			const tmx::ObjectGroup& objectLayer = layer->getLayerAs<tmx::ObjectGroup>();
+			return objectLayer;
 		}
 	}
+}

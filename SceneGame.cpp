@@ -20,12 +20,16 @@ void SceneGame::OnCreate() {
     auto movement = player->AddComponent<Component_KeyboardMovement>();
     movement->SetInput(&input);
 
+    auto collision = player->AddComponent<Component_MapCollision>();
+    collision->SetLayer(m_mapRenderer->GetCollisionLayer());
+
     auto animation = player->AddComponent<Component_Animation>();
 
     int vikingTextureID = m_textureAllocator.Add("Graphics/sprites/Viking.png");
 
     const int frameWidth = 165;
     const int frameHeight = 145;
+
 
     std::shared_ptr<Animation> idleAnimation = std::make_shared<Animation>(FacingDirection::Right);
     const float idleAnimFrameSeconds = 0.2f;
@@ -66,7 +70,6 @@ void SceneGame::LateUpdate(float deltaTime) {
 
 void SceneGame::Draw(Window& window) {
     m_mapRenderer->Draw(window);
-    m_mapRenderer->ShowLayers();
 	m_objects.Draw(window);
 }
 

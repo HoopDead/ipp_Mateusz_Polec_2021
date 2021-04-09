@@ -19,7 +19,7 @@ public:
 	void Draw(Window& window);
 
 	//TODO: Documentation
-	void ShowLayers();
+	tmx::ObjectGroup GetCollisionLayer();
 
 private:
 
