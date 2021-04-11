@@ -23,6 +23,7 @@ void SceneGame::OnCreate() {
     auto collision = player->AddComponent<Component_MapCollision>();
     collision->SetLayer(m_mapRenderer->GetCollisionLayer());
 
+
     auto animation = player->AddComponent<Component_Animation>();
 
     int vikingTextureID = m_textureAllocator.Add("Graphics/sprites/Viking.png");
@@ -47,6 +48,9 @@ void SceneGame::OnCreate() {
     walkAnimation->AddFrame(vikingTextureID, 200, 435, frameWidth, frameHeight, walkAnimFrameSeconds);
     walkAnimation->AddFrame(vikingTextureID, 400, 435, frameWidth, frameHeight, walkAnimFrameSeconds);
     animation->AddAnimation(AnimationState::Walk, walkAnimation);
+
+    auto boxCollider = player->AddComponent<Component_BoxCollider>();
+    boxCollider->SetCollidable(sf::FloatRect(0, 0, frameWidth, frameHeight));
 
     m_objects.Add(player);
 

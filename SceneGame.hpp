@@ -11,6 +11,7 @@
 #include "MapRenderer.h"
 #include "Component_Animation.hpp";
 #include "Component_MapCollision.hpp";
+#include "Component_BoxCollider.hpp"
 
 class SceneGame : public Scene {
 

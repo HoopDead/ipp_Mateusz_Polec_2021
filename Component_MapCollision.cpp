@@ -5,12 +5,21 @@ Component_MapCollision::Component_MapCollision(Object* owner) : Component(owner)
 }
 
 void Component_MapCollision::SetLayer(tmx::ObjectGroup objectGroup) {
-	m_objectGroup = objectGroup;
 	Log("Layer set!");
+	for (auto& obj : objectGroup.getObjects()) {
+		tmx::FloatRect rect = obj.getAABB();
+		m_boundPoints.push_back(sf::FloatRect(rect.left, rect.top, rect.width, rect.height));
+	}
 }
 
 void Component_MapCollision::Update(float deltaTime) {
-	Log("Updating Collision");
+	for (auto& obj : m_boundPoints) {
+		auto boxCollider = owner->GetComponent<Component_BoxCollider>();
+		boxCollider->SetPosition();
+		if (obj.intersects(boxCollider->GetColliderBox())) {
+			std::cout << "Collision" << "\n";
+		}
+	}
 }
 
 Component_MapCollision::~Component_MapCollision() {

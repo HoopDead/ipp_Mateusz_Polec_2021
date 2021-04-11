@@ -22,6 +22,7 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Bitmask.cpp" />
     <ClCompile Include="Component_Animation.cpp" />
+    <ClCompile Include="Component_BoxCollider.cpp" />
     <ClCompile Include="Component_KeyboardMovement.cpp" />
     <ClCompile Include="Component_MapCollision.cpp" />
     <ClCompile Include="Component_Sprite.cpp" />
@@ -41,6 +42,7 @@
     <ClInclude Include="Bitmask.hpp" />
     <ClInclude Include="Component.hpp" />
     <ClInclude Include="Component_Animation.hpp" />
+    <ClInclude Include="Component_BoxCollider.hpp" />
     <ClInclude Include="Component_KeyboardMovement.hpp" />
     <ClInclude Include="Component_MapCollision.hpp" />
     <ClInclude Include="Component_Sprite.hpp" />
