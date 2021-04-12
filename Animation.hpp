@@ -6,7 +6,9 @@
 enum class FacingDirection {
 	None,
 	Left,
-	Right
+	Right,
+	Up,
+	Down
 };
 
 
@@ -38,7 +40,7 @@ public:
 	* @Param: FacingDirection direction - intialise direction for player
 	* @Return: -
 	*/
-	Animation(FacingDirection direction);
+	Animation();
 
 	/*
 	* AddFrame method
@@ -82,23 +84,6 @@ public:
 	*/
 	void Reset();
 
-	/*
-	* SetDirection method
-	* Sets correct Direction for animation & makes sure that sprite does not flip
-	* @Param: FacingDirection dir - new facing direction for player
-	* @Return: -
-	*/
-	void SetDirection(FacingDirection dir);
-
-
-	/*
-	* GetDirection method
-	* Gets direction that player is facing
-	* @Param: -
-	* @Return: FacingDirection direction const - ummutable direction that player is facing
-	*/
-	FacingDirection GetDirection() const;
-
 private:
 	/*
 	* IncrementFrame method
@@ -113,6 +98,6 @@ private:
 	int m_currentFrameIndex;
 
 	float m_currentFrameTime;
+	bool m_releaseFirstFrame;
 
-	FacingDirection m_direction;
 };

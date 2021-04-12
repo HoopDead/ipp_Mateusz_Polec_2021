@@ -4,12 +4,15 @@
 #include "Animation.hpp"
 #include "Component_Sprite.hpp"
 #include "Logs.hpp"
+#include <map>
 
 enum class AnimationState {
 	None,
 	Idle,
 	Walk
 };
+
+using AnimationList = std::map<FacingDirection, std::shared_ptr<Animation>>;
 
 class Component_Animation : public Component {
 public:
@@ -37,14 +40,8 @@ public:
 	*/
 	void Update(float deltaTime) override;
 
-	/*
-	* AddAnimation method
-	* Add the new animation to collection of animations
-	* @Param: AnimatioNState state - state of Animation we want assign
-	* @Param: std::shared_ptr<Animation> animation - animation we want to assign to state
-	*/
-	void AddAnimation(AnimationState state,
-		std::shared_ptr<Animation> animation);
+	//TODO: Documentation
+	void AddAnimation(AnimationState state, AnimationList& animationList);
 
 	/*
 	* SetAnimationState method
@@ -72,7 +69,8 @@ public:
 
 private:
 	std::shared_ptr<Component_Sprite> m_sprite;
-	std::map<AnimationState, std::shared_ptr<Animation>> m_animations;
+	std::map<AnimationState, AnimationList> m_animations;
 	std::pair<AnimationState, std::shared_ptr<Animation>> m_currentAnimation;
+	FacingDirection m_currentDirection;
 
 };

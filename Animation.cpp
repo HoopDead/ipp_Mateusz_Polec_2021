@@ -1,8 +1,7 @@
 #include "Animation.hpp"
 
 
-Animation::Animation(FacingDirection direction) : m_frames(0), m_currentFrameIndex(0), m_currentFrameTime(0.f), m_direction(direction)
-{
+Animation::Animation() : m_frames(0), m_currentFrameIndex(0), m_currentFrameTime(0.f), m_releaseFirstFrame(true) {
 
 }
 
@@ -31,48 +30,34 @@ const FrameData* Animation::GetCurrentFrame() const
 
 bool Animation::UpdateFrame(float deltaTime)
 {
-    if (m_frames.size() > 0)
-    {
-        m_currentFrameTime += deltaTime;
+    if (m_releaseFirstFrame) {
+        m_releaseFirstFrame = false;
+        return true;
+    }
 
-        if (m_currentFrameTime >= m_frames[m_currentFrameIndex].displayTimeSeconds)
-        {
-            m_currentFrameTime = 0.f;
-            IncrementFrame();
-            return true;
-        }
+    if (m_frames.size() > 1) {
+        m_currentFrameTime += deltaTime;
+    }
+
+    if (m_currentFrameTime >= m_frames[m_currentFrameIndex].displayTimeSeconds) {
+        m_currentFrameTime = 0.f;
+        IncrementFrame();
+        return true;
     }
 
     return false;
 }
 
-void Animation::SetDirection(FacingDirection dir) {
-    if (m_direction != dir) {
-        m_direction = dir;
-        for (auto& f : m_frames) {
-            f.x += f.width;
-            f.width *= -1;
-        }
-    }
-}
-
-FacingDirection Animation::GetDirection() const {
-    return m_direction;
-}
 
 void Animation::IncrementFrame()
 {
-    if (m_currentFrameIndex == (m_frames.size() - 1))
-    {
-        m_currentFrameIndex = 0;
-    }
-    else
-    {
-        m_currentFrameIndex++;
-    }
+    m_currentFrameIndex = (m_currentFrameIndex + 1) % m_frames.size();
+    LogAll("Current Frame: ", m_currentFrameIndex);
 }
 
 void Animation::Reset()
 {
     m_currentFrameIndex = 0;
+    m_currentFrameTime = 0.f;
+    m_releaseFirstFrame = true;
 }

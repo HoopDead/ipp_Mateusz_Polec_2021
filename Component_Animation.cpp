@@ -1,10 +1,8 @@
 #include "Component_Animation.hpp"
 #include "Object.hpp"
 
-Component_Animation::Component_Animation(Object* owner) : Component(owner), m_currentAnimation(AnimationState::None, nullptr)
-{
-
-}
+Component_Animation::Component_Animation(Object* owner) : Component(owner),
+m_currentAnimation(AnimationState::None, nullptr), m_currentDirection(FacingDirection::Down) { }
 
 void Component_Animation::Awake()
 {
@@ -27,9 +25,9 @@ void Component_Animation::Update(float deltaTime)
     }
 }
 
-void Component_Animation::AddAnimation(AnimationState state, std::shared_ptr<Animation> animation)
+void Component_Animation::AddAnimation(AnimationState state, AnimationList& animationList)
 {
-    auto inserted = m_animations.insert(std::make_pair(state, animation));
+    m_animations.insert(std::make_pair(state, animationList));
 
     if (m_currentAnimation.first == AnimationState::None)
     {
@@ -44,13 +42,17 @@ void Component_Animation::SetAnimationState(AnimationState state)
         return;
     }
 
-    auto animation = m_animations.find(state);
-    if (animation != m_animations.end())
+    auto animationList = m_animations.find(state);
+    if (animationList != m_animations.end())
     {
-        m_currentAnimation.first = animation->first;
-        m_currentAnimation.second = animation->second;
+        auto animation = animationList->second.find(m_currentDirection);
 
-        m_currentAnimation.second->Reset();
+        if (animation != animationList->second.end())
+        {
+            m_currentAnimation.first = animationList->first;
+            m_currentAnimation.second = animation->second;
+            m_currentAnimation.second->Reset();
+        }
     }
 }
 
@@ -59,8 +61,22 @@ const AnimationState& Component_Animation::GetAnimationState() const
     return m_currentAnimation.first;
 }
 
-void Component_Animation::SetAnimationDirection(FacingDirection dir) {
-    if (m_currentAnimation.first != AnimationState::None) {
-        m_currentAnimation.second->SetDirection(dir);
+void Component_Animation::SetAnimationDirection(FacingDirection dir)
+{
+    if (dir != m_currentDirection)
+    {
+        m_currentDirection = dir;
+
+        auto animationList = m_animations.find(m_currentAnimation.first);
+        if (animationList != m_animations.end())
+        {
+            auto animation = animationList->second.find(m_currentDirection);
+
+            if (animation != animationList->second.end())
+            {
+                m_currentAnimation.second = animation->second;
+                m_currentAnimation.second->Reset();
+            }
+        }
     }
 }
