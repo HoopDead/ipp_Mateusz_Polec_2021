@@ -40,7 +40,13 @@ public:
 	*/
 	void Update(float deltaTime) override;
 
-	//TODO: Documentation
+	/*
+	* AddAnimation method
+	* Method to Add new Animation to m_animations member
+	* @Param: AnimationState state - state of animation to add
+	* @Param: AnimationList& animationList - list of animations that show movement in desired direction
+	* @Return: -
+	*/
 	void AddAnimation(AnimationState state, AnimationList& animationList);
 
 	/*
