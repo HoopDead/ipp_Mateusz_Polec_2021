@@ -73,7 +73,7 @@ public:
 private:
 
 	//Construtor is called from windows.h
-	Window window;
+	Window m_window;
 
 	
 	//Handling time in game

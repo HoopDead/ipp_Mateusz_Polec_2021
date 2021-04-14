@@ -23,6 +23,7 @@
     <ClCompile Include="Bitmask.cpp" />
     <ClCompile Include="Component_Animation.cpp" />
     <ClCompile Include="Component_BoxCollider.cpp" />
+    <ClCompile Include="Component_Camera.cpp" />
     <ClCompile Include="Component_KeyboardMovement.cpp" />
     <ClCompile Include="Component_MapCollision.cpp" />
     <ClCompile Include="Component_Sprite.cpp" />
@@ -43,11 +44,13 @@
     <ClInclude Include="Component.hpp" />
     <ClInclude Include="Component_Animation.hpp" />
     <ClInclude Include="Component_BoxCollider.hpp" />
+    <ClInclude Include="Component_Camera.hpp" />
     <ClInclude Include="Component_KeyboardMovement.hpp" />
     <ClInclude Include="Component_MapCollision.hpp" />
     <ClInclude Include="Component_Sprite.hpp" />
     <ClInclude Include="Component_Transform.hpp" />
     <ClInclude Include="Game.hpp" />
+    <ClInclude Include="Informations.hpp" />
     <ClInclude Include="Input.hpp" />
     <ClInclude Include="Logs.hpp" />
     <ClInclude Include="MapRenderer.h" />
@@ -58,6 +61,7 @@
     <ClInclude Include="SceneGame.hpp" />
     <ClInclude Include="SceneStateMachine.hpp" />
     <ClInclude Include="MapLoader.hpp" />
+    <ClInclude Include="Setup.hpp" />
     <ClInclude Include="Window.hpp" />
   </ItemGroup>
   <ItemGroup>

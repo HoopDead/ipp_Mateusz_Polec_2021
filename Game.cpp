@@ -1,8 +1,8 @@
 #include "Game.hpp"
 
-Game::Game() : window("Onyx Game DEV 1.0.2") {
+Game::Game() : m_window("Onyx Game DEV 1.0.2") {
 
-	std::shared_ptr<SceneGame> gameScene = std::make_shared<SceneGame>(m_textureAllocator);
+	std::shared_ptr<SceneGame> gameScene = std::make_shared<SceneGame>(m_textureAllocator, m_window);
 
 	unsigned int gameSceneID = sceneStateMachine.Add(gameScene);
 
@@ -17,7 +17,7 @@ void Game::ConsumeInput() {
 }
 
 void Game::Update() {
-	window.Update();
+	m_window.Update();
 
 	sceneStateMachine.Update(m_deltaTime);
 }
@@ -27,11 +27,11 @@ void Game::LateUpdate() {
 }
 
 void Game::Draw() {
-	window.BeginDraw();
+	m_window.BeginDraw();
 
-	sceneStateMachine.Draw(window);
+	sceneStateMachine.Draw(m_window);
 
-	window.EndDraw();
+	m_window.EndDraw();
 }
 
 void Game::CalculateDeltaTime() {
@@ -39,7 +39,7 @@ void Game::CalculateDeltaTime() {
 }
 
 bool Game::IsRunning() const {
-	return window.IsOpen();
+	return m_window.IsOpen();
 }
 
 Game::~Game() {

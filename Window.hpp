@@ -25,6 +25,38 @@ public:
 	void Update();
 
 	/*
+	* GetCenter method
+	* Return center of View
+	* @Param:
+	* @Return: const Vector2f - immutable vector of center of view
+	*/
+	sf::Vector2f GetCenter() const;
+
+	/*
+	* GetViewSpace method
+	* Return ViewSpace providen by programmer for player
+	* @Param: -
+	* @Return: FloatRect - immuatble Float Rectangle of View Space for player
+	*/
+	sf::FloatRect GetViewSpace() const;
+
+	/*
+	* GetView method
+	* Getter of View for Camera Component
+	* @Param: -
+	* @Return: const sf::View& - reference of immutable view for Camera
+	*/
+	const sf::View& GetView() const;
+
+	/*
+	* SetView Method
+	* Setter of View object
+	* @Param: const sf::View& view - reference to const View object
+	* @Return: -
+	*/
+	void SetView(const sf::View& view);
+
+	/*
 	* beginDraw method
 	* Called, on begin of render method - it has to clear the screen, because otherwise we would see all previous framerates
 	* @Param: -
@@ -39,6 +71,7 @@ public:
 	* @Return: -
 	*/
 	void Draw(const sf::Drawable& drawable);
+
 
 	/*
 	* endDraw method
@@ -56,6 +89,12 @@ public:
 	*/
 	bool IsOpen() const;
 
+	/*
+	* Destructor of Window object
+	* Created only for tests purposes
+	* @Param: -
+	* @Return: -
+	*/
 	~Window();
 
 private:

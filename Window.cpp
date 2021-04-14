@@ -20,6 +20,29 @@ void Window::Update() {
 
 }
 
+const sf::View& Window::GetView() const {
+	return m_window.getView();
+}
+
+sf::Vector2f Window::GetCenter() const {
+	return m_window.getView().getCenter();
+}
+
+sf::FloatRect Window::GetViewSpace() const {
+	const sf::View& view = GetView();
+	const sf::Vector2f& viewCenter = view.getCenter();
+	const sf::Vector2f viewSize = view.getSize();
+
+	const sf::Vector2f viewSizeHalf(viewSize.x / 2.f, viewSize.y / 2.f);
+	const sf::FloatRect viewSpace(viewCenter - viewSizeHalf, viewSize);
+
+	return viewSpace;
+}
+
+void Window::SetView(const sf::View& view) {
+	m_window.setView(view);
+}
+
 void Window::BeginDraw() {
 	m_window.clear(sf::Color::Black);
 }

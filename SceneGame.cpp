@@ -1,7 +1,7 @@
 #include "SceneGame.hpp"
 
-SceneGame::SceneGame(ResourceAllocator<sf::Texture>& textureAllocator) :
-	m_textureAllocator(textureAllocator) {
+SceneGame::SceneGame(ResourceAllocator<sf::Texture>& textureAllocator, Window& window) :
+	m_textureAllocator(textureAllocator), m_window(window) {
 	Log("Called Scene Game Constructor");
 }
 
@@ -104,6 +104,9 @@ void SceneGame::OnCreate() {
 
     auto boxCollider = player->AddComponent<Component_BoxCollider>();
     boxCollider->SetCollidable(sf::FloatRect(0, 0, frameWidth, frameHeight));
+
+    auto camera = player->AddComponent<Component_Camera>();
+    camera->SetWindow(&m_window);
 
     m_objects.Add(player);
 

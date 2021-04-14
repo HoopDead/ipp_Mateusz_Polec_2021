@@ -6,19 +6,41 @@
 
 struct MapRenderer {
 public:
-	//TODO: Documentation
+	/*
+	* Constructor of Map Renderer Object
+	* @Param: -
+	* @Return: -
+	*/
 	MapRenderer();
 
-	//TODO: Documentation
+	/*
+	* Destructor of Map Renderer Object
+	* Created only for test purposes
+	*/
 	~MapRenderer();
 
-	//TODO: Documentation
+	/*
+	* Awake Method
+	* Initialise all layers and load map into the members of this class
+	* @Param: -
+	* @Return: -
+	*/
 	void Awake();
 
-	//TODO: Documentation
+	/*
+	* Draw method
+	* Render all layers on window
+	* @Param: Window& window - reference to window where map is rendering
+	* @Return: -
+	*/
 	void Draw(Window& window);
 
-	//TODO: Documentation
+	/*
+	* GetCollisionLayer method
+	* Getter of collision layer
+	* @Param: -
+	* @Return: tmx::ObjectGroup - all objects that are based on collision layer
+	*/
 	tmx::ObjectGroup GetCollisionLayer();
 
 private:

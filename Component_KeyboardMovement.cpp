@@ -2,7 +2,7 @@
 #include "Object.hpp"
 
 Component_KeyboardMovement::Component_KeyboardMovement(Object* owner)
-	: Component(owner), m_moveSpeed(50), m_input(nullptr) {
+	: Component(owner), m_moveSpeed(200), m_input(nullptr) {
 	Log("Called Component Keyboard Movement Constructor");
 }
 

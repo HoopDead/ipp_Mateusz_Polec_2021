@@ -12,6 +12,7 @@
 #include "Component_Animation.hpp";
 #include "Component_MapCollision.hpp";
 #include "Component_BoxCollider.hpp"
+#include "Component_Camera.hpp"
 
 class SceneGame : public Scene {
 
@@ -23,7 +24,7 @@ public:
 	* @Param: -
 	* @Return: -
 	*/
-	SceneGame(ResourceAllocator<sf::Texture>& textureAllocator);
+	SceneGame(ResourceAllocator<sf::Texture>& textureAllocator, Window& window);
 
 	/*
 	* OnCreate method
@@ -82,6 +83,8 @@ public:
 	~SceneGame();
 
 private:
+
+	Window& m_window;
 
 	std::shared_ptr<MapRenderer> m_mapRenderer;
 

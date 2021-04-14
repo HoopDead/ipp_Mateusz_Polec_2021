@@ -27,6 +27,7 @@ void MapRenderer::Draw(Window& window) {
 	window.Draw(m_layer_collision);
 }
 
+
 tmx::ObjectGroup MapRenderer::GetCollisionLayer() {
 	for (const auto& layer : m_map.getLayers()) {
 		if (layer->getType() == tmx::Layer::Type::Object) {
