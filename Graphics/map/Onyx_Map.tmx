@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="10" nextobjectid="22">
+<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="10" nextobjectid="37">
  <tileset firstgid="1" source="Japanese Kangawa.tsx"/>
  <tileset firstgid="1483" source="Zen Garden.tsx"/>
  <tileset firstgid="2379" source="Dotonbori.tsx"/>
@@ -9,9 +9,9 @@
  <tileset firstgid="5108" source="Dark Tokyo.tsx"/>
  <tileset firstgid="6158" source="Collision.tsx"/>
  <objectgroup id="8" name="Layer_collision">
-  <object id="21" gid="6158" x="32.5" y="235.75" width="62.75" height="138.5"/>
+  <object id="36" x="32.6756" y="96.2174" width="64.2576" height="143.545"/>
  </objectgroup>
- <layer id="5" name="Layer_below_2" width="100" height="100">
+ <layer id="5" name="Layer_below_2" width="100" height="100" visible="0">
   <data encoding="csv">
 0,1539,1539,1539,1539,1539,1539,1539,1539,1539,0,0,0,258,258,258,258,258,258,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,258,0,0,0,258,258,258,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,1539,1539,1539,1539,0,0,0,0,0,0,0,0,0,0,0,0,0,258,258,258,0,0,0,0,0,0,0,0,0,0,0,258,0,0,0,258,258,258,258,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

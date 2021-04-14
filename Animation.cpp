@@ -52,7 +52,6 @@ bool Animation::UpdateFrame(float deltaTime)
 void Animation::IncrementFrame()
 {
     m_currentFrameIndex = (m_currentFrameIndex + 1) % m_frames.size();
-    LogAll("Current Frame: ", m_currentFrameIndex);
 }
 
 void Animation::Reset()

@@ -68,6 +68,8 @@ public:
 
     void SetTextureRect(const sf::IntRect& rect);
 
+    const sf::Sprite GetSprite() const;
+
 private:
     int m_currentTextureID;
     sf::Texture m_texture;

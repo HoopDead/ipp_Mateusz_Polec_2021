@@ -47,6 +47,11 @@ void Component_Sprite::SetTextureRect(const sf::IntRect& rect) {
     m_sprite.setTextureRect(rect);
 }
 
+const sf::Sprite Component_Sprite::GetSprite() const {
+    return m_sprite;
+}
+
+
 Component_Sprite::~Component_Sprite() {
     Log("Called Component_Sprite Destructor");
 }

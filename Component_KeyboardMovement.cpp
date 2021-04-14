@@ -57,11 +57,9 @@ void Component_KeyboardMovement::Update(float deltaTime) {
 	if (abs(xMove) > abs(yMove)) {
 		if (xMove < 0) {
 			m_animation->SetAnimationDirection(FacingDirection::Left);
-			Log("Left");
 		}
 		else {
 			m_animation->SetAnimationDirection(FacingDirection::Right);
-			Log("Right");
 		}
 	}
 	else {
