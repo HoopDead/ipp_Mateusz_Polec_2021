@@ -1,5 +1,4 @@
 #include "Component_KeyboardMovement.hpp"
-#include "Object.hpp"
 
 Component_KeyboardMovement::Component_KeyboardMovement(Object* owner)
 	: Component(owner), m_moveSpeed(200), m_input(nullptr) {
@@ -7,7 +6,7 @@ Component_KeyboardMovement::Component_KeyboardMovement(Object* owner)
 }
 
 void Component_KeyboardMovement::Awake() {
-	m_animation = owner->GetComponent<Component_Animation>();
+	m_velocity = owner->GetComponent<Component_Velocity>();
 }
 
 
@@ -20,13 +19,11 @@ void Component_KeyboardMovement::SetMovementSpeed(int moveSpeed) {
 }
 
 void Component_KeyboardMovement::Update(float deltaTime) {
-
 	if (m_input == nullptr) {
 		return;
 	}
 
-	int xMove = 0;
-
+	float xMove = 0.f;
 	if (m_input->IsKeyPressed(Input::Key::Left)) {
 		xMove = -m_moveSpeed;
 	}
@@ -34,7 +31,7 @@ void Component_KeyboardMovement::Update(float deltaTime) {
 		xMove = m_moveSpeed;
 	}
 
-	int yMove = 0;
+	float yMove = 0.f;
 	if (m_input->IsKeyPressed(Input::Key::Up)) {
 		yMove = -m_moveSpeed;
 	}
@@ -42,35 +39,7 @@ void Component_KeyboardMovement::Update(float deltaTime) {
 		yMove = m_moveSpeed;
 	}
 
-	float xFrameMove = xMove * deltaTime;
-	float yFrameMove = yMove * deltaTime;
-
-	owner->transform->AddPosition(xFrameMove, yFrameMove);
-
-	if (xMove == 0 && yMove == 0) {
-		m_animation->SetAnimationState(AnimationState::Idle);
-	}
-	else {
-		m_animation->SetAnimationState(AnimationState::Walk);
-	}
-
-	if (abs(xMove) > abs(yMove)) {
-		if (xMove < 0) {
-			m_animation->SetAnimationDirection(FacingDirection::Left);
-		}
-		else {
-			m_animation->SetAnimationDirection(FacingDirection::Right);
-		}
-	}
-	else {
-		if (yMove < 0) {
-			m_animation->SetAnimationDirection(FacingDirection::Up);
-		}
-		else {
-			m_animation->SetAnimationDirection(FacingDirection::Down);
-		}
-	}
-
+		m_velocity->Set(xMove, yMove);
 }
 
 Component_KeyboardMovement::~Component_KeyboardMovement() {

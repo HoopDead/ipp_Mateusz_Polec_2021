@@ -26,8 +26,10 @@
     <ClCompile Include="Component_Camera.cpp" />
     <ClCompile Include="Component_KeyboardMovement.cpp" />
     <ClCompile Include="Component_MapCollision.cpp" />
+    <ClCompile Include="Component_MovementAnimation.cpp" />
     <ClCompile Include="Component_Sprite.cpp" />
     <ClCompile Include="Component_Transform.cpp" />
+    <ClCompile Include="Component_Velocity.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -47,8 +49,10 @@
     <ClInclude Include="Component_Camera.hpp" />
     <ClInclude Include="Component_KeyboardMovement.hpp" />
     <ClInclude Include="Component_MapCollision.hpp" />
+    <ClInclude Include="Component_MovementAnimation.hpp" />
     <ClInclude Include="Component_Sprite.hpp" />
     <ClInclude Include="Component_Transform.hpp" />
+    <ClInclude Include="Component_Velocity.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="Informations.hpp" />
     <ClInclude Include="Input.hpp" />

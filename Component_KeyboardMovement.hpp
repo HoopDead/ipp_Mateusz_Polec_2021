@@ -3,8 +3,8 @@
 #include "Component.hpp"
 #include "Input.hpp"
 #include "Logs.hpp"
-#include "Component_Animation.hpp"
-
+#include "Component_Velocity.hpp"
+#include "Object.hpp"
 
 class Component_KeyboardMovement : public Component {
 
@@ -58,5 +58,5 @@ public:
 private:
 	int m_moveSpeed;
 	Input* m_input;
-	std::shared_ptr<Component_Animation> m_animation;
+	std::shared_ptr<Component_Velocity> m_velocity;
 };

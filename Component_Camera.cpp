@@ -18,6 +18,7 @@ void Component_Camera::LateUpdate(float deltaTime) {
 
 		sf::Vector2f position(screenDimension.x / 2, screenDimension.y / 2);
 
+		//TODO: Move to member of class
 		auto sprite = owner->GetComponent<Component_Sprite>();
 		sf::Sprite ownerSprite = sprite->GetSprite();
 
@@ -41,8 +42,6 @@ void Component_Camera::LateUpdate(float deltaTime) {
 		if (ownerSprite.getPosition().y + 32 > MAP_SIZE_Y - (screenDimension.y / 2)) {
 			position.y = MAP_SIZE_Y - (screenDimension.y / 2);
 		}
-
-		LogAll(position.x, position.y);
 
 		view.setCenter(position);
 

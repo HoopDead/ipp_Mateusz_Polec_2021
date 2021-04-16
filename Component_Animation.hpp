@@ -73,6 +73,9 @@ public:
 	*/
 	void SetAnimationDirection(FacingDirection dir);
 
+	//TODO: Documentation
+	const FacingDirection GetFacingDirection() const;
+
 private:
 	std::shared_ptr<Component_Sprite> m_sprite;
 	std::map<AnimationState, AnimationList> m_animations;

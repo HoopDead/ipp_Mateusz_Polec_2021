@@ -49,6 +49,7 @@ private:
 	MapLayer m_layer_above_2;
 	MapLayer m_layer_above_1;
 	MapLayer m_layer_main;
+	MapLayer m_layer_below;
 	MapLayer m_layer_below_1;
 	MapLayer m_layer_below_2;
 	MapLayer m_layer_collision;

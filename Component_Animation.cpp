@@ -80,3 +80,7 @@ void Component_Animation::SetAnimationDirection(FacingDirection dir)
         }
     }
 }
+
+const FacingDirection Component_Animation::GetFacingDirection() const {
+    return m_currentDirection;
+}

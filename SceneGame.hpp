@@ -13,6 +13,8 @@
 #include "Component_MapCollision.hpp";
 #include "Component_BoxCollider.hpp"
 #include "Component_Camera.hpp"
+#include "Component_MovementAnimation.hpp"
+#include "Component_Velocity.hpp"
 
 class SceneGame : public Scene {
 

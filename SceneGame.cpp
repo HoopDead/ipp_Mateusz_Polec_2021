@@ -20,6 +20,8 @@ void SceneGame::OnCreate() {
     auto movement = player->AddComponent<Component_KeyboardMovement>();
     movement->SetInput(&input);
 
+    auto transform = player->AddComponent<Component_Transform>();
+
     auto collision = player->AddComponent<Component_MapCollision>();
     collision->SetLayer(m_mapRenderer->GetCollisionLayer());
 
@@ -107,6 +109,9 @@ void SceneGame::OnCreate() {
 
     auto camera = player->AddComponent<Component_Camera>();
     camera->SetWindow(&m_window);
+
+    player->AddComponent<Component_Velocity>();
+    player->AddComponent<Component_MovementAnimation>();
 
     m_objects.Add(player);
 

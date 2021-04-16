@@ -4,8 +4,12 @@
 #include "Component_BoxCollider.hpp"
 #include "MapRenderer.h"
 #include "Component_Sprite.hpp"
+#include "Component_KeyboardMovement.hpp"
+#include "Component_KeyboardMovement.hpp"
+#include "Component_Animation.hpp"
 #include "Object.hpp"
 #include "Logs.hpp"
+#include "Component_Velocity.hpp"
 
 class Component_MapCollision : public Component {
 
@@ -33,6 +37,9 @@ public:
 	*/
 	void SetLayer(tmx::ObjectGroup objectGroup);
 
+	//TODO: Documentation
+	void Awake() override;
+
 	/*
 	* Update method - overriden from Component.h
 	* Check if player collides with any of object represented on collision layer
@@ -43,4 +50,11 @@ public:
 
 private:
 	std::vector<sf::FloatRect> m_boundPoints;
-};
+
+
+	std::shared_ptr<Component_BoxCollider> m_boxCollider;
+	std::shared_ptr<Component_Velocity> m_velocity;
+	std::shared_ptr<Component_Transform> m_transform;
+	std::shared_ptr<Component_Animation> m_animation;
+
+};	
