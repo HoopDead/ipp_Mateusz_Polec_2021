@@ -4,6 +4,10 @@ Component_Camera::Component_Camera(Object* owner) : Component(owner) {
 	Log("Called Component Camera Constructor");
 }
 
+void Component_Camera::Awake() {
+
+}
+
 void Component_Camera::LateUpdate(float deltaTime) {
 	if (m_window) {
 		sf::View view = m_window->GetView();
@@ -18,28 +22,25 @@ void Component_Camera::LateUpdate(float deltaTime) {
 
 		sf::Vector2f position(screenDimension.x / 2, screenDimension.y / 2);
 
-		//TODO: Move to member of class
-		auto sprite = owner->GetComponent<Component_Sprite>();
-		sf::Sprite ownerSprite = sprite->GetSprite();
 
-		if (ownerSprite.getPosition().x + 32 > screenDimension.x / 2) {
-			position.x = ownerSprite.getPosition().x + 32;
+		if (playerPos.x + 32 > screenDimension.x / 2) {
+			position.x = playerPos.x + 32;
 		}
 		else {
 			position.x = screenDimension.x / 2;
 		}
 
-		if (ownerSprite.getPosition().y + 32 > screenDimension.y / 2) {
-			position.y = ownerSprite.getPosition().y + 32;
+		if (playerPos.y + 32 > screenDimension.y / 2) {
+			position.y = playerPos.y + 32;
 		}
 		else {
 			position.y = screenDimension.y / 2;
 		}
 
-		if (ownerSprite.getPosition().x + 32 > MAP_SIZE_X - (screenDimension.x / 2)) {
+		if (playerPos.x + 32 > MAP_SIZE_X - (screenDimension.x / 2)) {
 			position.x = MAP_SIZE_X - (screenDimension.x / 2);
 		}
-		if (ownerSprite.getPosition().y + 32 > MAP_SIZE_Y - (screenDimension.y / 2)) {
+		if (playerPos.y + 32 > MAP_SIZE_Y - (screenDimension.y / 2)) {
 			position.y = MAP_SIZE_Y - (screenDimension.y / 2);
 		}
 

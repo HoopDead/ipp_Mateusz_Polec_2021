@@ -15,6 +15,9 @@ public:
 	*/
 	Component_Camera(Object* owner);
 
+	//TODO: Documentation
+	void Awake();
+
 	/*
 	* LateUpdate Method - overriden from Component.hpp
 	* Update Camera to desired view followed by player path
