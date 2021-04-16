@@ -16,16 +16,16 @@ Stworzenie własnego silnika gier na podstawie biblioteki SFML nastawionego pod 
 - [x] Stworzenie menadżera obiektów,
 - [x] Stworzenie silnika animacji,
 - [x] Stworzenie silnika wczytywania tilemapy,
-- [] Stworzenie silnika kolizji,
-- [] Stworzenie systemu kamer,
+- [x] Stworzenie silnika kolizji,
+- [x] Stworzenie systemu kamer,
 - [] Stworzenie systemu projectiles,
-- [] Stworzenie komunikacji między kolizjami
+- [x] Stworzenie komunikacji między kolizjami
 - [] Stworzenie menadżera Questów,
 - [] Stworzenie menadżera Dialogów,
 - [] Stworzenie silnika cutscenes (?)
 - [] Stworzenie shaderów do imitacji nocy, pogody
 - [] Stworzenie menu,
-- [] Stworzenie prostej mapy,
+- [x] Stworzenie prostej mapy,
 - [] Stworzenie systemu umiejętności,
 - [] Stworzenie prostej misji,
 - [] Stworzenie demo gry.
