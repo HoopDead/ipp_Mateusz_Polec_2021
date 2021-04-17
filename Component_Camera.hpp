@@ -15,8 +15,13 @@ public:
 	*/
 	Component_Camera(Object* owner);
 
-	//TODO: Documentation
-	void Awake();
+	/*
+	* Awake Method overriden from Component class
+	* Intialise members when Awake method is called
+	* @Param: -
+	* @Return: -
+	*/
+	void Awake() override;
 
 	/*
 	* LateUpdate Method - overriden from Component.hpp

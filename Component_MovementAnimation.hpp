@@ -8,16 +8,33 @@
 
 class Component_MovementAnimation : public Component {
 public:
-	//TODO: Documentation
+	/*
+	* Constructor of Component Movement Animation
+	* Sets owner of this Component
+	* @Param: Object* owner - pointer to owner of this component
+	* @Return: -
+	*/
 	Component_MovementAnimation(Object* owner);
 
-	//TODO: Documentation
+	/*
+	* Awake method, overriden from Component class
+	* On wake up sets all members of this class to Components get from owner
+	* @Param: -
+	* @Return: -
+	*/
 	void Awake() override;
 
-	//TODO: Documentation
+	/*
+	* Update method - overriden from Component class
+	* Updates the movement animation depending on Velocity of player
+	* @Param: float deltaTime - time between each frame
+	*/
 	void Update(float deltaTime) override;
 
-	//TODO: Documentation
+	/*
+	* Destructor of Movement Animation Component
+	* Created only for tests purposes
+	*/
 	~Component_MovementAnimation();
 
 private:

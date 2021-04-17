@@ -37,7 +37,12 @@ public:
 	*/
 	void SetLayer(tmx::ObjectGroup objectGroup);
 
-	//TODO: Documentation
+	/*
+	* Awake method - overriden from Component class
+	* Initialies all members - gets Component from Object class
+	* @Param: -
+	* @Return: -
+	*/
 	void Awake() override;
 
 	/*

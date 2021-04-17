@@ -32,10 +32,20 @@ public:
 	*/
 	virtual void Start() {};
 
-	//TODO: Documentation
+	/*
+	* Virtual Update Method
+	* Called between each frame update, to loop some actions taken by Components
+	* @Param: float deltaTime - time between each frame
+	* @Return: -
+	*/
 	virtual void Update(float deltaTime) {};
 
-	//TODO: Documentation
+	/*
+	* Virtual LateUpdate method
+	* Called between each frame, to handle operations after update and more aggravating
+	* @Param: float deltaTime - time between each frame
+	* @Return: -
+	*/
 	virtual void LateUpdate(float deltaTime) {};
 
 	/*
