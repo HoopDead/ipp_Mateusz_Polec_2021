@@ -18,6 +18,8 @@ void Window::Update() {
 		}
 	}
 
+	sf::Vector2f sizeOfWindow = m_window.getView().getSize();
+
 }
 
 const sf::View& Window::GetView() const {

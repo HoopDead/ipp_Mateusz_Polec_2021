@@ -49,4 +49,6 @@ public:
 
 private:
 	Window* m_window;
+
+	sf::View m_view;
 };
