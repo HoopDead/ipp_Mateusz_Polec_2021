@@ -56,7 +56,6 @@ public:
 private:
 	std::vector<sf::FloatRect> m_boundPoints;
 
-
 	std::shared_ptr<Component_BoxCollider> m_boxCollider;
 	std::shared_ptr<Component_Velocity> m_velocity;
 	std::shared_ptr<Component_Transform> m_transform;

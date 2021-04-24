@@ -12,7 +12,6 @@ void Component_MapCollision::Awake() {
 }
 
 void Component_MapCollision::SetLayer(tmx::ObjectGroup objectGroup) {
-	Log("Layer set!");
 	for (auto& obj : objectGroup.getObjects()) {
 		tmx::FloatRect rect = obj.getAABB();
 		m_boundPoints.push_back(sf::FloatRect(rect.left, rect.top, rect.width, rect.height));
@@ -30,33 +29,34 @@ void Component_MapCollision::Update(float deltaTime) {
 			const sf::Vector2f objPosition = { obj.left, obj.top };
 			const sf::Vector2f objCenter = { obj.left + (obj.width / 2), obj.top + (obj.height / 2) };
 
-			const sf::FloatRect leftWall(objPosition.x, objPosition.y, 1, obj.height);
-			const sf::FloatRect rightWall(objPosition.x + obj.width, objPosition.y, 1, obj.height);
-			const sf::FloatRect upWall(objPosition.x, objPosition.y, obj.width, 1);
-			const sf::FloatRect downWall(objPosition.x, objPosition.y + obj.height, obj.width, 1);
+			// All of those addition/subtraction operations are here to avoid colliding with two perpendicular walls.
+			// So solution is like that - we simply increase size of left and right wall, and slightly decrease up and down wall, to user wont intersect
+			// with two of them in the same time.
+
+			const sf::FloatRect leftWall(objPosition.x, objPosition.y - TWO_POWER_OF_TWO, 1, obj.height + TWO_POWER_OF_THREE);
+			const sf::FloatRect rightWall(objPosition.x + obj.width, objPosition.y - TWO_POWER_OF_TWO, 1, obj.height + TWO_POWER_OF_THREE);
+			const sf::FloatRect upWall(objPosition.x + TWO_POWER_OF_TWO, objPosition.y, obj.width - TWO_POWER_OF_THREE, 1);
+			const sf::FloatRect downWall(objPosition.x + TWO_POWER_OF_TWO, objPosition.y + obj.height, obj.width - TWO_POWER_OF_THREE, 1);
+
 
 			if (leftWall.intersects(m_boxCollider->GetColliderBox())) {
-				Log("Left Wall Coll");
-				m_velocity->Set(0, 0);
 				m_transform->SetPosition(objCenter.x - (obj.width / 2) - 32.f, playerPos.y);
+				Log("Left Wall");
 			}
 
 			if (rightWall.intersects(m_boxCollider->GetColliderBox())) {
-				Log("Right Wall Coll");
-				m_velocity->Set(0, 0);
 				m_transform->SetPosition(objCenter.x + (obj.width / 2), playerPos.y);
+				Log("Right Wall");
 			}
 
 			if (upWall.intersects(m_boxCollider->GetColliderBox())) {
-				Log("Up Wall Coll");
-				m_velocity->Set(0, 0);
 				m_transform->SetPosition(playerPos.x, objCenter.y - (obj.height/ 2) - 32.f);
+				Log("Up Wall");
 			}
 
 			if (downWall.intersects(m_boxCollider->GetColliderBox())) {
-				Log("Down Wall Coll");
-				m_velocity->Set(0, 0);
 				m_transform->SetPosition(playerPos.x, objCenter.y + (obj.height / 2));
+				Log("Down Wall");
 			}
 		}
 	}

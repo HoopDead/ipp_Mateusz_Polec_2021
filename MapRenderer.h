@@ -3,6 +3,7 @@
 #include "Window.hpp"
 #include "MapLoader.hpp"
 #include "Logs.hpp"
+#include "Informations.hpp"
 
 struct MapRenderer {
 public:
@@ -33,7 +34,23 @@ public:
 	* @Param: Window& window - reference to window where map is rendering
 	* @Return: -
 	*/
-	void Draw(Window& window);
+	//void Draw(Window& window);
+
+	/*
+	* DrawLayersBelow method
+	* Draw all layers that must be located BELOW Entities like Player, NPCs
+	* @Param: Window& window - reference to Window class
+	* @Return: -
+	*/
+	void DrawLayersBelow(Window& window);
+
+	/*
+	* DrawLayersAbove method
+	* Draw all layers that must be located ABOVE Entities like Player, NPCs
+	* Param: Window& window - reference to Window class
+	* @Return: -
+	*/
+	void DrawLayersAbove(Window& window);
 
 	/*
 	* GetCollisionLayer method
@@ -44,7 +61,7 @@ public:
 	tmx::ObjectGroup GetCollisionLayer();
 
 private:
-
+		
 	tmx::Map m_map;
 	MapLayer m_layer_above_2;
 	MapLayer m_layer_above_1;

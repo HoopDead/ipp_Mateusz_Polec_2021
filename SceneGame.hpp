@@ -15,6 +15,7 @@
 #include "Component_Camera.hpp"
 #include "Component_MovementAnimation.hpp"
 #include "Component_Velocity.hpp"
+#include "Component_Renderer.hpp"
 
 class SceneGame : public Scene {
 
@@ -75,6 +76,17 @@ public:
 	* @Return: -
 	*/
 	void Draw(Window &window) override;
+
+	//SECTION: Loading Entities
+
+	/*
+	* CreatePlayer Method
+	* Initialise all player components
+	* @Param: -
+	* @Return: -
+	*/
+	void CreatePlayer();
+
 
 	/*
 	* Destructor of Scene Game Object

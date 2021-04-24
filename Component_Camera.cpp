@@ -23,24 +23,24 @@ void Component_Camera::LateUpdate(float deltaTime) {
 		sf::Vector2f position(screenDimension.x / 2, screenDimension.y / 2);
 
 
-		if (playerPos.x + 32 > screenDimension.x / 2) {
-			position.x = playerPos.x + 32;
+		if (playerPos.x + SPRITE_SIZE > screenDimension.x / 2) {
+			position.x = playerPos.x + SPRITE_SIZE;
 		}
 		else {
 			position.x = screenDimension.x / 2;
 		}
 
-		if (playerPos.y + 32 > screenDimension.y / 2) {
-			position.y = playerPos.y + 32;
+		if (playerPos.y + SPRITE_SIZE > screenDimension.y / 2) {
+			position.y = playerPos.y + SPRITE_SIZE;
 		}
 		else {
 			position.y = screenDimension.y / 2;
 		}
 
-		if (playerPos.x + 32 > MAP_SIZE_X - (screenDimension.x / 2)) {
+		if (playerPos.x + SPRITE_SIZE > MAP_SIZE_X - (screenDimension.x / 2)) {
 			position.x = MAP_SIZE_X - (screenDimension.x / 2);
 		}
-		if (playerPos.y + 32 > MAP_SIZE_Y - (screenDimension.y / 2)) {
+		if (playerPos.y + SPRITE_SIZE > MAP_SIZE_Y - (screenDimension.y / 2)) {
 			position.y = MAP_SIZE_Y - (screenDimension.y / 2);
 		}
 

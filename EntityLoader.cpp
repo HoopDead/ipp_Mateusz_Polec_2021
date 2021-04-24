@@ -1,45 +1,6 @@
-#include "SceneGame.hpp"
+#include "EntityLoader.hpp"
 
-SceneGame::SceneGame(ResourceAllocator<sf::Texture>& textureAllocator, Window& window) :
-	m_textureAllocator(textureAllocator), m_window(window) {
-	Log("Called Scene Game Constructor");
-}
-
-void SceneGame::OnCreate() {
-
-    //Map Loading Section
-    m_mapRenderer = std::make_shared<MapRenderer>();
-    m_mapRenderer->Awake();
-
-    CreatePlayer();
-
-}
-
-void SceneGame::OnDestroy() {}
-
-void SceneGame::ProcessInput() {
-	input.Update();
-}
-
-void SceneGame::Update(float deltaTime) {
-	m_objects.ProcessRemoval();
-	m_objects.ProcessNewObjects();
-	m_objects.Update(deltaTime);
-}
-
-void SceneGame::LateUpdate(float deltaTime) {
-	m_objects.LateUpdate(deltaTime);
-}
-
-void SceneGame::Draw(Window& window) {
-    m_mapRenderer->DrawLayersBelow(window);
-	m_objects.Draw(window);
-    m_mapRenderer->DrawLayersAbove(window);
-
-}
-
-void SceneGame::CreatePlayer() {
-
+void EntityLoader::Awake() {
     //Player loader section
     std::shared_ptr<Object> player = std::make_shared<Object>(); //Move to class member?
 
@@ -134,7 +95,7 @@ void SceneGame::CreatePlayer() {
 
 
     auto boxCollider = player->AddComponent<Component_BoxCollider>();
-    boxCollider->SetCollidable(sf::FloatRect(0, 0, 32, 32));
+    boxCollider->SetCollidable(sf::FloatRect(0, 0, frameWidth, frameHeight));
 
     auto camera = player->AddComponent<Component_Camera>();
     camera->SetWindow(&m_window);
@@ -143,9 +104,8 @@ void SceneGame::CreatePlayer() {
     player->AddComponent<Component_MovementAnimation>();
 
     m_objects.Add(player);
-
 }
 
-SceneGame::~SceneGame() {
-	Log("Called Scene Game Destructor");
+ObjectCollection EntityLoader::operator=(ObjectCollection&& other) {
+
 }

@@ -30,11 +30,6 @@ void Component_Sprite::SetTextureAllocator(ResourceAllocator<sf::Texture>* alloc
     m_allocator = allocator;
 }
 
-void Component_Sprite::Draw(Window& window)
-{
-    window.Draw(m_sprite);
-}
-
 void Component_Sprite::LateUpdate(float deltaTime) {
     m_sprite.setPosition(owner->transform->GetPosition());
 }
@@ -45,6 +40,10 @@ void Component_Sprite::SetTextureRect(int x, int y, int width, int height) {
 
 void Component_Sprite::SetTextureRect(const sf::IntRect& rect) {
     m_sprite.setTextureRect(rect);
+}
+
+void Component_Sprite::Draw(Window& window) {
+    window.Draw(m_sprite);
 }
 
 const sf::Sprite Component_Sprite::GetSprite() const {
