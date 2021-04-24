@@ -21,6 +21,8 @@
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Bitmask.cpp" />
+    <ClCompile Include="ButtonCollection.cpp" />
+    <ClCompile Include="ButtonObject.cpp" />
     <ClCompile Include="Component_Animation.cpp" />
     <ClCompile Include="Component_BoxCollider.cpp" />
     <ClCompile Include="Component_Camera.cpp" />
@@ -37,12 +39,16 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectCollection.cpp" />
     <ClCompile Include="SceneGame.cpp" />
+    <ClCompile Include="SceneMenu.cpp" />
     <ClCompile Include="SceneStateMachine.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.hpp" />
     <ClInclude Include="Bitmask.hpp" />
+    <ClInclude Include="Button.hpp" />
+    <ClInclude Include="ButtonCollection.hpp" />
+    <ClInclude Include="ButtonObject.hpp" />
     <ClInclude Include="Component.hpp" />
     <ClInclude Include="Component_Animation.hpp" />
     <ClInclude Include="Component_BoxCollider.hpp" />
@@ -63,6 +69,7 @@
     <ClInclude Include="ResourceAllocator.hpp" />
     <ClInclude Include="Scene.hpp" />
     <ClInclude Include="SceneGame.hpp" />
+    <ClInclude Include="SceneMenu.hpp" />
     <ClInclude Include="SceneStateMachine.hpp" />
     <ClInclude Include="MapLoader.hpp" />
     <ClInclude Include="Setup.hpp" />

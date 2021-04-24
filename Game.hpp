@@ -3,6 +3,7 @@
 #include "Window.hpp"
 #include "SceneStateMachine.hpp"
 #include "SceneGame.hpp"
+#include "SceneMenu.hpp"
 #include "ResourceAllocator.hpp"
 
 class Game {

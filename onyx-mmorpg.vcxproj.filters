@@ -31,6 +31,12 @@
     <Filter Include="Source Files\Map">
       <UniqueIdentifier>{63296919-e32f-4aae-8ce7-61aa62e635f2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Buttons">
+      <UniqueIdentifier>{7d6947b7-925e-427c-862a-deadd1004ca7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Buttons">
+      <UniqueIdentifier>{92200882-30c1-43d5-9982-3de3bd500d1e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -92,6 +98,15 @@
     </ClCompile>
     <ClCompile Include="Component_Velocity.cpp">
       <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMenu.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="ButtonObject.cpp">
+      <Filter>Source Files\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="ButtonCollection.cpp">
+      <Filter>Source Files\Buttons</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +187,18 @@
     </ClInclude>
     <ClInclude Include="Component_MovementAnimation.hpp">
       <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMenu.hpp">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonObject.hpp">
+      <Filter>Header Files\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.hpp">
+      <Filter>Header Files\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonCollection.hpp">
+      <Filter>Header Files\Buttons</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

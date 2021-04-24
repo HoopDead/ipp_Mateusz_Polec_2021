@@ -18,7 +18,9 @@ void Window::Update() {
 		}
 	}
 
-	sf::Vector2f sizeOfWindow = m_window.getView().getSize();
+	sf::Vector2u windowSize = { 1920, 1080 };
+	m_window.setSize(windowSize);
+
 
 }
 
