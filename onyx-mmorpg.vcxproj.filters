@@ -191,10 +191,10 @@
     <ClInclude Include="SceneMenu.hpp">
       <Filter>Header Files\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="ButtonObject.hpp">
+    <ClInclude Include="Button.hpp">
       <Filter>Header Files\Buttons</Filter>
     </ClInclude>
-    <ClInclude Include="Button.hpp">
+    <ClInclude Include="ButtonObject.hpp">
       <Filter>Header Files\Buttons</Filter>
     </ClInclude>
     <ClInclude Include="ButtonCollection.hpp">

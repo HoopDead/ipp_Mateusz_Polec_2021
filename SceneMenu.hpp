@@ -3,9 +3,8 @@
 #include "Scene.hpp"
 #include "Window.hpp"
 #include "Logs.hpp"
-#include "ButtonObject.hpp"
-#include "Button.hpp"
 #include "ButtonCollection.hpp"
+#include "ButtonObject.hpp"
 
 class SceneMenu : public Scene {
 
@@ -37,6 +36,5 @@ public:
 private:
 
 	Window& m_window;
-
-	ButtonCollection m_ButtonObjects;
+	ButtonCollection m_buttons;
 };

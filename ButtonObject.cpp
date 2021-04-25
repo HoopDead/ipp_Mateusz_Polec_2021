@@ -1,33 +1,45 @@
 #include "ButtonObject.hpp"
 
 ButtonObject::ButtonObject() {
-	Log("Called Button Object Constructor");
+    Log("Called Object Constructor");
 }
 
-void ButtonObject::Awake() {
-	for (const auto& btn : m_buttons) {
-		btn->Awake();
-	}
+void ButtonObject::Awake()
+{
+    for (int i = m_buttons.size() - 1; i >= 0; i--)
+    {
+        m_buttons[i]->Awake();
+    }
 }
 
-void ButtonObject::Update(float deltaTime) {
-	for (const auto& btn : m_buttons) {
-		btn->Update(deltaTime);
-	}
+void ButtonObject::Start()
+{
+    for (int i = m_buttons.size() - 1; i >= 0; i--)
+    {
+        m_buttons[i]->Start();
+    }
 }
 
-void ButtonObject::LateUpdate(float deltaTime) {
-	for (const auto& btn : m_buttons) {
-		btn->LateUpdate(deltaTime);
-	}
+void ButtonObject::Update(float timeDelta)
+{
+    for (int i = m_buttons.size() - 1; i >= 0; i--)
+    {
+        m_buttons[i]->Update(timeDelta);
+    }
 }
 
-void ButtonObject::Draw(Window& window) {
-	for (const auto& btn : m_buttons) {
-		btn->Draw(window);
-	}
+void ButtonObject::LateUpdate(float timeDelta)
+{
+    for (int i = m_buttons.size() - 1; i >= 0; i--)
+    {
+        m_buttons[i]->LateUpdate(timeDelta);
+    }
 }
 
-ButtonObject::~ButtonObject() {
-	Log("Called Button Object Destructor");
+void ButtonObject::Draw(Window& window)
+{
+    for (int i = m_buttons.size() - 1; i >= 0; i--)
+    {
+        m_buttons[i]->Draw(window);
+    }
 }

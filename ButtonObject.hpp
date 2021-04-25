@@ -1,56 +1,71 @@
 #pragma once
 
+#include <vector>
 #include "Window.hpp"
 #include "Button.hpp"
 
 class ButtonObject {
+public:
 
 public:
 
-	ButtonObject();
+    //TODO: Documentation
+    ButtonObject();
 
-	void Awake();
+    //TODO: Documentation
+    void Awake();
 
-	void Update(float deltaTime);
+    //TODO: Documentation
+    void Start();
 
-	void LateUpdate(float deltaTime);
+    //TODO: Documentation
+    void Update(float deltaTime);
 
-	void Draw(Window& draw);
+    //TODO: Documentation
+    void LateUpdate(float deltaTime);
 
-	template <typename T> std::shared_ptr<T> AddButton() {
+    //TODO: Documentation
+    void Draw(Window& window);
 
-		static_assert(std::is_base_of<Button, T>::value,
-			"T must derive from Button");
+    //TODO: Documentation
+    template <typename T> std::shared_ptr<T> AddButton() // 1
+    {
+        static_assert(std::is_base_of<Button, T>::value,
+            "T must derive from Button");
 
-		for (auto& existingButton : m_buttons) {
-			if (std::dynamic_pointer_cast<T>(existingButton)) {
-				return std::dynamic_pointer_cast<T>(existingButton);
-			}
-		}
+        for (auto& existingButton : m_buttons)
+        {
 
-		std::shared_ptr<T> newButton = std::make_shared<T>(this);
-		m_buttons.push_back(newButton);
+            if (std::dynamic_pointer_cast<T>(existingButton))
+            {
+                return std::dynamic_pointer_cast<T>(existingButton); // 2
+            }
+        }
 
-		return newButton;
-	};
+        std::shared_ptr<T> newButton = std::make_shared<T>(this);
+        m_buttons.push_back(newButton);
 
-	template <typename T> std::shared_ptr<T> GetButton() {
+        return newButton;
+    };
+    
+    //TODO: Documentation
+    template <typename T> std::shared_ptr<T> GetButton()
+    {
+        static_assert(std::is_base_of<Button, T>::value,
+            "T must derive from Button");
 
-		static_assert(std::is_base_of<Button, T>::value,
-			"T must derive from Button");
+        for (auto& existingButton : m_buttons)
+        {
+            if (std::dynamic_pointer_cast<T>(existingButton))
+            {
+                return std::dynamic_pointer_cast<T>(existingButton);
+            }
+        }
 
-		for (auto& existingButton : m_buttons) {
-			if (std::dynamic_pointer_cast<T>(existingButton)) {
-				return std::dynamic_pointer_cast<T>(existingButton);
-			}
-		}
+        return nullptr;
+    };
 
-		return nullptr;
-	};
-
-
-	~ButtonObject();
 
 private:
-	std::vector<std::shared_ptr<Button>> m_buttons;
+    std::vector<std::shared_ptr<Button>> m_buttons;
 };

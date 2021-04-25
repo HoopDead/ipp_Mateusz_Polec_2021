@@ -1,25 +1,36 @@
 #pragma once
 
+#include <memory>
+#include <vector>
+
 #include "ButtonObject.hpp"
+#include "Logs.hpp"
 
 class ButtonCollection {
 public:
+
+	//TODO: Documentation
 	ButtonCollection();
 
-	void Add(std::shared_ptr<ButtonObject> buttonObject);
-
-	void Update(float deltaTime);
-
-	void LateUpdate(float deltaTime);
-
-	void Draw(Window& window);
-
-	void ProcessNewObjects();
-
+	//TODO: Documentation
 	~ButtonCollection();
 
-private:
+	//TODO: Documentation
+	void Add(std::shared_ptr<ButtonObject> object);
 
-	std::vector<std::shared_ptr<ButtonObject>> m_newObjects;
-	std::vector<std::shared_ptr<ButtonObject>> m_objects;
+	//TODO: Documentation
+	void Update(float deltaTime);
+
+	//TODO: Documentation
+	void LateUpdate(float deltaTime);
+
+	//TODO: Documentation
+	void Draw(Window& window);
+
+	//TODO: Documentation
+	void ProcessNewObjects();
+
+private:
+	std::vector<std::shared_ptr<ButtonObject>> m_ButtonObjects;
+	std::vector<std::shared_ptr<ButtonObject>> m_ButtonNewObjects;
 };

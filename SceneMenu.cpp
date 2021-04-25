@@ -7,7 +7,7 @@ SceneMenu::SceneMenu(Window& window) : m_window(window) {
 void SceneMenu::OnCreate() {
 	Log("Called Scene Menu OnCreate Method");
 
-	std::shared_ptr<ButtonObject> newGameButton = std::make_shared<ButtonObject>();
+	std::shared_ptr<ButtonObject> buttonTest = std::make_shared<ButtonObject>(); //Move to class member?
 
 
 }
