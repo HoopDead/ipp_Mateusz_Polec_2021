@@ -24,6 +24,7 @@ Stworzenie własnego silnika gier na podstawie biblioteki SFML nastawionego pod 
 - [] Stworzenie menadżera Dialogów,
 - [] Stworzenie silnika cutscenes (?)
 - [] Stworzenie shaderów do imitacji nocy, pogody
+- [] Stworzenie Button Managerów,
 - [] Stworzenie menu,
 - [x] Stworzenie prostej mapy,
 - [] Stworzenie systemu umiejętności,
