@@ -31,11 +31,11 @@
     <Filter Include="Source Files\Map">
       <UniqueIdentifier>{63296919-e32f-4aae-8ce7-61aa62e635f2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Buttons">
-      <UniqueIdentifier>{7d6947b7-925e-427c-862a-deadd1004ca7}</UniqueIdentifier>
+    <Filter Include="Header Files\Text">
+      <UniqueIdentifier>{d7b42189-6679-46c9-87c3-adaa4fbdbfa3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Buttons">
-      <UniqueIdentifier>{92200882-30c1-43d5-9982-3de3bd500d1e}</UniqueIdentifier>
+    <Filter Include="Source Files\Text">
+      <UniqueIdentifier>{9b5700e7-ec58-42d1-be32-4f238523efbf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -102,11 +102,11 @@
     <ClCompile Include="SceneMenu.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="ButtonObject.cpp">
-      <Filter>Source Files\Buttons</Filter>
+    <ClCompile Include="TextTemplate.cpp">
+      <Filter>Source Files\Text</Filter>
     </ClCompile>
-    <ClCompile Include="ButtonCollection.cpp">
-      <Filter>Source Files\Buttons</Filter>
+    <ClCompile Include="TextCollection.cpp">
+      <Filter>Source Files\Text</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -191,14 +191,11 @@
     <ClInclude Include="SceneMenu.hpp">
       <Filter>Header Files\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="Button.hpp">
-      <Filter>Header Files\Buttons</Filter>
+    <ClInclude Include="TextTemplate.hpp">
+      <Filter>Header Files\Text</Filter>
     </ClInclude>
-    <ClInclude Include="ButtonObject.hpp">
-      <Filter>Header Files\Buttons</Filter>
-    </ClInclude>
-    <ClInclude Include="ButtonCollection.hpp">
-      <Filter>Header Files\Buttons</Filter>
+    <ClInclude Include="TextCollection.hpp">
+      <Filter>Header Files\Text</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

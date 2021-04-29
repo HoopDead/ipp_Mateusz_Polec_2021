@@ -7,8 +7,18 @@ SceneMenu::SceneMenu(Window& window) : m_window(window) {
 void SceneMenu::OnCreate() {
 	Log("Called Scene Menu OnCreate Method");
 
-	std::shared_ptr<ButtonObject> buttonTest = std::make_shared<ButtonObject>(); //Move to class member?
+	std::shared_ptr<TextTemplate> test = std::make_shared<TextTemplate>();
 
+	test->Awake();
+	test->SetText("abcdefg");
+	test->SetPosition(300, 300);
+	test->SetFontSize(24);
+	test->SetColor(255, 255, 255);
+
+	m_textCollection.Add(test);
+
+
+	m_textCollection.Awake();
 
 }
 
@@ -29,6 +39,7 @@ void SceneMenu::LateUpdate(float deltaTime) {
 }
 
 void SceneMenu::Draw(Window& window) {
+	m_textCollection.Draw(window);
 
 }
 

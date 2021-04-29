@@ -21,8 +21,6 @@
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Bitmask.cpp" />
-    <ClCompile Include="ButtonCollection.cpp" />
-    <ClCompile Include="ButtonObject.cpp" />
     <ClCompile Include="Component_Animation.cpp" />
     <ClCompile Include="Component_BoxCollider.cpp" />
     <ClCompile Include="Component_Camera.cpp" />
@@ -41,14 +39,13 @@
     <ClCompile Include="SceneGame.cpp" />
     <ClCompile Include="SceneMenu.cpp" />
     <ClCompile Include="SceneStateMachine.cpp" />
+    <ClCompile Include="TextCollection.cpp" />
+    <ClCompile Include="TextTemplate.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.hpp" />
     <ClInclude Include="Bitmask.hpp" />
-    <ClInclude Include="Button.hpp" />
-    <ClInclude Include="ButtonCollection.hpp" />
-    <ClInclude Include="ButtonObject.hpp" />
     <ClInclude Include="Component.hpp" />
     <ClInclude Include="Component_Animation.hpp" />
     <ClInclude Include="Component_BoxCollider.hpp" />
@@ -73,6 +70,8 @@
     <ClInclude Include="SceneStateMachine.hpp" />
     <ClInclude Include="MapLoader.hpp" />
     <ClInclude Include="Setup.hpp" />
+    <ClInclude Include="TextCollection.hpp" />
+    <ClInclude Include="TextTemplate.hpp" />
     <ClInclude Include="Window.hpp" />
   </ItemGroup>
   <ItemGroup>

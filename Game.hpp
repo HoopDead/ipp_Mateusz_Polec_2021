@@ -5,6 +5,7 @@
 #include "SceneGame.hpp"
 #include "SceneMenu.hpp"
 #include "ResourceAllocator.hpp"
+#include "Informations.hpp"
 
 class Game {
 

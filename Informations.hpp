@@ -1,6 +1,6 @@
 #pragma once
 #include <thread>
-
+#include <iostream>
 
 /*
 * /\/\/\/\/\/\/\/\/\/\/\/\
@@ -28,3 +28,10 @@ const unsigned int TWO_POWER_OF_THREE = 8;
 */
 
 const unsigned int hardware_threads_count = std::max(1u, std::thread::hardware_concurrency());
+
+
+/*
+* /\/\/\/\/\/\/\/\/\/\/\/\
+* /\ FONT INFORMATION /\
+* /\/\/\/\/\/\/\/\/\/\/\/\
+*/
