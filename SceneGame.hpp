@@ -15,7 +15,6 @@
 #include "Component_Camera.hpp"
 #include "Component_MovementAnimation.hpp"
 #include "Component_Velocity.hpp"
-#include "Component_Renderer.hpp"
 
 class SceneGame : public Scene {
 

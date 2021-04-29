@@ -97,7 +97,7 @@ public:
 	*/
 	~Window();
 
-private:
+public:
 
 	sf::RenderWindow m_window;
 };

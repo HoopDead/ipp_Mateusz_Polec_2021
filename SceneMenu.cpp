@@ -31,6 +31,7 @@ void SceneMenu::ProcessInput() {
 }
 
 void SceneMenu::Update(float deltaTime) {
+	m_textCollection.Update(deltaTime);
 
 }
 

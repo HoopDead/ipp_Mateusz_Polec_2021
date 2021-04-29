@@ -63,6 +63,7 @@ bool Window::IsOpen() const {
 	return m_window.isOpen();
 }
 
+
 Window::~Window() {
 	Log("Called Window Destructor");
 }

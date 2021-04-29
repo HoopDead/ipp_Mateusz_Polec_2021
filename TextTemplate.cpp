@@ -21,6 +21,13 @@ void TextTemplate::Awake() {
 
 
 void TextTemplate::Update(float deltaTime) {
+
+	auto mouse_pos = sf::Mouse::getPosition();
+	sf::Vector2f mousePos = { (float)mouse_pos.x, (float)mouse_pos.y };
+	if (m_text.getGlobalBounds().contains(mousePos)) {
+		Log("MOUSE IN!");
+	}
+
 }
 
 void TextTemplate::Draw(Window& window) {

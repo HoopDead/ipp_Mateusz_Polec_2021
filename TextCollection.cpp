@@ -16,6 +16,7 @@ void TextCollection::Update(float deltaTime) {
 	}
 }
 
+
 void TextCollection::Draw(Window& window) {
 
 	for (const auto& t : m_texts) {
