@@ -5,6 +5,12 @@
 #include "Window.hpp"
 #include "Logs.hpp"
 
+
+enum class Type {
+	MENU,
+	GAME
+};
+
 class TextTemplate {
 
 public:
@@ -74,10 +80,10 @@ public:
 	/*
 	* SetFontSize method
 	* Set font size of m_text member
-	* @Param: const unsigned int size - size of font that we want in our text
+	* @Param: const unsigned float size - size of font that we want in our text
 	* @Return: -
 	*/
-	void SetFontSize(const unsigned int size);
+	void SetFontSize(const float size);
 
 	/*
 	* SetColor method
@@ -107,6 +113,22 @@ public:
 	void SetPosition(const float x, const float y);
 
 	/*
+	* SetType method
+	* Set Type of text to handle some hover actions
+	* @Param: Type type - type of text
+	* @Return: -
+	*/
+	void SetType(Type type);
+
+	/*
+	* GetType method
+	* Return immutable type of text
+	* @Param: -
+	* @Return: Type m_typeOfText - type of text from enum class Type
+	*/
+	Type GetType() const;
+
+	/*
 	* TextTemplate destructor
 	* Created only for test purposes
 	*/
@@ -115,5 +137,6 @@ public:
 private:
 	sf::Font m_font;
 	sf::Text m_text;
+	Type m_typeOfText;
 
 };

@@ -25,10 +25,10 @@ void TextTemplate::Update(float deltaTime) {
 	auto mouse_pos = sf::Mouse::getPosition();
 	sf::Vector2f mousePos = { (float)mouse_pos.x, (float)mouse_pos.y };
 	const sf::FloatRect text_rect = { m_text.getGlobalBounds().left, m_text.getGlobalBounds().top, m_text.getGlobalBounds().width + m_text.getCharacterSize(), m_text.getGlobalBounds().height + m_text.getCharacterSize() };
-	if (text_rect.contains(mousePos)) {
+	if (text_rect.contains(mousePos) && m_typeOfText == Type::MENU) {
 		SetColor(157, 173, 125);
 	}
-	else {
+	else if (!text_rect.contains(mousePos)) {
 		SetColor(255, 255, 255);
 	}
 
@@ -46,7 +46,7 @@ void TextTemplate::SetText(const std::string& text) {
 	m_text.setString(text);
 }
 
-void TextTemplate::SetFontSize(const unsigned int size) {
+void TextTemplate::SetFontSize(const float size) {
 	m_text.setCharacterSize(size);
 }
 
@@ -61,6 +61,14 @@ void TextTemplate::SetPosition(const sf::Vector2f& pos) {
 
 void TextTemplate::SetPosition(const float x, const float y) {
 	m_text.setPosition(x, y);
+}
+
+void TextTemplate::SetType(Type type) {
+	m_typeOfText = type;
+}
+
+Type TextTemplate::GetType() const {
+	return m_typeOfText;
 }
 
 
