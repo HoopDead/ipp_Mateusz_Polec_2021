@@ -7,15 +7,48 @@ SceneMenu::SceneMenu(Window& window) : m_window(window) {
 void SceneMenu::OnCreate() {
 	Log("Called Scene Menu OnCreate Method");
 
-	std::shared_ptr<TextTemplate> test = std::make_shared<TextTemplate>();
 
-	test->Awake();
-	test->SetText("abcdefg");
-	test->SetPosition(300, 300);
-	test->SetFontSize(24);
-	test->SetColor(255, 255, 255);
+	//NEW GAME BUTTON
+	std::shared_ptr<TextTemplate> NewGameButton = std::make_shared<TextTemplate>();
 
-	m_textCollection.Add(test);
+	NewGameButton->Awake();
+	NewGameButton->SetText("NEW GAME");
+	NewGameButton->SetPosition(300, 300);
+	NewGameButton->SetFontSize(32);
+	NewGameButton->SetColor(255, 255, 255);
+
+
+	//LOAD GAME BUTTON
+	std::shared_ptr<TextTemplate> LoadGameButton = std::make_shared<TextTemplate>();
+
+	LoadGameButton->Awake();
+	LoadGameButton->SetText("LOAD GAME");
+	LoadGameButton->SetPosition(300, 375);
+	LoadGameButton->SetFontSize(32);
+	LoadGameButton->SetColor(255, 255, 255);
+
+	//OPTIONS BUTTON
+	std::shared_ptr<TextTemplate> OptionsGameButton = std::make_shared<TextTemplate>();
+
+	OptionsGameButton->Awake();
+	OptionsGameButton->SetText("OPTIONS");
+	OptionsGameButton->SetPosition(300, 450);
+	OptionsGameButton->SetFontSize(32);
+	OptionsGameButton->SetColor(255, 255, 255);
+
+	//EXIT BUTTON
+	std::shared_ptr<TextTemplate> ExitGameButton = std::make_shared<TextTemplate>();
+
+	ExitGameButton->Awake();
+	ExitGameButton->SetText("EXIT GAME");
+	ExitGameButton->SetPosition(300, 525);
+	ExitGameButton->SetFontSize(32);
+	ExitGameButton->SetColor(255, 255, 255);
+
+	m_textCollection.Add(NewGameButton);
+	m_textCollection.Add(LoadGameButton);
+	m_textCollection.Add(OptionsGameButton);
+	m_textCollection.Add(ExitGameButton);
 
 
 	m_textCollection.Awake();
