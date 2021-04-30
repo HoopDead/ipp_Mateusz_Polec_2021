@@ -24,8 +24,12 @@ void TextTemplate::Update(float deltaTime) {
 
 	auto mouse_pos = sf::Mouse::getPosition();
 	sf::Vector2f mousePos = { (float)mouse_pos.x, (float)mouse_pos.y };
-	if (m_text.getGlobalBounds().contains(mousePos)) {
-		Log("MOUSE IN!");
+	const sf::FloatRect text_rect = { m_text.getGlobalBounds().left, m_text.getGlobalBounds().top, m_text.getGlobalBounds().width + m_text.getCharacterSize(), m_text.getGlobalBounds().height + m_text.getCharacterSize() };
+	if (text_rect.contains(mousePos)) {
+		SetColor(157, 173, 125);
+	}
+	else {
+		SetColor(255, 255, 255);
 	}
 
 }
