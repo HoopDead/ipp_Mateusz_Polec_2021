@@ -129,14 +129,33 @@ public:
 	Type GetType() const;
 
 	/*
+	* QueueForRemoval method
+	* Set m_queuedForRemoval boolean to true
+	* @Param: -
+	* @Return: -
+	*/
+	void QueueForRemoval();
+
+	/*
+	* IsQueuedForRemoval method
+	* Return m_isQueuedForRemoval member
+	* @Param: -
+	* @Return: bool m_isQueuedForRemoval
+	*/
+	bool IsQueuedForRemoval() const;
+
+
+	/*
 	* TextTemplate destructor
 	* Created only for test purposes
 	*/
 	~TextTemplate();
 
+
 private:
 	sf::Font m_font;
 	sf::Text m_text;
 	Type m_typeOfText;
+	bool m_isQueuedForRemoval = false;
 
 };

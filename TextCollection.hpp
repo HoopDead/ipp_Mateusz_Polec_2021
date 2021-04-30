@@ -49,6 +49,8 @@ public:
 
 	//TODO: Implement Remove method.
 
+	void ProcessRemoval();
+
 	/*
 	* Destructor of TextCollection Object
 	* Created only for test purposes.

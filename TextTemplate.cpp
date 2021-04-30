@@ -72,6 +72,14 @@ Type TextTemplate::GetType() const {
 }
 
 
+void TextTemplate::QueueForRemoval() {
+	m_isQueuedForRemoval = true;
+}
+
+bool TextTemplate::IsQueuedForRemoval() const {
+	return m_isQueuedForRemoval;
+}
+
 
 TextTemplate::~TextTemplate() {
 	Log("Called Text Template Destructor");
