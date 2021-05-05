@@ -113,6 +113,8 @@ public:
 	*/
 	void SetPosition(const float x, const float y);
 
+	sf::Vector2f GetDimensions() const;
+
 	/*
 	* SetType method
 	* Set Type of text to handle some hover actions

@@ -13,7 +13,7 @@ void SceneMenu::OnCreate() {
 
 	NewGameButton->Awake();
 	NewGameButton->SetText("NEW GAME");
-	NewGameButton->SetPosition(300, 300);
+	NewGameButton->SetPosition(m_window.GetCenter() - NewGameButton->GetDimensions());
 	NewGameButton->SetFontSize(32);
 	NewGameButton->SetColor(255, 255, 255);
 	NewGameButton->SetType(Type::MENU);
@@ -24,7 +24,7 @@ void SceneMenu::OnCreate() {
 
 	LoadGameButton->Awake();
 	LoadGameButton->SetText("LOAD GAME");
-	LoadGameButton->SetPosition(300, 375);
+	LoadGameButton->SetPosition(m_window.GetCenter().x - LoadGameButton->GetDimensions().x, m_window.GetCenter().y - LoadGameButton->GetDimensions().y + 75);
 	LoadGameButton->SetFontSize(32);
 	LoadGameButton->SetColor(255, 255, 255);
 	LoadGameButton->SetType(Type::MENU);
@@ -36,17 +36,19 @@ void SceneMenu::OnCreate() {
 
 	OptionsGameButton->Awake();
 	OptionsGameButton->SetText("OPTIONS");
-	OptionsGameButton->SetPosition(300, 450);
+	OptionsGameButton->SetPosition(m_window.GetCenter().x - OptionsGameButton->GetDimensions().x, m_window.GetCenter().y - OptionsGameButton->GetDimensions().y + 150);
 	OptionsGameButton->SetFontSize(32);
 	OptionsGameButton->SetColor(255, 255, 255);
 	OptionsGameButton->SetType(Type::MENU);
+	auto OptionsModalAction = OptionsGameButton->AddAction<TextAction_Options>();
+	OptionsModalAction->SetModal(&m_modalOptions);
 
 	//EXIT BUTTON
 	std::shared_ptr<TextTemplate> ExitGameButton = std::make_shared<TextTemplate>();
 
 	ExitGameButton->Awake();
 	ExitGameButton->SetText("EXIT GAME");
-	ExitGameButton->SetPosition(300, 525);
+	ExitGameButton->SetPosition(m_window.GetCenter().x - ExitGameButton->GetDimensions().x, m_window.GetCenter().y - ExitGameButton->GetDimensions().y + 225);
 	ExitGameButton->SetFontSize(32);
 	ExitGameButton->SetColor(255, 255, 255);
 	ExitGameButton->SetType(Type::MENU);
@@ -60,6 +62,8 @@ void SceneMenu::OnCreate() {
 
 
 	m_textCollection.Awake();
+
+	m_modalOptions.Initialise();
 
 }
 
@@ -83,6 +87,7 @@ void SceneMenu::LateUpdate(float deltaTime) {
 
 void SceneMenu::Draw(Window& window) {
 	m_textCollection.Draw(window);
+	m_modalOptions.Draw(window);
 
 }
 

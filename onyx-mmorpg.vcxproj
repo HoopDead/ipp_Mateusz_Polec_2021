@@ -34,13 +34,16 @@
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MapRenderer.cpp" />
+    <ClCompile Include="ModalOptions.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectCollection.cpp" />
     <ClCompile Include="SceneGame.cpp" />
     <ClCompile Include="SceneMenu.cpp" />
     <ClCompile Include="SceneStateMachine.cpp" />
+    <ClCompile Include="Setup.cpp" />
     <ClCompile Include="TextAction_Exit.cpp" />
     <ClCompile Include="TextAction_LoadGame.cpp" />
+    <ClCompile Include="TextAction_Options.cpp" />
     <ClCompile Include="TextCollection.cpp" />
     <ClCompile Include="TextTemplate.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -63,6 +66,8 @@
     <ClInclude Include="Input.hpp" />
     <ClInclude Include="Logs.hpp" />
     <ClInclude Include="MapRenderer.h" />
+    <ClInclude Include="ModalOptions.hpp" />
+    <ClInclude Include="ModalTemplate.hpp" />
     <ClInclude Include="Object.hpp" />
     <ClInclude Include="ObjectCollection.hpp" />
     <ClInclude Include="ResourceAllocator.hpp" />
@@ -75,6 +80,7 @@
     <ClInclude Include="TextAction.hpp" />
     <ClInclude Include="TextAction_Exit.hpp" />
     <ClInclude Include="TextAction_LoadGame.hpp" />
+    <ClInclude Include="TextAction_Options.hpp" />
     <ClInclude Include="TextCollection.hpp" />
     <ClInclude Include="TextTemplate.hpp" />
     <ClInclude Include="Window.hpp" />

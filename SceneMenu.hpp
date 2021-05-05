@@ -8,6 +8,8 @@
 #include "TextCollection.hpp"
 #include "TextAction_Exit.hpp"
 #include "TextAction_LoadGame.hpp"
+#include "TextAction_Options.hpp"
+#include "ModalOptions.hpp"
 
 class SceneMenu : public Scene {
 
@@ -41,4 +43,5 @@ private:
 	Window& m_window;
 	TextCollection m_textCollection;
 	SceneStateMachine* m_sceneStateMachine;
+	ModalOptions m_modalOptions;
 };

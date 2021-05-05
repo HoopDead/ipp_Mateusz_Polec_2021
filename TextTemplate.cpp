@@ -70,6 +70,11 @@ void TextTemplate::SetPosition(const float x, const float y) {
 	m_text.setPosition(x, y);
 }
 
+sf::Vector2f TextTemplate::GetDimensions() const {
+	const sf::Vector2f textDimensions = { m_text.getLocalBounds().width / 2, m_text.getLocalBounds().height / 2 };
+	return textDimensions;
+}
+
 void TextTemplate::SetType(Type type) {
 	m_typeOfText = type;
 }

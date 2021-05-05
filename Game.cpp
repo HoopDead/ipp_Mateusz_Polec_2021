@@ -11,7 +11,10 @@ Game::Game() : m_window("Onyx Game DEV 1.0.2") {
 	sceneStateMachine.SwitchTo(menuSceneID);
 
 	m_deltaTime = m_clock.restart().asSeconds();
-	Log("Called Game Constructor");
+
+	m_setup.LoadDeviceInfo();
+
+	m_window.SetSetup(&m_setup);
 }
 
 void Game::ConsumeInput() {

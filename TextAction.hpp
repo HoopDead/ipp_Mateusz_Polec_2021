@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Logs.hpp"
+#include "Window.hpp"
 
 
 class TextTemplate;
@@ -14,6 +15,8 @@ public:
 	}
 
 	virtual void RunAction() {};
+
+	virtual void Draw(Window& window) {};
 
 	~TextAction() {
 		Log("Called TextAction destructor");

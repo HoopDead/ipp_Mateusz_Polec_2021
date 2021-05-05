@@ -6,6 +6,7 @@
 #include "SceneMenu.hpp"
 #include "ResourceAllocator.hpp"
 #include "Informations.hpp"
+#include "Setup.hpp"
 
 class Game {
 
@@ -88,5 +89,7 @@ private:
 	//Handling resources for textures
 	ResourceAllocator<sf::Texture> m_textureAllocator;
 
+	//Setup for whole game
+	Setup m_setup;
 
 };

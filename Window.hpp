@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include "Logs.hpp"
+#include "Setup.hpp"
 
 class Window {
 
@@ -90,7 +91,22 @@ public:
 	bool IsOpen() const;
 
 
+	/*
+	* Exit Method
+	* Method that closes the window - created for buttons
+	* @Param: -
+	* @Return: -
+	*/
 	void Exit();
+
+
+	/*
+	* SetSetup method
+	* Sets the m_setup member
+	* @Param: Setup* setup - pointer to setup
+	* @Return: -
+	*/
+	void SetSetup(Setup* setup);
 
 	/*
 	* Destructor of Window object
@@ -103,4 +119,5 @@ public:
 public:
 
 	sf::RenderWindow m_window;
+	Setup* m_setup;
 };

@@ -18,8 +18,7 @@ void Window::Update() {
 		}
 	}
 
-	sf::Vector2u windowSize = { 1920, 1080 };
-	m_window.setSize(windowSize);
+	m_window.setSize(m_setup->GetResolution());
 
 
 }
@@ -65,6 +64,10 @@ bool Window::IsOpen() const {
 
 void Window::Exit() {
 	m_window.close();
+}
+
+void Window::SetSetup(Setup* setup) {
+	m_setup = setup;
 }
 
 
