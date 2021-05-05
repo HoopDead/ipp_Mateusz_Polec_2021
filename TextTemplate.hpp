@@ -184,5 +184,6 @@ private:
 	Type m_typeOfText;
 	bool m_isQueuedForRemoval = false;
 	std::vector<std::shared_ptr<TextAction>> m_actions;
+	bool m_isMousePressed = false;
 
 };

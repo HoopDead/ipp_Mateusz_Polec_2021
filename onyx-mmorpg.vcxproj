@@ -42,6 +42,7 @@
     <ClCompile Include="SceneStateMachine.cpp" />
     <ClCompile Include="Setup.cpp" />
     <ClCompile Include="TextAction_Exit.cpp" />
+    <ClCompile Include="TextAction_ExitOptionsModal.cpp" />
     <ClCompile Include="TextAction_LoadGame.cpp" />
     <ClCompile Include="TextAction_Options.cpp" />
     <ClCompile Include="TextCollection.cpp" />
@@ -79,6 +80,7 @@
     <ClInclude Include="Setup.hpp" />
     <ClInclude Include="TextAction.hpp" />
     <ClInclude Include="TextAction_Exit.hpp" />
+    <ClInclude Include="TextAction_ExitOptionsModal.hpp" />
     <ClInclude Include="TextAction_LoadGame.hpp" />
     <ClInclude Include="TextAction_Options.hpp" />
     <ClInclude Include="TextCollection.hpp" />

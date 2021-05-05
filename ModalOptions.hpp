@@ -2,6 +2,9 @@
 
 #include "ModalTemplate.hpp"
 #include "Window.hpp"
+#include "TextTemplate.hpp"
+#include "TextCollection.hpp"
+#include "TextAction_ExitOptionsModal.hpp"
 
 class ModalOptions : public ModalTemplate {
 public:
@@ -9,6 +12,8 @@ public:
 	ModalOptions();
 
 	void Initialise() override;
+
+	void Update(float deltaTime) override;
 
 	void Draw(Window& window) override;
 
@@ -24,4 +29,7 @@ private:
 
 	bool m_isActive;
 	sf::RectangleShape m_modalRect;
+	TextCollection m_textCollection;
+	std::shared_ptr<TextTemplate> ExitModalButton;
+
 };

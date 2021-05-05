@@ -11,5 +11,7 @@ public:
 
 	virtual void Draw(Window& window) {};
 
+	virtual void Update(float deltaTime) {};
+
 	~ModalTemplate() {};
 };

@@ -43,6 +43,12 @@
     <Filter Include="Source Files\Modals">
       <UniqueIdentifier>{1c56e7af-af7a-46b6-9ec8-45d248faffdb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Text\TextAction">
+      <UniqueIdentifier>{714a284c-157c-4831-bb63-97c2cc95c57f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Text\TextAction">
+      <UniqueIdentifier>{87e2bca4-0a57-4293-8c32-ee464076f628}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -114,20 +120,23 @@
     <ClCompile Include="TextCollection.cpp">
       <Filter>Source Files\Text</Filter>
     </ClCompile>
-    <ClCompile Include="TextAction_Exit.cpp">
-      <Filter>Source Files\Text</Filter>
-    </ClCompile>
-    <ClCompile Include="TextAction_LoadGame.cpp">
-      <Filter>Source Files\Text</Filter>
-    </ClCompile>
     <ClCompile Include="Setup.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TextAction_Options.cpp">
-      <Filter>Source Files\Text</Filter>
-    </ClCompile>
     <ClCompile Include="ModalOptions.cpp">
       <Filter>Source Files\Modals</Filter>
+    </ClCompile>
+    <ClCompile Include="TextAction_Options.cpp">
+      <Filter>Source Files\Text\TextAction</Filter>
+    </ClCompile>
+    <ClCompile Include="TextAction_Exit.cpp">
+      <Filter>Source Files\Text\TextAction</Filter>
+    </ClCompile>
+    <ClCompile Include="TextAction_ExitOptionsModal.cpp">
+      <Filter>Source Files\Text\TextAction</Filter>
+    </ClCompile>
+    <ClCompile Include="TextAction_LoadGame.cpp">
+      <Filter>Source Files\Text\TextAction</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -218,23 +227,26 @@
     <ClInclude Include="TextCollection.hpp">
       <Filter>Header Files\Text</Filter>
     </ClInclude>
-    <ClInclude Include="TextAction.hpp">
-      <Filter>Header Files\Text</Filter>
-    </ClInclude>
-    <ClInclude Include="TextAction_Exit.hpp">
-      <Filter>Header Files\Text</Filter>
-    </ClInclude>
-    <ClInclude Include="TextAction_LoadGame.hpp">
-      <Filter>Header Files\Text</Filter>
-    </ClInclude>
-    <ClInclude Include="TextAction_Options.hpp">
-      <Filter>Header Files\Text</Filter>
-    </ClInclude>
     <ClInclude Include="ModalTemplate.hpp">
       <Filter>Header Files\Modals</Filter>
     </ClInclude>
     <ClInclude Include="ModalOptions.hpp">
       <Filter>Header Files\Modals</Filter>
+    </ClInclude>
+    <ClInclude Include="TextAction.hpp">
+      <Filter>Header Files\Text\TextAction</Filter>
+    </ClInclude>
+    <ClInclude Include="TextAction_Exit.hpp">
+      <Filter>Header Files\Text\TextAction</Filter>
+    </ClInclude>
+    <ClInclude Include="TextAction_LoadGame.hpp">
+      <Filter>Header Files\Text\TextAction</Filter>
+    </ClInclude>
+    <ClInclude Include="TextAction_Options.hpp">
+      <Filter>Header Files\Text\TextAction</Filter>
+    </ClInclude>
+    <ClInclude Include="TextAction_ExitOptionsModal.hpp">
+      <Filter>Header Files\Text\TextAction</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

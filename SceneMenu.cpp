@@ -77,7 +77,12 @@ void SceneMenu::ProcessInput() {
 }
 
 void SceneMenu::Update(float deltaTime) {
-	m_textCollection.Update(deltaTime);
+	if (!m_modalOptions.IsActive()) {
+		m_textCollection.Update(deltaTime);
+	}
+	else {
+		m_modalOptions.Update(deltaTime);
+	}
 
 }
 

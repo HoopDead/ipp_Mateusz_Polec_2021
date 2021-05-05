@@ -10,10 +10,7 @@ void TextAction_Options::SetModal(ModalOptions* modal) {
 
 void TextAction_Options::RunAction() {
 	
-	if (m_modal->IsActive()) {
-		m_modal->Deactivate();
-	}
-	else {
+	if (!m_modal->IsActive()) {
 		m_modal->Activate();
 	}
 }
