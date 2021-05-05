@@ -40,6 +40,7 @@
     <ClCompile Include="SceneMenu.cpp" />
     <ClCompile Include="SceneStateMachine.cpp" />
     <ClCompile Include="TextAction_Exit.cpp" />
+    <ClCompile Include="TextAction_LoadGame.cpp" />
     <ClCompile Include="TextCollection.cpp" />
     <ClCompile Include="TextTemplate.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -73,6 +74,7 @@
     <ClInclude Include="Setup.hpp" />
     <ClInclude Include="TextAction.hpp" />
     <ClInclude Include="TextAction_Exit.hpp" />
+    <ClInclude Include="TextAction_LoadGame.hpp" />
     <ClInclude Include="TextCollection.hpp" />
     <ClInclude Include="TextTemplate.hpp" />
     <ClInclude Include="Window.hpp" />

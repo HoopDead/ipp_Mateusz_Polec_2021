@@ -111,6 +111,9 @@
     <ClCompile Include="TextAction_Exit.cpp">
       <Filter>Source Files\Text</Filter>
     </ClCompile>
+    <ClCompile Include="TextAction_LoadGame.cpp">
+      <Filter>Source Files\Text</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.hpp">
@@ -204,6 +207,9 @@
       <Filter>Header Files\Text</Filter>
     </ClInclude>
     <ClInclude Include="TextAction_Exit.hpp">
+      <Filter>Header Files\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="TextAction_LoadGame.hpp">
       <Filter>Header Files\Text</Filter>
     </ClInclude>
   </ItemGroup>

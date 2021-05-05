@@ -2,16 +2,18 @@
 
 #include "Scene.hpp"
 #include "Window.hpp"
+#include "SceneStateMachine.hpp"
 #include "Logs.hpp"
 #include "TextTemplate.hpp"
 #include "TextCollection.hpp"
-
 #include "TextAction_Exit.hpp"
+#include "TextAction_LoadGame.hpp"
+
 class SceneMenu : public Scene {
 
 public:
 	//TODO: Documentation
-	SceneMenu(Window& window);
+	SceneMenu(Window& window, SceneStateMachine* sceneStateMachine);
 
 	//TODO: Documentation
 	void OnCreate() override;
@@ -38,4 +40,5 @@ private:
 
 	Window& m_window;
 	TextCollection m_textCollection;
+	SceneStateMachine* m_sceneStateMachine;
 };

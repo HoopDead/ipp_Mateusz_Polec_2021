@@ -1,6 +1,6 @@
 #include "SceneMenu.hpp"
 
-SceneMenu::SceneMenu(Window& window) : m_window(window) {
+SceneMenu::SceneMenu(Window& window, SceneStateMachine* sceneStateMachine) : m_window(window), m_sceneStateMachine(sceneStateMachine) {
 	Log("Called Scene Menu Constructor");
 }
 
@@ -28,6 +28,8 @@ void SceneMenu::OnCreate() {
 	LoadGameButton->SetFontSize(32);
 	LoadGameButton->SetColor(255, 255, 255);
 	LoadGameButton->SetType(Type::MENU);
+	auto LoadGameAction = LoadGameButton->AddAction<TextAction_LoadGame>();
+	LoadGameAction->SetSceneStateMachine(m_sceneStateMachine);
 
 	//OPTIONS BUTTON
 	std::shared_ptr<TextTemplate> OptionsGameButton = std::make_shared<TextTemplate>();
