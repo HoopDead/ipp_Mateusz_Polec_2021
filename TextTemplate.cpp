@@ -27,6 +27,13 @@ void TextTemplate::Update(float deltaTime) {
 	const sf::FloatRect text_rect = { m_text.getGlobalBounds().left, m_text.getGlobalBounds().top, m_text.getGlobalBounds().width + m_text.getCharacterSize(), m_text.getGlobalBounds().height + m_text.getCharacterSize() };
 	if (text_rect.contains(mousePos) && m_typeOfText == Type::MENU) {
 		SetColor(157, 173, 125);
+
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+			for (const auto& action : m_actions) {
+				action->RunAction();
+			}
+		}
+
 	}
 	else if (!text_rect.contains(mousePos)) {
 		SetColor(255, 255, 255);

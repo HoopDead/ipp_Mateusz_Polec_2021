@@ -89,6 +89,9 @@ public:
 	*/
 	bool IsOpen() const;
 
+
+	void Exit();
+
 	/*
 	* Destructor of Window object
 	* Created only for tests purposes

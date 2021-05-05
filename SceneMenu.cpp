@@ -48,6 +48,8 @@ void SceneMenu::OnCreate() {
 	ExitGameButton->SetFontSize(32);
 	ExitGameButton->SetColor(255, 255, 255);
 	ExitGameButton->SetType(Type::MENU);
+	auto ExitAction = ExitGameButton->AddAction<TextAction_Exit>();
+	ExitAction->SetWindow(&m_window);
 
 	m_textCollection.Add(NewGameButton);
 	m_textCollection.Add(LoadGameButton);
@@ -60,6 +62,7 @@ void SceneMenu::OnCreate() {
 }
 
 void SceneMenu::OnDestroy() {
+	Log("Destroy!");
 
 }
 

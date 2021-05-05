@@ -6,6 +6,7 @@
 #include "TextTemplate.hpp"
 #include "TextCollection.hpp"
 
+#include "TextAction_Exit.hpp"
 class SceneMenu : public Scene {
 
 public:

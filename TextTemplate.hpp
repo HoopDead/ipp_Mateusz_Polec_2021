@@ -4,6 +4,7 @@
 
 #include "Window.hpp"
 #include "Logs.hpp"
+#include "TextAction.hpp"
 
 
 enum class Type {
@@ -144,6 +145,29 @@ public:
 	*/
 	bool IsQueuedForRemoval() const;
 
+	template <typename T> std::shared_ptr<T> AddAction() // 1
+	{
+		//Check, if class based to template is derivered from Compontent
+		static_assert(std::is_base_of<TextAction, T>::value,
+			"T must derive from TextAction");
+
+		//Check, if any Compontent of this type exstsis in vector
+		for (auto& exisitingAction : m_actions)
+		{
+
+			//Security for now to prevent adding two components twice
+			if (std::dynamic_pointer_cast<T>(exisitingAction))
+			{
+				return std::dynamic_pointer_cast<T>(exisitingAction); // 2
+			}
+		}
+
+		std::shared_ptr<T> newAction = std::make_shared<T>(this);
+		m_actions.push_back(newAction);
+
+		return newAction;
+	};
+
 
 	/*
 	* TextTemplate destructor
@@ -157,5 +181,6 @@ private:
 	sf::Text m_text;
 	Type m_typeOfText;
 	bool m_isQueuedForRemoval = false;
+	std::vector<std::shared_ptr<TextAction>> m_actions;
 
 };
