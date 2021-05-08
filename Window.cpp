@@ -2,7 +2,7 @@
 
 
 Window::Window(const std::string& windowName)
-	: m_window(sf::VideoMode(1920, 1080), windowName) {
+	: m_window(sf::VideoMode(1920, 1080, 32), windowName) {
 	m_window.setVerticalSyncEnabled(true);
 	Log("Called Window Constructor");
 }
@@ -18,7 +18,10 @@ void Window::Update() {
 		}
 	}
 
-	m_window.setSize(m_setup->GetResolution());
+
+	sf::Vector2u res = { m_setup->GetResolution().width, m_setup->GetResolution().height };
+
+	m_window.setSize(res);
 
 
 }
@@ -68,6 +71,10 @@ void Window::Exit() {
 
 void Window::SetSetup(Setup* setup) {
 	m_setup = setup;
+}
+
+void Window::ResizeToResolution() {
+	m_window.create(sf::VideoMode(m_setup->GetResolution().width, m_setup->GetResolution().height, 32), "XD", sf::Style::Fullscreen);
 }
 
 

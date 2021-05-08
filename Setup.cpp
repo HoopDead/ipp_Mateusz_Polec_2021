@@ -6,8 +6,8 @@ Setup::Setup() {
 
 void Setup::LoadDeviceInfo() {
 
-	m_resolution.x = sf::VideoMode::getDesktopMode().width;
-	m_resolution.y = sf::VideoMode::getDesktopMode().height;
+	m_resolution.width = sf::VideoMode::getDesktopMode().width;
+	m_resolution.height = sf::VideoMode::getDesktopMode().height;
 	Log("Load Device Info Method set");
 	
 }
@@ -16,7 +16,16 @@ void Setup::SetupGameOptions() {
 
 }
 
-sf::Vector2u Setup::GetResolution() const {
+void Setup::SetResolution(unsigned int x, unsigned int y) {
+	m_resolution.width = x;
+	m_resolution.height = y;
+}
+
+void Setup::SetResolution(sf::VideoMode resolution) {
+	m_resolution = resolution;
+}
+
+sf::VideoMode Setup::GetResolution() const {
 	return m_resolution;
 }
 

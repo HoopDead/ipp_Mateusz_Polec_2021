@@ -22,7 +22,12 @@ void TextCollection::Draw(Window& window) {
 	for (const auto& t : m_texts) {
 		t->Draw(window);
 	}
+}
 
+void TextCollection::Refresh() {
+	for (const auto& t : m_texts) {
+		t->Refresh();
+	}
 }
 
 void TextCollection::Add(std::shared_ptr<TextTemplate> text) {

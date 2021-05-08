@@ -23,9 +23,13 @@ public:
 
 	void SetupGameOptions();
 
-	sf::Vector2u GetResolution() const;
+	void SetResolution(unsigned int x, unsigned int y);
+	
+	void SetResolution(sf::VideoMode resolution);
+
+	sf::VideoMode GetResolution() const;
 
 	~Setup();
 private:
-	sf::Vector2u m_resolution;
+	sf::VideoMode m_resolution;
 };

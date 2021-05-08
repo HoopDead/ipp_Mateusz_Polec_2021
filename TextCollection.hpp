@@ -39,6 +39,9 @@ public:
 	*/
 	void Draw(Window& window);
 
+
+	void Refresh();
+
 	/*
 	* Add Method
 	* Add new text to m_texts member

@@ -5,13 +5,14 @@
 #include "TextTemplate.hpp"
 #include "TextCollection.hpp"
 #include "TextAction_ExitOptionsModal.hpp"
+#include "TextAction_ChangeResolution.hpp"
 
 class ModalOptions : public ModalTemplate {
 public:
 
 	ModalOptions();
 
-	void Initialise(std::shared_ptr<Input> input, Setup* setup);
+	void Initialise(std::shared_ptr<Input> input, Setup* setup, Window* window);
 
 	void Update(float deltaTime) override;
 
@@ -35,5 +36,6 @@ private:
 	std::shared_ptr<TextTemplate> ResolutionText;
 	std::shared_ptr<Input> m_input;
 	Setup* m_setup;
+	Window* m_window;
 
 };

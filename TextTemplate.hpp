@@ -135,6 +135,8 @@ public:
 	*/
 	Type GetType() const;
 
+	void Refresh();
+
 	/*
 	* QueueForRemoval method
 	* Set m_queuedForRemoval boolean to true

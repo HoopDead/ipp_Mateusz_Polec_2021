@@ -13,22 +13,20 @@ void SceneMenu::OnCreate() {
 
 
 	//NEW GAME BUTTON
-	std::shared_ptr<TextTemplate> NewGameButton = std::make_shared<TextTemplate>(m_input);
+	NewGameButton = std::make_shared<TextTemplate>(m_input);
 
 	NewGameButton->Awake();
 	NewGameButton->SetText("NEW GAME");
-	NewGameButton->SetPosition(m_window.GetCenter() - NewGameButton->GetDimensions());
 	NewGameButton->SetFontSize(32);
 	NewGameButton->SetColor(255, 255, 255);
 	NewGameButton->SetType(Type::MENU);
 
 
 	//LOAD GAME BUTTON
-	std::shared_ptr<TextTemplate> LoadGameButton = std::make_shared<TextTemplate>(m_input);
+	LoadGameButton = std::make_shared<TextTemplate>(m_input);
 
 	LoadGameButton->Awake();
 	LoadGameButton->SetText("LOAD GAME");
-	LoadGameButton->SetPosition(m_window.GetCenter().x - LoadGameButton->GetDimensions().x, m_window.GetCenter().y - LoadGameButton->GetDimensions().y + 75);
 	LoadGameButton->SetFontSize(32);
 	LoadGameButton->SetColor(255, 255, 255);
 	LoadGameButton->SetType(Type::MENU);
@@ -36,11 +34,10 @@ void SceneMenu::OnCreate() {
 	LoadGameAction->SetSceneStateMachine(m_sceneStateMachine);
 
 	//OPTIONS BUTTON
-	std::shared_ptr<TextTemplate> OptionsGameButton = std::make_shared<TextTemplate>(m_input);
+	OptionsGameButton = std::make_shared<TextTemplate>(m_input);
 
 	OptionsGameButton->Awake();
 	OptionsGameButton->SetText("OPTIONS");
-	OptionsGameButton->SetPosition(m_window.GetCenter().x - OptionsGameButton->GetDimensions().x, m_window.GetCenter().y - OptionsGameButton->GetDimensions().y + 150);
 	OptionsGameButton->SetFontSize(32);
 	OptionsGameButton->SetColor(255, 255, 255);
 	OptionsGameButton->SetType(Type::MENU);
@@ -48,11 +45,10 @@ void SceneMenu::OnCreate() {
 	OptionsModalAction->SetModal(&m_modalOptions);
 
 	//EXIT BUTTON
-	std::shared_ptr<TextTemplate> ExitGameButton = std::make_shared<TextTemplate>(m_input);
+	ExitGameButton = std::make_shared<TextTemplate>(m_input);
 
 	ExitGameButton->Awake();
 	ExitGameButton->SetText("EXIT GAME");
-	ExitGameButton->SetPosition(m_window.GetCenter().x - ExitGameButton->GetDimensions().x, m_window.GetCenter().y - ExitGameButton->GetDimensions().y + 225);
 	ExitGameButton->SetFontSize(32);
 	ExitGameButton->SetColor(255, 255, 255);
 	ExitGameButton->SetType(Type::MENU);
@@ -67,7 +63,7 @@ void SceneMenu::OnCreate() {
 
 	m_textCollection.Awake();
 
-	m_modalOptions.Initialise(m_input, m_setup);
+	m_modalOptions.Initialise(m_input, m_setup, &m_window);
 
 }
 
@@ -95,6 +91,10 @@ void SceneMenu::LateUpdate(float deltaTime) {
 }
 
 void SceneMenu::Draw(Window& window) {
+	NewGameButton->SetPosition(m_window.GetCenter() - NewGameButton->GetDimensions());
+	LoadGameButton->SetPosition(m_window.GetCenter().x - LoadGameButton->GetDimensions().x, m_window.GetCenter().y - LoadGameButton->GetDimensions().y + 75);
+	OptionsGameButton->SetPosition(m_window.GetCenter().x - OptionsGameButton->GetDimensions().x, m_window.GetCenter().y - OptionsGameButton->GetDimensions().y + 150);
+	ExitGameButton->SetPosition(m_window.GetCenter().x - ExitGameButton->GetDimensions().x, m_window.GetCenter().y - ExitGameButton->GetDimensions().y + 225);
 	m_textCollection.Draw(window);
 	m_modalOptions.Draw(window);
 

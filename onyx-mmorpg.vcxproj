@@ -41,6 +41,7 @@
     <ClCompile Include="SceneMenu.cpp" />
     <ClCompile Include="SceneStateMachine.cpp" />
     <ClCompile Include="Setup.cpp" />
+    <ClCompile Include="TextAction_ChangeResolution.cpp" />
     <ClCompile Include="TextAction_Exit.cpp" />
     <ClCompile Include="TextAction_ExitOptionsModal.cpp" />
     <ClCompile Include="TextAction_LoadGame.cpp" />
@@ -79,6 +80,7 @@
     <ClInclude Include="MapLoader.hpp" />
     <ClInclude Include="Setup.hpp" />
     <ClInclude Include="TextAction.hpp" />
+    <ClInclude Include="TextAction_ChangeResolution.hpp" />
     <ClInclude Include="TextAction_Exit.hpp" />
     <ClInclude Include="TextAction_ExitOptionsModal.hpp" />
     <ClInclude Include="TextAction_LoadGame.hpp" />

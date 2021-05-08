@@ -47,4 +47,9 @@ private:
 	ModalOptions m_modalOptions;
 	std::shared_ptr<Input> m_input;
 	Setup* m_setup;
+
+	std::shared_ptr<TextTemplate> NewGameButton;
+	std::shared_ptr<TextTemplate> LoadGameButton;
+	std::shared_ptr<TextTemplate> OptionsGameButton;
+	std::shared_ptr<TextTemplate> ExitGameButton;
 };

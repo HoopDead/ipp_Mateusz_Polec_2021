@@ -65,6 +65,8 @@ public:
 	*/
 	void BeginDraw();
 
+	void ResizeToResolution();
+
 	/*
 	* draw method
 	* Called to draw everything on screen

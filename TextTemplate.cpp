@@ -29,9 +29,9 @@ void TextTemplate::Update(float deltaTime) {
 
 	auto mouse_pos = sf::Mouse::getPosition();
 	sf::Vector2f mousePos = { (float)mouse_pos.x, (float)mouse_pos.y };
-	const sf::FloatRect text_rect = { m_text.getGlobalBounds().left, m_text.getGlobalBounds().top, m_text.getGlobalBounds().width + m_text.getCharacterSize(), m_text.getGlobalBounds().height + m_text.getCharacterSize() };
+	const sf::FloatRect text_rect = { m_text.getGlobalBounds().left, m_text.getGlobalBounds().top, m_text.getGlobalBounds().width + m_text.getCharacterSize()* 1.5f, m_text.getGlobalBounds().height + m_text.getCharacterSize()* 1.5f };
 	if (text_rect.contains(mousePos) && m_typeOfText == Type::MENU) {
-		SetColor(157, 173, 125);
+		SetColor(232, 192, 14);
 		m_input->Update();
 		if (m_input->IsKeyDown(Input::Key::MouseLeft)) {
 			for (const auto& action : m_actions) {
@@ -88,6 +88,9 @@ Type TextTemplate::GetType() const {
 	return m_typeOfText;
 }
 
+void TextTemplate::Refresh() {
+	m_text.setPosition(m_text.getPosition());
+}
 
 void TextTemplate::QueueForRemoval() {
 	m_isQueuedForRemoval = true;
