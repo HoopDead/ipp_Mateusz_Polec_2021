@@ -26,8 +26,19 @@ void ModalOptions::Initialise(std::shared_ptr<Input> input, Setup* setup) {
 	ResolutionRawText->SetColor(255, 255, 255);
 	ResolutionRawText->SetType(Type::RAW);
 
+	ResolutionText = std::make_shared<TextTemplate>(m_input);
+
+	ResolutionText->Awake();
+	ResolutionText->SetText(std::to_string(m_setup->GetResolution().x) + "x" + std::to_string(m_setup->GetResolution().y));
+	ResolutionText->SetFontSize(20);
+	ResolutionText->SetColor(255, 255, 255);
+	ResolutionText->SetType(Type::MENU);
+
+
+
 	m_textCollection.Add(ExitModalButton);
 	m_textCollection.Add(ResolutionRawText);
+	m_textCollection.Add(ResolutionText);
 }
 
 void ModalOptions::Update(float deltaTime) {
@@ -41,6 +52,7 @@ void ModalOptions::Draw(Window& window) {
 		m_modalRect.setPosition(window.GetCenter().x - m_modalRect.getLocalBounds().width / 2, window.GetCenter().y - m_modalRect.getLocalBounds().height / 2);
 		ExitModalButton->SetPosition(window.GetCenter().x - ExitModalButton->GetDimensions().x, window.GetCenter().y + m_modalRect.getLocalBounds().height / 2.3);
 		ResolutionRawText->SetPosition(window.GetCenter().x - ResolutionRawText->GetDimensions().x, window.GetCenter().y - m_modalRect.getLocalBounds().height / 2.3);
+		ResolutionText->SetPosition(window.GetCenter().x - ResolutionText->GetDimensions().x, window.GetCenter().y - m_modalRect.getLocalBounds().height / 2.6);
 		window.Draw(m_modalRect);
 		m_textCollection.Draw(window);
 	}

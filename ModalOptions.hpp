@@ -32,6 +32,7 @@ private:
 	TextCollection m_textCollection;
 	std::shared_ptr<TextTemplate> ExitModalButton;
 	std::shared_ptr<TextTemplate> ResolutionRawText;
+	std::shared_ptr<TextTemplate> ResolutionText;
 	std::shared_ptr<Input> m_input;
 	Setup* m_setup;
 
