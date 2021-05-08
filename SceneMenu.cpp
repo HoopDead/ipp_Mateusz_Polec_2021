@@ -1,9 +1,10 @@
 #include "SceneMenu.hpp"
 
-SceneMenu::SceneMenu(Window& window, SceneStateMachine* sceneStateMachine, std::shared_ptr<Input> input) 
+SceneMenu::SceneMenu(Window& window, SceneStateMachine* sceneStateMachine, std::shared_ptr<Input> input, Setup* setup) 
 	: m_window(window), 
 	m_sceneStateMachine(sceneStateMachine),
-	m_input(input) {
+	m_input(input),
+	m_setup(setup) {
 	Log("Called Scene Menu Constructor");
 }
 
@@ -66,7 +67,7 @@ void SceneMenu::OnCreate() {
 
 	m_textCollection.Awake();
 
-	m_modalOptions.Initialise(m_input);
+	m_modalOptions.Initialise(m_input, m_setup);
 
 }
 

@@ -2,8 +2,9 @@
 
 ModalOptions::ModalOptions() : m_isActive(false) {}
 
-void ModalOptions::Initialise(std::shared_ptr<Input> input) {
+void ModalOptions::Initialise(std::shared_ptr<Input> input, Setup* setup) {
 	m_input = input;
+	m_setup = setup;
 	m_modalRect.setSize(sf::Vector2f(500, 700));
 	m_modalRect.setFillColor(sf::Color(13, 120, 186));
 
@@ -17,7 +18,16 @@ void ModalOptions::Initialise(std::shared_ptr<Input> input) {
 	auto ExitModalAction = ExitModalButton->AddAction<TextAction_ExitOptionsModal>();
 	ExitModalAction->SetModal(this);
 
+	ResolutionRawText = std::make_shared<TextTemplate>();
+
+	ResolutionRawText->Awake();
+	ResolutionRawText->SetText("RESOLUTION");
+	ResolutionRawText->SetFontSize(24);
+	ResolutionRawText->SetColor(255, 255, 255);
+	ResolutionRawText->SetType(Type::RAW);
+
 	m_textCollection.Add(ExitModalButton);
+	m_textCollection.Add(ResolutionRawText);
 }
 
 void ModalOptions::Update(float deltaTime) {
@@ -30,6 +40,7 @@ void ModalOptions::Draw(Window& window) {
 	if (m_isActive) {
 		m_modalRect.setPosition(window.GetCenter().x - m_modalRect.getLocalBounds().width / 2, window.GetCenter().y - m_modalRect.getLocalBounds().height / 2);
 		ExitModalButton->SetPosition(window.GetCenter().x - ExitModalButton->GetDimensions().x, window.GetCenter().y + m_modalRect.getLocalBounds().height / 2.3);
+		ResolutionRawText->SetPosition(window.GetCenter().x - ResolutionRawText->GetDimensions().x, window.GetCenter().y - m_modalRect.getLocalBounds().height / 2.3);
 		window.Draw(m_modalRect);
 		m_textCollection.Draw(window);
 	}

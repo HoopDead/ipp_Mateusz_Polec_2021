@@ -16,7 +16,7 @@ class SceneMenu : public Scene {
 
 public:
 	//TODO: Documentation
-	SceneMenu(Window& window, SceneStateMachine* sceneStateMachine, std::shared_ptr<Input> input);
+	SceneMenu(Window& window, SceneStateMachine* sceneStateMachine, std::shared_ptr<Input> input, Setup* setup);
 
 	//TODO: Documentation
 	void OnCreate() override;
@@ -46,4 +46,5 @@ private:
 	SceneStateMachine* m_sceneStateMachine;
 	ModalOptions m_modalOptions;
 	std::shared_ptr<Input> m_input;
+	Setup* m_setup;
 };

@@ -11,7 +11,7 @@
 enum class Type {
 	MENU,
 	GAME,
-	TEST
+	RAW
 };
 
 class TextTemplate {

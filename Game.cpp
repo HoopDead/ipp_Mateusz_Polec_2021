@@ -5,7 +5,7 @@ Game::Game() : m_window("Onyx Game DEV 1.0.2") {
 	m_input = std::make_shared<Input>();
 
 	std::shared_ptr<SceneGame> gameScene = std::make_shared<SceneGame>(m_textureAllocator, m_window, m_input);
-	std::shared_ptr<SceneMenu> menuScene = std::make_shared<SceneMenu>(m_window, &sceneStateMachine, m_input);
+	std::shared_ptr<SceneMenu> menuScene = std::make_shared<SceneMenu>(m_window, &sceneStateMachine, m_input, &m_setup);
 
 	unsigned int menuSceneID = sceneStateMachine.Add(menuScene);
 	unsigned int gameSceneID = sceneStateMachine.Add(gameScene);
