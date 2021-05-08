@@ -1,9 +1,13 @@
 #include "TextTemplate.hpp"
 
-TextTemplate::TextTemplate() {
+TextTemplate::TextTemplate() : m_input(nullptr) {
 	Log("Called TextTemplate Constructor");
 }
-TextTemplate::TextTemplate(const std::string& text, const float x, const float y, const float size, const int r, const int g, const int b) {
+
+TextTemplate::TextTemplate(std::shared_ptr<Input> input) : m_input(input) {}
+
+TextTemplate::TextTemplate(const std::string& text, const float x, const float y, const float size, const int r, const int g, const int b) : 
+	m_input(nullptr) {
 	SetText(text);
 	SetPosition(x, y);
 	SetFontSize(size);
@@ -22,13 +26,14 @@ void TextTemplate::Awake() {
 
 void TextTemplate::Update(float deltaTime) {
 
+
 	auto mouse_pos = sf::Mouse::getPosition();
 	sf::Vector2f mousePos = { (float)mouse_pos.x, (float)mouse_pos.y };
 	const sf::FloatRect text_rect = { m_text.getGlobalBounds().left, m_text.getGlobalBounds().top, m_text.getGlobalBounds().width + m_text.getCharacterSize(), m_text.getGlobalBounds().height + m_text.getCharacterSize() };
 	if (text_rect.contains(mousePos) && m_typeOfText == Type::MENU) {
 		SetColor(157, 173, 125);
-
-		if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+		m_input->Update();
+		if (m_input->IsKeyDown(Input::Key::MouseLeft)) {
 			for (const auto& action : m_actions) {
 				action->RunAction();
 			}

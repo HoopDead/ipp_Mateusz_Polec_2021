@@ -23,7 +23,7 @@ public:
 	* @Param: Input* input - pointer to Input class
 	* @Return: -
 	*/
-	void SetInput(Input* input);
+	void SetInput(std::shared_ptr<Input> input);
 
 	/*
 	* SetMovementSpeed Method
@@ -57,6 +57,6 @@ public:
 
 private:
 	int m_moveSpeed;
-	Input* m_input;
+	std::shared_ptr<Input> m_input;
 	std::shared_ptr<Component_Velocity> m_velocity;
 };

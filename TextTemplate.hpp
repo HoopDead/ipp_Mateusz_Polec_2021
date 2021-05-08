@@ -5,11 +5,13 @@
 #include "Window.hpp"
 #include "Logs.hpp"
 #include "TextAction.hpp"
+#include "Input.hpp"
 
 
 enum class Type {
 	MENU,
-	GAME
+	GAME,
+	TEST
 };
 
 class TextTemplate {
@@ -23,6 +25,8 @@ public:
 	* @Return: -
 	*/
 	TextTemplate();
+
+	TextTemplate(std::shared_ptr<Input> input);
 
 	/*
 	* TextTemplate Constructor (probably will be depracted)
@@ -185,5 +189,5 @@ private:
 	bool m_isQueuedForRemoval = false;
 	std::vector<std::shared_ptr<TextAction>> m_actions;
 	bool m_isMousePressed = false;
-
+	std::shared_ptr<Input> m_input;
 };

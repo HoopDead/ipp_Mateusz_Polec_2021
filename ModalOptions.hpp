@@ -11,7 +11,7 @@ public:
 
 	ModalOptions();
 
-	void Initialise() override;
+	void Initialise(std::shared_ptr<Input> input);
 
 	void Update(float deltaTime) override;
 
@@ -31,5 +31,6 @@ private:
 	sf::RectangleShape m_modalRect;
 	TextCollection m_textCollection;
 	std::shared_ptr<TextTemplate> ExitModalButton;
+	std::shared_ptr<Input> m_input;
 
 };

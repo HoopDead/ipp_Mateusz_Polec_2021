@@ -10,12 +10,13 @@
 #include "TextAction_LoadGame.hpp"
 #include "TextAction_Options.hpp"
 #include "ModalOptions.hpp"
+#include "Input.hpp"
 
 class SceneMenu : public Scene {
 
 public:
 	//TODO: Documentation
-	SceneMenu(Window& window, SceneStateMachine* sceneStateMachine);
+	SceneMenu(Window& window, SceneStateMachine* sceneStateMachine, std::shared_ptr<Input> input);
 
 	//TODO: Documentation
 	void OnCreate() override;
@@ -44,4 +45,5 @@ private:
 	TextCollection m_textCollection;
 	SceneStateMachine* m_sceneStateMachine;
 	ModalOptions m_modalOptions;
+	std::shared_ptr<Input> m_input;
 };

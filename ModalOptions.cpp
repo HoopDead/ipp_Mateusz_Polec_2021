@@ -1,12 +1,13 @@
-	#include "ModalOptions.hpp"
+#include "ModalOptions.hpp"
 
 ModalOptions::ModalOptions() : m_isActive(false) {}
 
-void ModalOptions::Initialise() {
+void ModalOptions::Initialise(std::shared_ptr<Input> input) {
+	m_input = input;
 	m_modalRect.setSize(sf::Vector2f(500, 700));
 	m_modalRect.setFillColor(sf::Color(13, 120, 186));
 
-	ExitModalButton = std::make_shared<TextTemplate>();
+	ExitModalButton = std::make_shared<TextTemplate>(m_input);
 
 	ExitModalButton->Awake();
 	ExitModalButton->SetText("CLOSE OPTIONS");

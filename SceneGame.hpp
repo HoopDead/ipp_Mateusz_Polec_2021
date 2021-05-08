@@ -26,7 +26,7 @@ public:
 	* @Param: -
 	* @Return: -
 	*/
-	SceneGame(ResourceAllocator<sf::Texture>& textureAllocator, Window& window);
+	SceneGame(ResourceAllocator<sf::Texture>& textureAllocator, Window& window, std::shared_ptr<Input> input);
 
 	/*
 	* OnCreate method
@@ -105,5 +105,5 @@ private:
 
 	ObjectCollection m_objects;
 
-	Input input;
+	std::shared_ptr<Input> m_input;
 };

@@ -14,6 +14,8 @@ void Input::Update() {
 
 	m_frameKeys.SetBit((int)Key::Esc), sf::Keyboard::isKeyPressed(sf::Keyboard::Escape);
 
+	m_frameKeys.SetBit((int)Key::MouseLeft, sf::Mouse::isButtonPressed(sf::Mouse::Left));
+
 }
 
 bool Input::IsKeyDown(Key keycode) {

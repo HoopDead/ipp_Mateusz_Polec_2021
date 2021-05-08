@@ -10,7 +10,7 @@ void Component_KeyboardMovement::Awake() {
 }
 
 
-void Component_KeyboardMovement::SetInput(Input* input) {
+void Component_KeyboardMovement::SetInput(std::shared_ptr<Input> input) {
 	m_input = input;
 }
 

@@ -1,7 +1,7 @@
 #include "SceneGame.hpp"
 
-SceneGame::SceneGame(ResourceAllocator<sf::Texture>& textureAllocator, Window& window) :
-	m_textureAllocator(textureAllocator), m_window(window) {
+SceneGame::SceneGame(ResourceAllocator<sf::Texture>& textureAllocator, Window& window, std::shared_ptr<Input> input) :
+	m_textureAllocator(textureAllocator), m_window(window), m_input(input) {
 	Log("Called Scene Game Constructor");
 }
 
@@ -18,7 +18,7 @@ void SceneGame::OnCreate() {
 void SceneGame::OnDestroy() {}
 
 void SceneGame::ProcessInput() {
-	input.Update();
+	m_input->Update();
 }
 
 void SceneGame::Update(float deltaTime) {
@@ -47,7 +47,7 @@ void SceneGame::CreatePlayer() {
     sprite->SetTextureAllocator(&m_textureAllocator);
 
     auto movement = player->AddComponent<Component_KeyboardMovement>();
-    movement->SetInput(&input);
+    movement->SetInput(m_input);
 
     auto transform = player->AddComponent<Component_Transform>();
 

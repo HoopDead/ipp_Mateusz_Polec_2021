@@ -1,6 +1,9 @@
 #include "SceneMenu.hpp"
 
-SceneMenu::SceneMenu(Window& window, SceneStateMachine* sceneStateMachine) : m_window(window), m_sceneStateMachine(sceneStateMachine) {
+SceneMenu::SceneMenu(Window& window, SceneStateMachine* sceneStateMachine, std::shared_ptr<Input> input) 
+	: m_window(window), 
+	m_sceneStateMachine(sceneStateMachine),
+	m_input(input) {
 	Log("Called Scene Menu Constructor");
 }
 
@@ -9,7 +12,7 @@ void SceneMenu::OnCreate() {
 
 
 	//NEW GAME BUTTON
-	std::shared_ptr<TextTemplate> NewGameButton = std::make_shared<TextTemplate>();
+	std::shared_ptr<TextTemplate> NewGameButton = std::make_shared<TextTemplate>(m_input);
 
 	NewGameButton->Awake();
 	NewGameButton->SetText("NEW GAME");
@@ -20,7 +23,7 @@ void SceneMenu::OnCreate() {
 
 
 	//LOAD GAME BUTTON
-	std::shared_ptr<TextTemplate> LoadGameButton = std::make_shared<TextTemplate>();
+	std::shared_ptr<TextTemplate> LoadGameButton = std::make_shared<TextTemplate>(m_input);
 
 	LoadGameButton->Awake();
 	LoadGameButton->SetText("LOAD GAME");
@@ -32,7 +35,7 @@ void SceneMenu::OnCreate() {
 	LoadGameAction->SetSceneStateMachine(m_sceneStateMachine);
 
 	//OPTIONS BUTTON
-	std::shared_ptr<TextTemplate> OptionsGameButton = std::make_shared<TextTemplate>();
+	std::shared_ptr<TextTemplate> OptionsGameButton = std::make_shared<TextTemplate>(m_input);
 
 	OptionsGameButton->Awake();
 	OptionsGameButton->SetText("OPTIONS");
@@ -44,7 +47,7 @@ void SceneMenu::OnCreate() {
 	OptionsModalAction->SetModal(&m_modalOptions);
 
 	//EXIT BUTTON
-	std::shared_ptr<TextTemplate> ExitGameButton = std::make_shared<TextTemplate>();
+	std::shared_ptr<TextTemplate> ExitGameButton = std::make_shared<TextTemplate>(m_input);
 
 	ExitGameButton->Awake();
 	ExitGameButton->SetText("EXIT GAME");
@@ -63,7 +66,7 @@ void SceneMenu::OnCreate() {
 
 	m_textCollection.Awake();
 
-	m_modalOptions.Initialise();
+	m_modalOptions.Initialise(m_input);
 
 }
 

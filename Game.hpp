@@ -92,4 +92,7 @@ private:
 	//Setup for whole game
 	Setup m_setup;
 
+	//Input
+	std::shared_ptr<Input> m_input;
+
 };
