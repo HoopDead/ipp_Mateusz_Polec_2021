@@ -34,6 +34,7 @@ private:
 	std::shared_ptr<TextTemplate> ExitModalButton;
 	std::shared_ptr<TextTemplate> ResolutionRawText;
 	std::shared_ptr<TextTemplate> ResolutionText;
+	std::shared_ptr<TextTemplate> VSyncRawText;
 	std::shared_ptr<Input> m_input;
 	Setup* m_setup;
 	Window* m_window;

@@ -12,7 +12,7 @@ void ModalOptions::Initialise(std::shared_ptr<Input> input, Setup* setup, Window
 	ExitModalButton = std::make_shared<TextTemplate>(m_input);
 
 	ExitModalButton->Awake();
-	ExitModalButton->SetText("CLOSE OPTIONS");
+	ExitModalButton->SetText("ZAMKNIJ OKNO");
 	ExitModalButton->SetFontSize(24);
 	ExitModalButton->SetColor(255, 255, 255);
 	ExitModalButton->SetType(Type::MENU);
@@ -22,7 +22,7 @@ void ModalOptions::Initialise(std::shared_ptr<Input> input, Setup* setup, Window
 	ResolutionRawText = std::make_shared<TextTemplate>();
 
 	ResolutionRawText->Awake();
-	ResolutionRawText->SetText("RESOLUTION");
+	ResolutionRawText->SetText("ROZDZIELCZOSC");
 	ResolutionRawText->SetFontSize(24);
 	ResolutionRawText->SetColor(255, 255, 255);
 	ResolutionRawText->SetType(Type::RAW);
@@ -38,10 +38,18 @@ void ModalOptions::Initialise(std::shared_ptr<Input> input, Setup* setup, Window
 	ChangeResolutionAction->SetSetup(m_setup);
 	ChangeResolutionAction->SetWindow(m_window);
 
+	VSyncRawText = std::make_shared<TextTemplate>();
+
+	VSyncRawText->Awake();
+	VSyncRawText->SetText("VSync");
+	VSyncRawText->SetFontSize(24);
+	VSyncRawText->SetColor(255, 255, 255);
+	VSyncRawText->SetType(Type::RAW);
 
 	m_textCollection.Add(ExitModalButton);
 	m_textCollection.Add(ResolutionRawText);
 	m_textCollection.Add(ResolutionText);
+	m_textCollection.Add(VSyncRawText);
 }
 
 void ModalOptions::Update(float deltaTime) {
@@ -57,6 +65,7 @@ void ModalOptions::Draw(Window& window) {
 		ExitModalButton->SetPosition(window.GetCenter().x - ExitModalButton->GetDimensions().x, window.GetCenter().y + m_modalRect.getLocalBounds().height / 2.3);
 		ResolutionRawText->SetPosition(window.GetCenter().x - ResolutionRawText->GetDimensions().x, window.GetCenter().y - m_modalRect.getLocalBounds().height / 2.3);
 		ResolutionText->SetPosition(window.GetCenter().x - ResolutionText->GetDimensions().x, window.GetCenter().y - m_modalRect.getLocalBounds().height / 2.6);
+		VSyncRawText->SetPosition(window.GetCenter().x - VSyncRawText->GetDimensions().x, window.GetCenter().y - m_modalRect.getLocalBounds().height / 3.1);
 		window.Draw(m_modalRect);
 		m_textCollection.Draw(window);
 	}

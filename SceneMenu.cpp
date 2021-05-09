@@ -16,7 +16,7 @@ void SceneMenu::OnCreate() {
 	NewGameButton = std::make_shared<TextTemplate>(m_input);
 
 	NewGameButton->Awake();
-	NewGameButton->SetText("NEW GAME");
+	NewGameButton->SetText("NOWA GRA");
 	NewGameButton->SetFontSize(32);
 	NewGameButton->SetColor(255, 255, 255);
 	NewGameButton->SetType(Type::MENU);
@@ -26,7 +26,7 @@ void SceneMenu::OnCreate() {
 	LoadGameButton = std::make_shared<TextTemplate>(m_input);
 
 	LoadGameButton->Awake();
-	LoadGameButton->SetText("LOAD GAME");
+	LoadGameButton->SetText("WCZYTAJ GRE");
 	LoadGameButton->SetFontSize(32);
 	LoadGameButton->SetColor(255, 255, 255);
 	LoadGameButton->SetType(Type::MENU);
@@ -37,7 +37,7 @@ void SceneMenu::OnCreate() {
 	OptionsGameButton = std::make_shared<TextTemplate>(m_input);
 
 	OptionsGameButton->Awake();
-	OptionsGameButton->SetText("OPTIONS");
+	OptionsGameButton->SetText("OPCJE");
 	OptionsGameButton->SetFontSize(32);
 	OptionsGameButton->SetColor(255, 255, 255);
 	OptionsGameButton->SetType(Type::MENU);
@@ -48,7 +48,7 @@ void SceneMenu::OnCreate() {
 	ExitGameButton = std::make_shared<TextTemplate>(m_input);
 
 	ExitGameButton->Awake();
-	ExitGameButton->SetText("EXIT GAME");
+	ExitGameButton->SetText("WYJDZ Z GRY");
 	ExitGameButton->SetFontSize(32);
 	ExitGameButton->SetColor(255, 255, 255);
 	ExitGameButton->SetType(Type::MENU);
