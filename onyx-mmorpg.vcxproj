@@ -46,6 +46,7 @@
     <ClCompile Include="TextAction_ExitOptionsModal.cpp" />
     <ClCompile Include="TextAction_LoadGame.cpp" />
     <ClCompile Include="TextAction_Options.cpp" />
+    <ClCompile Include="TextAction_VSyncSwitch.cpp" />
     <ClCompile Include="TextCollection.cpp" />
     <ClCompile Include="TextTemplate.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -85,6 +86,7 @@
     <ClInclude Include="TextAction_ExitOptionsModal.hpp" />
     <ClInclude Include="TextAction_LoadGame.hpp" />
     <ClInclude Include="TextAction_Options.hpp" />
+    <ClInclude Include="TextAction_VSyncSwitch.hpp" />
     <ClInclude Include="TextCollection.hpp" />
     <ClInclude Include="TextTemplate.hpp" />
     <ClInclude Include="Window.hpp" />

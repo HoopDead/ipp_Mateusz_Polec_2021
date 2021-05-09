@@ -35,7 +35,6 @@ public:
 private:
 
 	Setup* m_setup;
-	TextCollection* m_textCollection;
 	std::vector<sf::VideoMode> m_resolutions = sf::VideoMode::getFullscreenModes();
 	sf::VideoMode m_actualResolution;
 	int m_actualResolutionIndex = 0;

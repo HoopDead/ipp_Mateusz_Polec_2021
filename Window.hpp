@@ -65,7 +65,18 @@ public:
 	*/
 	void BeginDraw();
 
+	/*
+	* ResizeToResolution method
+	* Create new Window/Refresh current Window to resolution from Setup class
+	* @Param: -
+	* @Return: -
+	*/
 	void ResizeToResolution();
+
+	/*
+	* 
+	*/
+	void VSyncSwitch(bool state);
 
 	/*
 	* draw method

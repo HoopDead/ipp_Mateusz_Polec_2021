@@ -46,10 +46,21 @@ void ModalOptions::Initialise(std::shared_ptr<Input> input, Setup* setup, Window
 	VSyncRawText->SetColor(255, 255, 255);
 	VSyncRawText->SetType(Type::RAW);
 
+	VSyncText = std::make_shared<TextTemplate>(m_input);
+
+	VSyncText->Awake();
+	VSyncText->SetText("Wlaczony");
+	VSyncText->SetFontSize(20);
+	VSyncText->SetColor(255, 255, 255);
+	VSyncText->SetType(Type::MENU);
+	auto VSyncSwitch = VSyncText->AddAction<TextAction_VSyncSwitch>();
+	VSyncSwitch->SetWindow(m_window);
+
 	m_textCollection.Add(ExitModalButton);
 	m_textCollection.Add(ResolutionRawText);
 	m_textCollection.Add(ResolutionText);
 	m_textCollection.Add(VSyncRawText);
+	m_textCollection.Add(VSyncText);
 }
 
 void ModalOptions::Update(float deltaTime) {
@@ -66,6 +77,7 @@ void ModalOptions::Draw(Window& window) {
 		ResolutionRawText->SetPosition(window.GetCenter().x - ResolutionRawText->GetDimensions().x, window.GetCenter().y - m_modalRect.getLocalBounds().height / 2.3);
 		ResolutionText->SetPosition(window.GetCenter().x - ResolutionText->GetDimensions().x, window.GetCenter().y - m_modalRect.getLocalBounds().height / 2.6);
 		VSyncRawText->SetPosition(window.GetCenter().x - VSyncRawText->GetDimensions().x, window.GetCenter().y - m_modalRect.getLocalBounds().height / 3.1);
+		VSyncText->SetPosition(window.GetCenter().x - VSyncText->GetDimensions().x, window.GetCenter().y - m_modalRect.getLocalBounds().height / 3.6);
 		window.Draw(m_modalRect);
 		m_textCollection.Draw(window);
 	}

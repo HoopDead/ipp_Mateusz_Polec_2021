@@ -77,6 +77,10 @@ void Window::ResizeToResolution() {
 	m_window.create(sf::VideoMode(m_setup->GetResolution().width, m_setup->GetResolution().height, 32), "XD", sf::Style::Fullscreen);
 }
 
+void Window::VSyncSwitch(bool state) {
+	m_window.setVerticalSyncEnabled(state);
+}
+
 
 Window::~Window() {
 	Log("Called Window Destructor");

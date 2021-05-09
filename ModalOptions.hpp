@@ -6,6 +6,7 @@
 #include "TextCollection.hpp"
 #include "TextAction_ExitOptionsModal.hpp"
 #include "TextAction_ChangeResolution.hpp"
+#include "TextAction_VSyncSwitch.hpp"
 
 class ModalOptions : public ModalTemplate {
 public:
@@ -35,6 +36,7 @@ private:
 	std::shared_ptr<TextTemplate> ResolutionRawText;
 	std::shared_ptr<TextTemplate> ResolutionText;
 	std::shared_ptr<TextTemplate> VSyncRawText;
+	std::shared_ptr<TextTemplate> VSyncText;
 	std::shared_ptr<Input> m_input;
 	Setup* m_setup;
 	Window* m_window;
