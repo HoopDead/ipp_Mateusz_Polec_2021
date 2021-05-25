@@ -144,6 +144,9 @@
     <ClCompile Include="TextAction_VSyncSwitch.cpp">
       <Filter>Source Files\Text\TextAction</Filter>
     </ClCompile>
+    <ClCompile Include="ModalGamePause.cpp">
+      <Filter>Source Files\Modals</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.hpp">
@@ -259,6 +262,9 @@
     </ClInclude>
     <ClInclude Include="TextAction_VSyncSwitch.hpp">
       <Filter>Header Files\Text\TextAction</Filter>
+    </ClInclude>
+    <ClInclude Include="ModalGamePause.hpp">
+      <Filter>Header Files\Modals</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

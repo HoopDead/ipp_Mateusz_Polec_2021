@@ -12,7 +12,7 @@ void Input::Update() {
 
 	m_frameKeys.SetBit((int)Key::Right, (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) || (sf::Keyboard::isKeyPressed(sf::Keyboard::D)));
 
-	m_frameKeys.SetBit((int)Key::Esc), sf::Keyboard::isKeyPressed(sf::Keyboard::Escape);
+	m_frameKeys.SetBit((int)Key::Esc, sf::Keyboard::isKeyPressed(sf::Keyboard::Escape));
 
 	m_frameKeys.SetBit((int)Key::MouseLeft, sf::Mouse::isButtonPressed(sf::Mouse::Left));
 

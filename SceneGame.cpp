@@ -13,18 +13,32 @@ void SceneGame::OnCreate() {
 
     CreatePlayer();
 
+    m_modalGamePause.Initialise(m_input, &m_window);
+
+
 }
 
 void SceneGame::OnDestroy() {}
 
 void SceneGame::ProcessInput() {
 	m_input->Update();
+    if (m_input->IsKeyDown(Input::Key::Esc)) {
+        if (!m_modalGamePause.IsActive()) {
+            m_modalGamePause.Activate();
+        }
+        else {
+            m_modalGamePause.Deactivate();
+        }
+    }
 }
 
 void SceneGame::Update(float deltaTime) {
-	m_objects.ProcessRemoval();
-	m_objects.ProcessNewObjects();
-	m_objects.Update(deltaTime);
+    if (!m_modalGamePause.IsActive()) {
+        m_objects.ProcessRemoval();
+        m_objects.ProcessNewObjects();
+        m_objects.Update(deltaTime);
+    }
+    m_modalGamePause.Update(deltaTime);
 }
 
 void SceneGame::LateUpdate(float deltaTime) {
@@ -35,6 +49,7 @@ void SceneGame::Draw(Window& window) {
     m_mapRenderer->DrawLayersBelow(window);
 	m_objects.Draw(window);
     m_mapRenderer->DrawLayersAbove(window);
+    m_modalGamePause.Draw(window);
 
 }
 

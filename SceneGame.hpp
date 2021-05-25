@@ -9,6 +9,7 @@
 #include "ResourceAllocator.hpp"
 #include "ObjectCollection.hpp"
 #include "MapRenderer.h"
+#include "ModalGamePause.hpp"
 #include "Component_Animation.hpp";
 #include "Component_MapCollision.hpp";
 #include "Component_BoxCollider.hpp"
@@ -106,4 +107,6 @@ private:
 	ObjectCollection m_objects;
 
 	std::shared_ptr<Input> m_input;
+
+	ModalGamePause m_modalGamePause;
 };

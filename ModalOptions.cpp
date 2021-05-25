@@ -71,7 +71,6 @@ void ModalOptions::Update(float deltaTime) {
 
 void ModalOptions::Draw(Window& window) {
 	if (m_isActive) {
-		LogAllOneLine("Modal width:", m_modalRect.getLocalBounds().width);
 		m_modalRect.setPosition(window.GetCenter().x - m_modalRect.getLocalBounds().width / 2, window.GetCenter().y - m_modalRect.getLocalBounds().height / 2);
 		ExitModalButton->SetPosition(window.GetCenter().x - ExitModalButton->GetDimensions().x, window.GetCenter().y + m_modalRect.getLocalBounds().height / 2.3);
 		ResolutionRawText->SetPosition(window.GetCenter().x - ResolutionRawText->GetDimensions().x, window.GetCenter().y - m_modalRect.getLocalBounds().height / 2.3);
